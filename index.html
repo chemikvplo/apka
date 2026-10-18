@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemia Rozszerzona - Nauka</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chemia Rozszerzona 🧪</h1>
+            <p>Twoje mobilne Vademecum</p>
+        </header>
+
+        <!-- Sekcja Fiszek -->
+        <section class="card-section">
+            <h2>Fiszka Dnia</h2>
+            <div class="flashcard" id="flashcard" onclick="flipsCard()">
+                <div class="card-inner" id="cardInner">
+                    <div class="card-front" id="cardFront">Ładowanie fiszki...</div>
+                    <div class="card-back" id="cardBack">Ładowanie odpowiedzi...</div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button onclick="nextCard()">Następna fiszka</button>
+            </div>
+        </section>
+
+        <!-- Sekcja Progresu (LocalStorage) -->
+        <section class="progress-section">
+            <h2>Twój Progres</h2>
+            <p>Rozwiązane zadania: <span id="scoreCount">0</span></p>
+            <button onclick="completeTask()">Zaliczyłem zadanie! (+1)</button>
+            <button class="reset-btn" onclick="resetProgress()">Zresetuj postęp</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(() => console.log("Service Worker działa!"))
+            .catch((err) => console.log("Błąd Service Workera", err));
+    }
+</script>
+</body>
+</html>
