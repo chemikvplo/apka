@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemia Rozszerzona - Nauka</title>
+    <title>Chemia Rozszerzona - Vademecum</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
 </head>
@@ -14,36 +14,54 @@
             <p>Twoje mobilne Vademecum</p>
         </header>
 
-        <!-- Sekcja Fiszek -->
-        <section class="card-section">
-            <h2>Fiszka Dnia</h2>
-            <div class="flashcard" id="flashcard" onclick="flipsCard()">
-                <div class="card-inner" id="cardInner">
-                    <div class="card-front" id="cardFront">Ładowanie fiszki...</div>
-                    <div class="card-back" id="cardBack">Ładowanie odpowiedzi...</div>
-                </div>
-            </div>
-            <div class="buttons">
-                <button onclick="nextCard()">Następna fiszka</button>
+        <!-- WIDOK 1: MENU GŁÓWNE Z DZIAŁAMI -->
+        <section id="home-view">
+            <h2>Wybierz dział:</h2>
+            <div id="categories-grid" class="grid-container">
+                <!-- Przyciski wygenerują się tu automatycznie przez JS -->
             </div>
         </section>
 
-        <!-- Sekcja Progresu (LocalStorage) -->
-        <section class="progress-section">
-            <h2>Twój Progres</h2>
-            <p>Rozwiązane zadania: <span id="scoreCount">0</span></p>
-            <button onclick="completeTask()">Zaliczyłem zadanie! (+1)</button>
-            <button class="reset-btn" onclick="resetProgress()">Zresetuj postęp</button>
+        <!-- WIDOK 2: KONKRETNY DZIAŁ -->
+        <section id="category-view" class="hidden">
+            <button class="back-btn" onclick="goBack()">🔙 Wróć do spisu</button>
+            <h2 id="current-category-title">Tytuł działu</h2>
+
+            <!-- Zakładki -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('notatki')">📝 Notatki</button>
+                <button class="tab-btn" onclick="showTab('fiszki')">🗂️ Fiszki</button>
+                <button class="tab-btn" onclick="showTab('zadania')">📐 Zadania</button>
+            </div>
+
+            <!-- Treść zakładek -->
+            <div id="tab-notatki" class="tab-content">
+                <div id="notes-content">Wybierz dział, aby zobaczyć notatki...</div>
+            </div>
+
+            <div id="tab-fiszki" class="tab-content hidden">
+                <div class="flashcard" id="flashcard" onclick="flipsCard()">
+                    <div class="card-inner" id="cardInner">
+                        <div class="card-front" id="cardFront">Kliknij "Następna fiszka"</div>
+                        <div class="card-back" id="cardBack">Odpowiedź...</div>
+                    </div>
+                </div>
+                <button class="action-btn" onclick="nextCard()">Następna fiszka</button>
+            </div>
+
+            <div id="tab-zadania" class="tab-content hidden">
+                <p>Rozwiązane zadania w tym dziale: <span id="scoreCount">0</span></p>
+                <button class="action-btn" onclick="completeTask()">Zaliczyłem zadanie! (+1)</button>
+                <div id="tasks-content" class="tasks-box">Wkrótce pojawią się tu zadania z rozwiązaniami...</div>
+            </div>
         </section>
     </div>
 
     <script src="app.js"></script>
     <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-            .then(() => console.log("Service Worker działa!"))
-            .catch((err) => console.log("Błąd Service Workera", err));
-    }
-</script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
 </body>
 </html>
