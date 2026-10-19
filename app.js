@@ -37,22 +37,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
-// ZARZĄDZANIE WIDOKAMI I KARTAMI
-// ==========================================
+// ZARZĄDZANIE WIDOKAMI I INICJALIZACJA KREATORÓW
 function switchView(viewId) {
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     document.getElementById(viewId).classList.add('active');
 
+    // Leniwe ładowanie edytora JSME TYLKO dla chemii organicznej
     if (viewId === 'view-draw-organic' && typeof JSApplet !== 'undefined' && !jsmeOrg) {
         jsmeOrg = new JSApplet.JSME("jsme_container_org", "100%", "300px", {"options":"query,hydrogens,nozoom"});
     }
 }
 
-function switchTab(tabId) {
+// Bezpieczne przełączanie zakładek (Notatki, Fiszki, Zadania)
+function switchTab(tabId, element = null) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    document.getElementById(`tab-${tabId}`).classList.add('active');
+    
+    // Znajdź przycisk bezpiecznie (nawet przy wywołaniu automatycznym)
+    const btn = element || (typeof event !== 'undefined' && event && event.currentTarget) || document.querySelector(`.tab-btn[onclick*="${tabId}"]`);
+    if (btn) btn.classList.add('active');
+    
+    const content = document.getElementById(`tab-${tabId}`);
+    if (content) content.classList.add('active');
 }
 
 function renderChaptersGrid() {
@@ -80,7 +86,8 @@ function openChapter(index) {
     
     currentFilter = 'all';
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector('.filter-btn').classList.add('active');
+    const firstFilter = document.querySelector('.filter-btn');
+    if (firstFilter) firstFilter.classList.add('active');
 
     let savedIndex = userProgress.lastViewed[index] || 0;
     if(savedIndex >= currentFlashcards.length) savedIndex = 0;
@@ -88,9 +95,21 @@ function openChapter(index) {
 
     applyFilter(false); 
     document.getElementById("flashcard").classList.remove("flipped");
-    document.querySelector('.tab-btn').click(); 
+    
+    // Bezpieczne otwarcie zakładki Notatki bez wywoływania błędnego .click()
+    switchTab('notatki'); 
 }
 
+// ZARZĄDZANIE FILTRAMI (ZAKŁADKI NAD FISZKĄ)
+function setFilter(filterType, element = null) {
+    currentFilter = filterType;
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    
+    const btn = element || (typeof event !== 'undefined' && event && event.currentTarget) || document.querySelector(`.filter-btn[onclick*="${filterType}"]`);
+    if (btn) btn.classList.add('active');
+    
+    applyFilter(true); 
+}
 // ==========================================
 // FILTROWANIE I OBSŁUGA FISZEK
 // ==========================================
