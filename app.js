@@ -1,4 +1,11 @@
 // ==========================================
+// INICJALIZACJA JSME (Usuwa błąd z konsoli)
+// ==========================================
+function jsmeOnLoad() {
+    // Biblioteka JSME wymaga obecności tej funkcji.
+}
+
+// ==========================================
 // STAN APLIKACJI I PAMIĘĆ SESJI
 // ==========================================
 let currentFlashcards = [];   
@@ -24,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderChaptersGrid();
     updateProgressUI();
 
-    // 1. Obsługa klawisza ENTER w edytorze
+    // Obsługa klawisza ENTER w edytorze nieorganicznym
     const formulaInput = document.getElementById('formula-input');
     if (formulaInput) {
         formulaInput.addEventListener('keydown', function(e) {
@@ -35,28 +42,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 2. Monitorowanie przewijania strony dla przycisku "Wróć do góry"
-    const scrollBtn = document.getElementById('scroll-to-top');
-    if(scrollBtn) {
-        window.addEventListener('scroll', function(e) {
-            // Łapiemy element, który faktycznie jest w danym momencie scrollowany
-            let target = e.target;
-            if (target === document || target === window) target = document.documentElement;
-            
-            // Pojawia się, jeśli użytkownik zjechał o 300 pikseli w dół
-            if (target.scrollTop > 300) {
-                scrollBtn.classList.add('visible');
-            } else if (target.scrollTop < 100) {
-                scrollBtn.classList.remove('visible');
-            }
-        }, true); // "true" pozwala przechwycić scroll z każdego zagnieżdżonego diva
-    }
+    // Kuloodporny wykrywacz przewijania dla przycisku "Wróć do góry"
+    window.addEventListener('scroll', function() {
+        const scrollBtn = document.getElementById('scroll-to-top');
+        if (!scrollBtn) return;
+        
+        let isScrolled = false;
+        
+        // Sprawdzamy okno główne
+        if (window.scrollY > 250 || document.documentElement.scrollTop > 250) {
+            isScrolled = true;
+        }
+        
+        // Sprawdzamy wszystkie kontenery w aplikacji (zakładki z notatkami, widoki)
+        document.querySelectorAll('.tab-content, .view, .app-container').forEach(el => {
+            if (el.scrollTop > 250) isScrolled = true;
+        });
+
+        if (isScrolled) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    }, true); // 'true' pozwala na przechwycenie scrollowania z wewnątrz divów
 });
 
-// Funkcja przewijająca na samą górę wszystkich sekcji
+// Funkcja przewijająca wszystko na samą górę
 function scrollToTop() {
+    // Przewiń główne okno
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.querySelectorAll('.tab-content, .view, .card-back').forEach(el => {
+    
+    // Przewiń wszystkie wewnętrzne kontenery
+    document.querySelectorAll('.tab-content, .view, .app-container, .card-back').forEach(el => {
         el.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
@@ -299,8 +316,6 @@ async function getIupacName(type) {
 // =========================================================
 // SYSTEM NIEORGANICZNY: EDYTOR I SILNIK STECHIOMETRYCZNY
 // =========================================================
-
-// Usunięto tutaj wywołanie .focus() - zapobiega to gubieniu kursora i naprawia problem "podwójnych indeksów"
 function formatText(command) {
     document.execCommand(command, false, null);
 }
@@ -312,7 +327,7 @@ function insertText(text) {
 function clearEditor() {
     const editor = document.getElementById('formula-input');
     editor.innerHTML = "";
-    editor.focus(); // Focus potrzebny tylko po pełnym wyczyszczeniu pola
+    editor.focus();
 }
 
 async function getInorganicName() {
@@ -324,14 +339,12 @@ async function getInorganicName() {
         return;
     }
 
-    // ETAP 1: Natychmiastowa analiza matematyczno-stechiometryczna w nomenklatura.js
     const localName = parseInorganicFormulaLocal(rawFormula);
     if (localName) {
         resultBox.innerHTML = `✅ Oficjalna nazwa systematyczna:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${localName}</span>`;
         return;
     }
 
-    // ETAP 2: Jeśli to wzór organiczny lub nietypowy minerał -> Chmura (PubChem + Wikidata PL + Translator)
     resultBox.innerHTML = "⏳ Przeszukuję globalne rejestry chemiczne...";
     const cloudName = await resolveCompoundInCloud(rawFormula, false);
 
