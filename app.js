@@ -1,9 +1,7 @@
 // ==========================================
-// INICJALIZACJA JSME (Usuwa błąd z konsoli)
+// INICJALIZACJA JSME (Usuwa błędy konsoli)
 // ==========================================
-function jsmeOnLoad() {
-    // Biblioteka JSME wymaga obecności tej funkcji.
-}
+function jsmeOnLoad() {}
 
 // ==========================================
 // STAN APLIKACJI I PAMIĘĆ SESJI
@@ -17,9 +15,7 @@ let currentFilter = 'all';
 let jsmeOrg = null; 
 
 let userProgress = JSON.parse(localStorage.getItem("chemia_user_progress")) || {
-    learnedCards: {}, 
-    lastViewed: {},   
-    totalLearned: 0
+    learnedCards: {}, lastViewed: {}, totalLearned: 0
 };
 
 function saveProgress() {
@@ -31,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderChaptersGrid();
     updateProgressUI();
 
-    // Obsługa klawisza ENTER w edytorze nieorganicznym
+    // 1. ZAMIANA KLAWIATURY NA INDEKSY W LOCIE (Kreator Nieorganiczny)
     const formulaInput = document.getElementById('formula-input');
     if (formulaInput) {
         formulaInput.addEventListener('keydown', function(e) {
@@ -40,39 +36,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 getInorganicName();
             }
         });
+
+        formulaInput.addEventListener('input', function(e) {
+            if (formatMode === 'normal') return;
+            
+            let cursor = this.selectionStart;
+            let text = this.value;
+            if (cursor > 0) {
+                let char = text.substring(cursor - 1, cursor);
+                let map = formatMode === 'sub' ? unicodeSub : unicodeSup;
+                
+                // Jeśli wpisany znak istnieje w słowniku indeksów, podmień go
+                if (map[char]) {
+                    this.value = text.substring(0, cursor - 1) + map[char] + text.substring(cursor);
+                    this.selectionStart = this.selectionEnd = cursor;
+                }
+            }
+        });
     }
 
-    // Kuloodporny wykrywacz przewijania dla przycisku "Wróć do góry"
-    window.addEventListener('scroll', function() {
-        const scrollBtn = document.getElementById('scroll-to-top');
-        if (!scrollBtn) return;
-        
-        let isScrolled = false;
-        
-        // Sprawdzamy okno główne
-        if (window.scrollY > 250 || document.documentElement.scrollTop > 250) {
-            isScrolled = true;
-        }
-        
-        // Sprawdzamy wszystkie kontenery w aplikacji (zakładki z notatkami, widoki)
-        document.querySelectorAll('.tab-content, .view, .app-container').forEach(el => {
-            if (el.scrollTop > 250) isScrolled = true;
-        });
-
-        if (isScrolled) {
-            scrollBtn.classList.add('visible');
-        } else {
-            scrollBtn.classList.remove('visible');
-        }
-    }, true); // 'true' pozwala na przechwycenie scrollowania z wewnątrz divów
+    // 2. KULOODPORNY WYKRYWACZ SCROLLA (Dla przycisku powrotu do góry)
+    window.addEventListener('scroll', handleScrollVisibility, true);
 });
 
-// Funkcja przewijająca wszystko na samą górę
-function scrollToTop() {
-    // Przewiń główne okno
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+function handleScrollVisibility() {
+    const scrollBtn = document.getElementById('scroll-to-top');
+    if (!scrollBtn) return;
     
-    // Przewiń wszystkie wewnętrzne kontenery
+    let isScrolled = false;
+    if (window.scrollY > 200 || document.documentElement.scrollTop > 200) isScrolled = true;
+    
+    // Sprawdzamy też wszystkie wewnętrzne zakładki
+    document.querySelectorAll('.tab-content, .view, .app-container').forEach(el => {
+        if (el.scrollTop > 200) isScrolled = true;
+    });
+
+    if (isScrolled) {
+        scrollBtn.classList.add('visible');
+    } else {
+        scrollBtn.classList.remove('visible');
+    }
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     document.querySelectorAll('.tab-content, .view, .app-container, .card-back').forEach(el => {
         el.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -314,39 +321,82 @@ async function getIupacName(type) {
 }
 
 // =========================================================
-// SYSTEM NIEORGANICZNY: EDYTOR I SILNIK STECHIOMETRYCZNY
+// SYSTEM NIEORGANICZNY: EDYTOR UNICODE I TŁUMACZ
 // =========================================================
-function formatText(command) {
-    document.execCommand(command, false, null);
+
+// Stan formatowania: 'normal', 'sub', 'sup'
+let formatMode = 'normal'; 
+const unicodeSub = {'0':'₀','1':'₁','2':'₂','3':'₃','4':'₄','5':'₅','6':'₆','7':'₇','8':'₈','9':'₉','+':'₊','-':'₋'};
+const unicodeSup = {'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','+':'⁺','-':'⁻'};
+
+// Przełącznik przycisków indeksów
+function toggleFormat(mode) {
+    const subBtn = document.getElementById('btn-sub');
+    const supBtn = document.getElementById('btn-sup');
+    const input = document.getElementById('formula-input');
+    
+    // Jeśli kliknięto w ten sam aktywny przycisk -> Wyłącz formatowanie (Toggle Off)
+    if (formatMode === mode) {
+        formatMode = 'normal';
+        if (subBtn) subBtn.classList.remove('active-tool');
+        if (supBtn) supBtn.classList.remove('active-tool');
+    } else {
+        // Zmiana formatowania na nowe
+        formatMode = mode;
+        if (subBtn) subBtn.classList.toggle('active-tool', mode === 'sub');
+        if (supBtn) supBtn.classList.toggle('active-tool', mode === 'sup');
+    }
+    input.focus(); // Zwraca focus bez chowania klawiatury
 }
 
+// Wstawianie nawiasów w miejsce kursora
 function insertText(text) {
-    document.execCommand('insertText', false, text);
+    const input = document.getElementById('formula-input');
+    const start = input.selectionStart;
+    const val = input.value;
+    input.value = val.substring(0, start) + text + val.substring(input.selectionEnd);
+    input.selectionStart = input.selectionEnd = start + text.length;
+    input.focus();
 }
 
 function clearEditor() {
-    const editor = document.getElementById('formula-input');
-    editor.innerHTML = "";
-    editor.focus();
+    const input = document.getElementById('formula-input');
+    input.value = "";
+    formatMode = 'normal';
+    document.getElementById('btn-sub').classList.remove('active-tool');
+    document.getElementById('btn-sup').classList.remove('active-tool');
+    input.focus();
+}
+
+// Przygotowanie danych do wysyłki w API (zamiana ₂ na 2)
+function sanitizeForAPI(raw) {
+    const map = {
+        '₀':'0','₁':'1','₂':'2','₃':'3','₄':'4','₅':'5','₆':'6','₇':'7','₈':'8','₉':'9','₊':'+','₋':'-',
+        '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁺':'+','⁻':'-'
+    };
+    return raw.replace(/[₀-₉⁰-⁹₊₋⁺⁻]/g, m => map[m]);
 }
 
 async function getInorganicName() {
     const resultBox = document.getElementById('iupac-result-inorg');
-    const rawFormula = document.getElementById('formula-input').innerText.trim();
+    const rawFormula = document.getElementById('formula-input').value.trim();
     
     if (!rawFormula) {
         resultBox.innerHTML = "❌ Najpierw wpisz wzór!";
         return;
     }
 
-    const localName = parseInorganicFormulaLocal(rawFormula);
+    // Pozbywamy się małych/górnych cyfr Unicode, by algorytm mógł normalnie liczyć ładunki
+    const sanitizedFormula = sanitizeForAPI(rawFormula);
+
+    const localName = parseInorganicFormulaLocal(sanitizedFormula);
     if (localName) {
         resultBox.innerHTML = `✅ Oficjalna nazwa systematyczna:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${localName}</span>`;
         return;
     }
 
     resultBox.innerHTML = "⏳ Przeszukuję globalne rejestry chemiczne...";
-    const cloudName = await resolveCompoundInCloud(rawFormula, false);
+    const cloudName = await resolveCompoundInCloud(sanitizedFormula, false);
 
     if (cloudName) {
         resultBox.innerHTML = `✅ Rozpoznano związek:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${cloudName}</span>`;
