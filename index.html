@@ -67,13 +67,14 @@
 
                 <!-- Pasek narzędzi (Indeksy i Nawiasy) -->
                 <div class="editor-tools">
-                    <button class="tool-btn" onclick="formatText('subscript')" title="Indeks dolny (Włącz/Wyłącz)">X₂</button>
-                    <button class="tool-btn" onclick="formatText('superscript')" title="Indeks górny (Włącz/Wyłącz)">X²</button>
-                    <button class="tool-btn" onclick="insertText('(')">(</button>
-                    <button class="tool-btn" onclick="insertText(')')">)</button>
-                    <button class="tool-btn" onclick="insertText('[')">[</button>
-                    <button class="tool-btn" onclick="insertText(']')">]</button>
-                    <button class="tool-btn" style="color: #ef4444; margin-left: auto;" onclick="clearEditor()">Czyść</button>
+                    <!-- onpointerdown="event.preventDefault();" blokuje utratę focusa, co naprawia "podwójne indeksy" -->
+                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="formatText('subscript')" title="Indeks dolny (Włącz/Wyłącz)">X₂</button>
+                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="formatText('superscript')" title="Indeks górny (Włącz/Wyłącz)">X²</button>
+                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="insertText('(')">(</button>
+                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="insertText(')')">)</button>
+                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="insertText('[')">[</button>
+                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="insertText(']')">]</button>
+                    <button class="tool-btn" style="color: #ef4444; margin-left: auto;" onpointerdown="event.preventDefault();" onclick="clearEditor()">Czyść</button>
                 </div>
 
                 <button class="action-btn" style="margin-top: 10px;" onclick="getInorganicName()">Odkryj nazwę związku</button>
@@ -183,5 +184,7 @@
     <script src="dzial_13.js"></script>
     <script src="nomenklatura.js"></script>
     <script src="app.js"></script>
+    <!-- Pływający przycisk powrotu do góry -->
+    <button id="scroll-to-top" class="scroll-top-btn" onclick="scrollToTop()" title="Wróć do góry">&#8593;</button>
 </body>
 </html>

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderChaptersGrid();
     updateProgressUI();
 
-    // Obsługa klawisza ENTER w polu wpisywania wzoru nieorganicznego
+    // 1. Obsługa klawisza ENTER w edytorze
     const formulaInput = document.getElementById('formula-input');
     if (formulaInput) {
         formulaInput.addEventListener('keydown', function(e) {
@@ -34,26 +34,49 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 2. Monitorowanie przewijania strony dla przycisku "Wróć do góry"
+    const scrollBtn = document.getElementById('scroll-to-top');
+    if(scrollBtn) {
+        window.addEventListener('scroll', function(e) {
+            // Łapiemy element, który faktycznie jest w danym momencie scrollowany
+            let target = e.target;
+            if (target === document || target === window) target = document.documentElement;
+            
+            // Pojawia się, jeśli użytkownik zjechał o 300 pikseli w dół
+            if (target.scrollTop > 300) {
+                scrollBtn.classList.add('visible');
+            } else if (target.scrollTop < 100) {
+                scrollBtn.classList.remove('visible');
+            }
+        }, true); // "true" pozwala przechwycić scroll z każdego zagnieżdżonego diva
+    }
 });
 
+// Funkcja przewijająca na samą górę wszystkich sekcji
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelectorAll('.tab-content, .view, .card-back').forEach(el => {
+        el.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 // ==========================================
-// ZARZĄDZANIE WIDOKAMI I INICJALIZACJA KREATORÓW
+// ZARZĄDZANIE WIDOKAMI I KARTAMI
+// ==========================================
 function switchView(viewId) {
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     document.getElementById(viewId).classList.add('active');
 
-    // Leniwe ładowanie edytora JSME TYLKO dla chemii organicznej
     if (viewId === 'view-draw-organic' && typeof JSApplet !== 'undefined' && !jsmeOrg) {
         jsmeOrg = new JSApplet.JSME("jsme_container_org", "100%", "300px", {"options":"query,hydrogens,nozoom"});
     }
 }
 
-// Bezpieczne przełączanie zakładek (Notatki, Fiszki, Zadania)
 function switchTab(tabId, element = null) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     
-    // Znajdź przycisk bezpiecznie (nawet przy wywołaniu automatycznym)
     const btn = element || (typeof event !== 'undefined' && event && event.currentTarget) || document.querySelector(`.tab-btn[onclick*="${tabId}"]`);
     if (btn) btn.classList.add('active');
     
@@ -95,12 +118,12 @@ function openChapter(index) {
 
     applyFilter(false); 
     document.getElementById("flashcard").classList.remove("flipped");
-    
-    // Bezpieczne otwarcie zakładki Notatki bez wywoływania błędnego .click()
     switchTab('notatki'); 
 }
 
-// ZARZĄDZANIE FILTRAMI (ZAKŁADKI NAD FISZKĄ)
+// ==========================================
+// FILTROWANIE I OBSŁUGA FISZEK
+// ==========================================
 function setFilter(filterType, element = null) {
     currentFilter = filterType;
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -108,15 +131,6 @@ function setFilter(filterType, element = null) {
     const btn = element || (typeof event !== 'undefined' && event && event.currentTarget) || document.querySelector(`.filter-btn[onclick*="${filterType}"]`);
     if (btn) btn.classList.add('active');
     
-    applyFilter(true); 
-}
-// ==========================================
-// FILTROWANIE I OBSŁUGA FISZEK
-// ==========================================
-function setFilter(filterType) {
-    currentFilter = filterType;
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
     applyFilter(true); 
 }
 
@@ -285,19 +299,20 @@ async function getIupacName(type) {
 // =========================================================
 // SYSTEM NIEORGANICZNY: EDYTOR I SILNIK STECHIOMETRYCZNY
 // =========================================================
+
+// Usunięto tutaj wywołanie .focus() - zapobiega to gubieniu kursora i naprawia problem "podwójnych indeksów"
 function formatText(command) {
-    document.getElementById('formula-input').focus();
     document.execCommand(command, false, null);
 }
 
 function insertText(text) {
-    document.getElementById('formula-input').focus();
     document.execCommand('insertText', false, text);
 }
 
 function clearEditor() {
-    document.getElementById('formula-input').innerHTML = "";
-    document.getElementById('formula-input').focus();
+    const editor = document.getElementById('formula-input');
+    editor.innerHTML = "";
+    editor.focus(); // Focus potrzebny tylko po pełnym wyczyszczeniu pola
 }
 
 async function getInorganicName() {
@@ -323,6 +338,6 @@ async function getInorganicName() {
     if (cloudName) {
         resultBox.innerHTML = `✅ Rozpoznano związek:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${cloudName}</span>`;
     } else {
-        resultBox.innerHTML = "⚠️ Nie rozpoznano wzoru. Sprawdź poprawność stechiometryczną i nawiasy (np. CuSO4, Fe2(SO4)3, [Ag(NH3)2]OH, K4[Fe(CN)6]).";
+        resultBox.innerHTML = "⚠️ Nie rozpoznano wzoru. Sprawdź poprawność stechiometryczną i nawiasy (np. CuSO4, Fe2(SO4)3, K4[Fe(CN)6]).";
     }
 }
