@@ -3,60 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemia Rozszerzona - Vademecum</title>
+    <title>Chemia Rozszerzona by Paweł Sroga</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+    <!-- TUTAJ DODAJEMY BIBLIOTEKĘ DO RYSOWANIA WZORÓW -->
+    <script src="https://unpkg.com/smiles-drawer@2.1.7/dist/smiles-drawer.min.js"></script>
+<script type="text/javascript" src="https://jsme-editor.github.io/dist/jsme/jsme.nocache.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Chemia Rozszerzona 🧪</h1>
-            <p>Twoje mobilne Vademecum</p>
+    <div class="app-container">
+        <!-- NAGŁÓWEK APLIKACJI -->
+        <header class="app-header">
+            <h1>Chemia Rozszerzona</h1>
+            <p class="subtitle">by Paweł Sroga</p>
         </header>
 
-        <!-- WIDOK 1: MENU GŁÓWNE Z DZIAŁAMI -->
-        <section id="home-view">
-            <h2>Wybierz dział:</h2>
-            <div id="categories-grid" class="grid-container">
-                <!-- Przyciski wygenerują się tu automatycznie przez JS -->
+        <!-- EKRAN 1: GŁÓWNE KAFELKI -->
+        <section id="view-main" class="view active">
+            <div class="main-tiles-grid">
+                <button class="main-tile" onclick="switchView('view-chapters')">
+                    <span class="icon">📚</span>
+                    <span class="title">Działy</span>
+                    <span class="desc">Baza wiedzy, fiszki i zadania</span>
+                </button>
+                <button class="main-tile" onclick="switchView('view-progress')">
+                    <span class="icon">📈</span>
+                    <span class="title">Progres</span>
+                    <span class="desc">Twoje statystyki nauki</span>
+                </button>
+                <!-- NOWE KAFELKI RYSOWANIA -->
+                <button class="main-tile" onclick="switchView('view-draw-inorganic')">
+                    <span class="icon">⚗️</span>
+                    <span class="title">Nieorganiczne</span>
+                    <span class="desc">Rysowanie i wzory</span>
+                </button>
+                <button class="main-tile" onclick="switchView('view-draw-organic')">
+                    <span class="icon">🧬</span>
+                    <span class="title">Organiczne</span>
+                    <span class="desc">Kreator struktur IUPAC</span>
+                </button>
             </div>
         </section>
 
-        <!-- WIDOK 2: KONKRETNY DZIAŁ -->
-        <section id="category-view" class="hidden">
-            <button class="back-btn" onclick="goBack()">🔙 Wróć do spisu</button>
-            <h2 id="current-category-title">Tytuł działu</h2>
+       <!-- NOWY EKRAN: RYSOWANIE NIEORGANICZNE (KLAWIATURA + FORMATOWANIE) -->
+        <section id="view-draw-inorganic" class="view">
+            <button class="back-btn" onclick="switchView('view-main')">
+                <span class="arrow">←</span> Wróć do menu
+            </button>
+            <h2 class="chapter-title">Kreator Nieorganiczny</h2>
+            
+            <div class="content-box" style="padding: 15px;">
+                <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Wpisz wzór sumaryczny z klawiatury. Użyj przycisków poniżej do wstawiania indeksów i nawiasów:</p>
+                
+                <!-- Aktywne pole do wpisywania z klawiatury -->
+                <div id="formula-input" contenteditable="true" placeholder="Np. K4[Fe(CN)6]" class="formula-editor"></div>
 
-            <!-- Zakładki -->
-            <div class="tabs">
-                <button class="tab-btn active" onclick="showTab('notatki')">📝 Notatki</button>
-                <button class="tab-btn" onclick="showTab('fiszki')">🗂️ Fiszki</button>
-                <button class="tab-btn" onclick="showTab('zadania')">📐 Zadania</button>
+                <!-- Pasek narzędzi (Indeksy i Nawiasy) -->
+                <div class="editor-tools">
+                    <button class="tool-btn" onclick="formatText('subscript')" title="Indeks dolny (Włącz/Wyłącz)">X₂</button>
+                    <button class="tool-btn" onclick="formatText('superscript')" title="Indeks górny (Włącz/Wyłącz)">X²</button>
+                    <button class="tool-btn" onclick="insertText('(')">(</button>
+                    <button class="tool-btn" onclick="insertText(')')">)</button>
+                    <button class="tool-btn" onclick="insertText('[')">[</button>
+                    <button class="tool-btn" onclick="insertText(']')">]</button>
+                    <button class="tool-btn" style="color: #ef4444; margin-left: auto;" onclick="clearEditor()">Czyść</button>
+                </div>
+
+                <button class="action-btn" style="margin-top: 10px;" onclick="getInorganicName()">Odkryj nazwę związku</button>
+                <div id="iupac-result-inorg" class="iupac-result-box">Wpisz wzór i kliknij przycisk...</div>
+            </div>
+        </section>
+
+        <!-- NOWY EKRAN: RYSOWANIE ORGANICZNE -->
+        <section id="view-draw-organic" class="view">
+            <button class="back-btn" onclick="switchView('view-main')">
+                <span class="arrow">←</span> Wróć do menu
+            </button>
+            <h2 class="chapter-title">Kreator Organiczny</h2>
+            <div class="content-box" style="padding: 15px;">
+                <p style="margin-top: 0;">Narysuj szkielet węglowy, a AI wygeneruje nazwę IUPAC!</p>
+                <!-- Pojemnik na edytor -->
+                <div id="jsme_container_org" style="width: 100%; border-radius: 8px; overflow: hidden; background: white;"></div>
+                <button class="action-btn" style="margin-top: 15px;" onclick="getIupacName('org')">Generuj nazwę IUPAC</button>
+                <div id="iupac-result-org" class="iupac-result-box">Czekam na Twój rysunek...</div>
+            </div>
+        </section>
+
+        <!-- EKRAN 2: LISTA DZIAŁÓW -->
+        <section id="view-chapters" class="view">
+            <button class="back-btn" onclick="switchView('view-main')">
+                <span class="arrow">←</span> Wróć do menu
+            </button>
+            <h2>Wybierz dział</h2>
+            <div id="chapters-list" class="chapters-grid">
+                <!-- Generowane z JS -->
+            </div>
+        </section>
+
+        <!-- EKRAN 3: KONKRETNY DZIAŁ Z ZAKŁADKAMI -->
+        <section id="view-details" class="view">
+            <button class="back-btn" onclick="switchView('view-chapters')">
+                <span class="arrow">←</span> Wróć do działów
+            </button>
+            <h2 id="current-chapter-title" class="chapter-title">Tytuł działu</h2>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="switchTab('notatki')">Notatki</button>
+                <button class="tab-btn" onclick="switchTab('fiszki')">Fiszki</button>
+                <button class="tab-btn" onclick="switchTab('zadania')">Zadania</button>
             </div>
 
-            <!-- Treść zakładek -->
-            <div id="tab-notatki" class="tab-content">
-                <div id="notes-content">Wybierz dział, aby zobaczyć notatki...</div>
+            <div id="tab-notatki" class="tab-content active">
+                <div class="content-box" id="content-notatki">Wybierz dział...</div>
             </div>
 
-            <div id="tab-fiszki" class="tab-content hidden">
-                <div class="flashcard" id="flashcard" onclick="flipsCard()">
-                    <div class="card-inner" id="cardInner">
-                        <div class="card-front" id="cardFront">Kliknij "Następna fiszka"</div>
-                        <div class="card-back" id="cardBack">Odpowiedź...</div>
+         <div id="tab-fiszki" class="tab-content">
+                <div class="flashcard-filters">
+                    <button class="filter-btn active" onclick="setFilter('all')">Wszystkie</button>
+                    <button class="filter-btn" onclick="setFilter('learning')">Do nauki</button>
+                    <button class="filter-btn" onclick="setFilter('learned')">Umiem</button>
+                </div>
+
+                <div class="flashcard-header">
+                    <span id="flashcard-counter" class="counter">0/0</span>
+                </div>
+                
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard" onclick="flipCard()">
+                        <div class="card-inner">
+                            <div class="card-front" id="card-front">Ładowanie...</div>
+                            <!-- W tył fiszki wbudowujemy miejsce na tekst ORAZ na rysunek chemiczny -->
+                            <div class="card-back" id="card-back">
+                                <div class="card-text" id="card-back-text"></div>
+                                <canvas id="chem-canvas" width="250" height="150"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <button class="action-btn" onclick="nextCard()">Następna fiszka</button>
+                <div class="flashcard-controls">
+                    <div class="nav-buttons">
+                        <button class="action-btn secondary" onclick="prevCard()">← Poprzednia</button>
+                        <button class="action-btn" onclick="nextCard()">Następna →</button>
+                    </div>
+                    <button id="btn-learn" class="success-btn" onclick="toggleFlashcardLearned()">Umiem to! (+1)</button>
+                </div>
             </div>
 
-            <div id="tab-zadania" class="tab-content hidden">
-                <p>Rozwiązane zadania w tym dziale: <span id="scoreCount">0</span></p>
-                <button class="action-btn" onclick="completeTask()">Zaliczyłem zadanie! (+1)</button>
-                <div id="tasks-content" class="tasks-box">Wkrótce pojawią się tu zadania z rozwiązaniami...</div>
+            <div id="tab-zadania" class="tab-content">
+                <div class="content-box" id="content-zadania">Zadania wkrótce...</div>
             </div>
         </section>
+
+        <!-- EKRAN 4: PROGRES -->
+        <section id="view-progress" class="view">
+            <button class="back-btn" onclick="switchView('view-main')">
+                <span class="arrow">←</span> Wróć do menu
+            </button>
+            <h2>Twój Progres</h2>
+            <div class="stats-box">
+                <div class="stat-item">
+                    <span class="stat-value" id="stat-fiszki">0</span>
+                    <span class="stat-label">Opanowane fiszki</span>
+                </div>
+            </div>
+            <button class="reset-btn" onclick="resetProgress()">Zresetuj statystyki</button>
+        </section>
+
     </div>
 
+   <!-- Skrypty -->
+    <script src="baza.js"></script>
+    <script src="dzial_13.js"></script>
+    <script src="nomenklatura.js"></script>
     <script src="app.js"></script>
-    </body>
+</body>
 </html>
