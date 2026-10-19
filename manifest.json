@@ -1,14 +1,14 @@
 {
-  "name": "Chemia Rozszerzona - Vademecum",
-  "short_name": "Chemia Rozsz.",
-  "start_url": "/index.html",
+  "name": "Chemia Rozszerzona",
+  "short_name": "Chemia",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f4f7f6",
-  "theme_color": "#007acc",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
   "icons": [
     {
       "src": "icon.png",
-      "sizes": "192x192",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
