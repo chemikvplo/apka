@@ -112,24 +112,33 @@
             </div>
         </section>
 
-        <!-- EKRAN 3: KONKRETNY DZIAŁ Z ZAKŁADKAMI -->
+        <!-- EKRAN 2: SZCZEGÓŁY DZIAŁU -->
         <section id="view-details" class="view">
             <button class="back-btn" onclick="switchView('view-chapters')">
-                <span class="arrow">←</span> Wróć do działów
+                <span class="arrow">←</span> Wróć do listy działów
             </button>
             <h2 id="current-chapter-title" class="chapter-title">Tytuł działu</h2>
-
-            <div class="tabs-container">
+            
+            <!-- NOWE MENU ZAKŁADEK -->
+            <div class="tabs">
                 <button class="tab-btn active" onclick="switchTab('notatki')">Notatki</button>
+                <button class="tab-btn" onclick="switchTab('notatki-active')">Active Recall</button>
                 <button class="tab-btn" onclick="switchTab('fiszki')">Fiszki</button>
                 <button class="tab-btn" onclick="switchTab('zadania')">Zadania</button>
             </div>
 
+            <!-- KONTENERY ZAKŁADEK -->
             <div id="tab-notatki" class="tab-content active">
-                <div class="content-box" id="content-notatki">Wybierz dział...</div>
+                <div class="content-box" id="content-notatki">Wybierz dział, aby zobaczyć notatki.</div>
             </div>
 
-         <div id="tab-fiszki" class="tab-content">
+            <!-- NOWY KONTENER DLA ACTIVE RECALL -->
+            <div id="tab-notatki-active" class="tab-content">
+                <div class="content-box" id="content-notatki-active">Wybierz dział, aby zobaczyć notatki do nauki aktywnej.</div>
+            </div>
+
+            <div id="tab-fiszki" class="tab-content">
+                <!-- Tutaj jest Twój dotychczasowy kod fiszek (filtry, karta, przyciski nawigacyjne itd.) -->
                 <div class="flashcard-filters">
                     <button class="filter-btn active" onclick="setFilter('all')">Wszystkie</button>
                     <button class="filter-btn" onclick="setFilter('learning')">Do nauki</button>

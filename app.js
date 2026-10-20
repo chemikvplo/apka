@@ -127,9 +127,12 @@ function openChapter(index) {
     switchView('view-details');
     document.getElementById("current-chapter-title").innerText = romanChapters[index];
     
-    const data = appData[index] || { notatki: "Wkrótce...", fiszki: [], zadania: "Wkrótce..." };
-    document.getElementById("content-notatki").innerHTML = data.notatki;
-    document.getElementById("content-zadania").innerHTML = data.zadania;
+    // Nowy schemat danych uwzględniający notatkiActive
+    const data = appData[index] || { notatki: "Wkrótce...", notatkiActive: "Wkrótce...", fiszki: [], zadania: "Wkrótce..." };
+    
+    document.getElementById("content-notatki").innerHTML = data.notatki || "Wkrótce...";
+    document.getElementById("content-notatki-active").innerHTML = data.notatkiActive || "Brak wersji Active Recall dla tego działu.";
+    document.getElementById("content-zadania").innerHTML = data.zadania || "Wkrótce...";
     
     currentFlashcards = data.fiszki.map((card, i) => ({ ...card, originalIndex: i }));
     
@@ -427,4 +430,10 @@ async function getInorganicName() {
     } else {
          resultBox.innerHTML = "⚠️ Brak podpiętej funkcji tłumaczącej w chmurze!";
     }
+}
+// =========================================================
+// SYSTEM ACTIVE RECALL W NOTATKACH (Odkrywanie luk)
+// =========================================================
+function toggleRecall(el) {
+    el.classList.toggle('revealed');
 }

@@ -415,6 +415,78 @@ appData[13] = {
         </div>
     </div>
     `,
+
+    notatkiActive: `
+    <div class="notes-wrapper">
+        <h2 class="notes-main-title">🧠 ACTIVE RECALL: ALKOHOLE I FENOLE</h2>
+        <p style="text-align: center; color: #94a3b8; font-size: 13px; margin-bottom: 20px;">
+            💡 <em>Klikaj na ciemne pola, aby odkryć ukryte słowa i produkty reakcji, oraz rozwijaj pytania, by sprawdzić swoją wiedzę!</em>
+        </p>
+
+        <div class="note-section">
+            <h3>1. Budowa</h3>
+            <details class="recall-details">
+                <summary>Wymień hybrydyzację atomu węgla związanego z grupą -OH w alkoholach i fenolach.</summary>
+                <p>Alkohole: <strong>sp<sup>3</sup></strong>. Fenole: <strong>sp<sup>2</sup></strong>.</p>
+            </details>
+            <p>Rzędowość alkoholi dotyczy alkoholi <span class="recall-blank" onclick="toggleRecall(this)">I, II i III-rzędowych</span>. Fenole <span class="recall-blank" onclick="toggleRecall(this)">nie posiadają</span> rzędowości!</p>
+        </div>
+
+        <div class="note-section">
+            <h3>2. Właściwości Chemiczne Alkoholi (Dokończ reakcje)</h3>
+            <p>Wodne roztwory alkoholi wykazują odczyn <span class="recall-blank" onclick="toggleRecall(this)">obojętny</span>, ponieważ nie dysocjują.</p>
+            
+            <h4>Reakcja z sodem:</h4>
+            <div class="chem-eq">
+                2 CH<sub>3</sub>CH<sub>2</sub>OH + 2 Na <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> 
+                <span class="recall-blank" onclick="toggleRecall(this)">2 CH<sub>3</sub>CH<sub>2</sub>ONa + H<sub>2</sub>&uarr;</span>
+            </div>
+
+            <h4>Dehydratacja:</h4>
+            <div class="chem-eq">
+                CH<sub>3</sub>–CH(OH)–CH<sub>3</sub> 
+                <span class="chem-arrow"><span class="cond-top">Al<sub>2</sub>O<sub>3</sub>, T</span><span class="arrow-sym">&rarr;</span></span> 
+                <span class="recall-blank" onclick="toggleRecall(this)">CH<sub>3</sub>–CH=CH<sub>2</sub> + H<sub>2</sub>O</span>
+            </div>
+
+            <details class="recall-details">
+                <summary>Jakie produkty powstaną po utlenieniu alkoholu I-rzędowego, II-rzędowego i III-rzędowego?</summary>
+                <ul class="note-list">
+                    <li>I-rzędowy utlenia się do: <strong>aldehydu</strong> (potem kwasu karboksylowego).</li>
+                    <li>II-rzędowy utlenia się do: <strong>ketonu</strong>.</li>
+                    <li>III-rzędowy: <strong>nie utlenia się</strong> (brak zmiany barwy utleniacza).</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="note-section">
+            <h3>3. Doświadczenia Identyfikacyjne</h3>
+            <details class="recall-details">
+                <summary>Jaki odczynnik służy do odróżnienia glikolu od etanolu i jakie są obserwacje?</summary>
+                <div>
+                    <strong>Odczynnik:</strong> Świeżo strącony Cu(OH)<sub>2</sub> (na zimno).<br>
+                    <strong>Obserwacje dla etanolu:</strong> Osad nie roztwarza się.<br>
+                    <strong>Obserwacje dla glikolu (poli-):</strong> Osad Cu(OH)<sub>2</sub> roztwarza się tworząc szafirowy (ciemnoniebieski) roztwór.
+                </div>
+            </details>
+
+            <details class="recall-details">
+                <summary>Jak doświadczalnie wykryć obecność fenolu za pomocą soli żelaza?</summary>
+                <p>Należy użyć roztworu <strong>FeCl<sub>3</sub></strong>. W obecności fenolu pojawi się charakterystyczne <strong>fioletowe (fiołkowe) zabarwienie</strong> roztworu.</p>
+            </details>
+        </div>
+
+        <div class="note-section">
+            <h3>4. Fenole i kwasowość</h3>
+            <p>Uszereguj według rosnącej mocy kwasowej: Fenol, Kwas Węglowy, Etanol, Woda.</p>
+            <p>Kolejność: <span class="recall-blank" onclick="toggleRecall(this)">Etanol &lt; Woda &lt; Fenol &lt; Kwas węglowy</span></p>
+            <details class="recall-details">
+                <summary>Jak doświadczalnie udowodnić, że kwas węglowy jest mocniejszy od fenolu?</summary>
+                <p>Należy przepuścić CO<sub>2</sub> przez klarowny roztwór fenolanu sodu. Obserwuje się <strong>zmętnienie</strong>, ponieważ mocniejszy kwas węglowy wypiera fenol z jego soli (który słabo rozpuszcza się w zimnej wodzie).</p>
+            </details>
+        </div>
+    </div>
+    `,
     
     zadania: "<h3>Zadania</h3><br>Miejsce na zadania obliczeniowe i reakcje...",
 
