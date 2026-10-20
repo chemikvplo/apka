@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
         formulaInput.addEventListener('input', function(e) {
             if (formatMode === 'normal') return;
             
-            let cursor = this.selectionStart;
-            let text = this.value;
+            let cursor = this.selectionStart || 0;
+            let text = this.value || "";
+            
             if (cursor > 0) {
                 let char = text.substring(cursor - 1, cursor);
                 let map = formatMode === 'sub' ? unicodeSub : unicodeSup;
@@ -110,6 +111,7 @@ function switchTab(tabId, element = null) {
 
 function renderChaptersGrid() {
     const grid = document.getElementById("chapters-list");
+    if(!grid) return;
     grid.innerHTML = "";
     romanChapters.forEach((title, index) => {
         const btn = document.createElement("button");
@@ -312,11 +314,15 @@ async function getIupacName(type) {
 
     resultBox.innerHTML = "⏳ Analizowanie struktury i tłumaczenie IUPAC...";
 
-    const plName = await resolveCompoundInCloud(smiles, true);
-    if (plName) {
-        resultBox.innerHTML = `✅ Nazwa IUPAC:<br><span style="color: var(--accent); font-size: 19px; display:block; margin-top:8px;">${plName}</span>`;
+    if (typeof resolveCompoundInCloud !== 'undefined') {
+        const plName = await resolveCompoundInCloud(smiles, true);
+        if (plName) {
+            resultBox.innerHTML = `✅ Nazwa IUPAC:<br><span style="color: var(--accent); font-size: 19px; display:block; margin-top:8px;">${plName}</span>`;
+        } else {
+            resultBox.innerHTML = "⚠️ Związek nie istnieje w rejestrze lub zawiera błędną wartościowość wiązań.";
+        }
     } else {
-        resultBox.innerHTML = "⚠️ Związek nie istnieje w rejestrze lub zawiera błędną wartościowość wiązań.";
+        resultBox.innerHTML = "⚠️ Brak funkcji tłumaczącej w bazie!";
     }
 }
 
@@ -346,30 +352,40 @@ function toggleFormat(mode) {
         if (subBtn) subBtn.classList.toggle('active-tool', mode === 'sub');
         if (supBtn) supBtn.classList.toggle('active-tool', mode === 'sup');
     }
-    input.focus(); // Zwraca focus bez chowania klawiatury
+    if (input) input.focus(); // Zwraca focus bez chowania klawiatury
 }
 
-// Wstawianie nawiasów w miejsce kursora
+// Bezpieczne wstawianie tekstu w miejsce kursora (działa na <input>)
 function insertText(text) {
     const input = document.getElementById('formula-input');
-    const start = input.selectionStart;
-    const val = input.value;
-    input.value = val.substring(0, start) + text + val.substring(input.selectionEnd);
+    if (!input) return;
+
+    const start = input.selectionStart || 0;
+    const end = input.selectionEnd || 0;
+    const val = input.value || "";
+
+    input.value = val.substring(0, start) + text + val.substring(end);
     input.selectionStart = input.selectionEnd = start + text.length;
     input.focus();
 }
 
+// Bezpieczne czyszczenie <input>
 function clearEditor() {
     const input = document.getElementById('formula-input');
-    input.value = "";
+    if (input) {
+        input.value = "";
+        input.focus();
+    }
     formatMode = 'normal';
-    document.getElementById('btn-sub').classList.remove('active-tool');
-    document.getElementById('btn-sup').classList.remove('active-tool');
-    input.focus();
+    const subBtn = document.getElementById('btn-sub');
+    const supBtn = document.getElementById('btn-sup');
+    if (subBtn) subBtn.classList.remove('active-tool');
+    if (supBtn) supBtn.classList.remove('active-tool');
 }
 
 // Przygotowanie danych do wysyłki w API (zamiana ₂ na 2)
 function sanitizeForAPI(raw) {
+    if (!raw) return "";
     const map = {
         '₀':'0','₁':'1','₂':'2','₃':'3','₄':'4','₅':'5','₆':'6','₇':'7','₈':'8','₉':'9','₊':'+','₋':'-',
         '⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁺':'+','⁻':'-'
@@ -379,7 +395,8 @@ function sanitizeForAPI(raw) {
 
 async function getInorganicName() {
     const resultBox = document.getElementById('iupac-result-inorg');
-    const rawFormula = document.getElementById('formula-input').value.trim();
+    const input = document.getElementById('formula-input');
+    const rawFormula = input ? input.value.trim() : "";
     
     if (!rawFormula) {
         resultBox.innerHTML = "❌ Najpierw wpisz wzór!";
@@ -389,18 +406,25 @@ async function getInorganicName() {
     // Pozbywamy się małych/górnych cyfr Unicode, by algorytm mógł normalnie liczyć ładunki
     const sanitizedFormula = sanitizeForAPI(rawFormula);
 
-    const localName = parseInorganicFormulaLocal(sanitizedFormula);
-    if (localName) {
-        resultBox.innerHTML = `✅ Oficjalna nazwa systematyczna:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${localName}</span>`;
-        return;
+    if (typeof parseInorganicFormulaLocal !== 'undefined') {
+        const localName = parseInorganicFormulaLocal(sanitizedFormula);
+        if (localName) {
+            resultBox.innerHTML = `✅ Oficjalna nazwa systematyczna:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${localName}</span>`;
+            return;
+        }
     }
 
     resultBox.innerHTML = "⏳ Przeszukuję globalne rejestry chemiczne...";
-    const cloudName = await resolveCompoundInCloud(sanitizedFormula, false);
+    
+    if (typeof resolveCompoundInCloud !== 'undefined') {
+        const cloudName = await resolveCompoundInCloud(sanitizedFormula, false);
 
-    if (cloudName) {
-        resultBox.innerHTML = `✅ Rozpoznano związek:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${cloudName}</span>`;
+        if (cloudName) {
+            resultBox.innerHTML = `✅ Rozpoznano związek:<br><span style="color: var(--accent); font-size: 20px; display:block; margin-top: 10px;">${cloudName}</span>`;
+        } else {
+            resultBox.innerHTML = "⚠️ Nie rozpoznano wzoru. Sprawdź poprawność stechiometryczną i nawiasy (np. CuSO4, Fe2(SO4)3, K4[Fe(CN)6]).";
+        }
     } else {
-        resultBox.innerHTML = "⚠️ Nie rozpoznano wzoru. Sprawdź poprawność stechiometryczną i nawiasy (np. CuSO4, Fe2(SO4)3, K4[Fe(CN)6]).";
+         resultBox.innerHTML = "⚠️ Brak podpiętej funkcji tłumaczącej w chmurze!";
     }
 }
