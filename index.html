@@ -6,32 +6,34 @@
     <title>Chemia Rozszerzona by Paweł Sroga</title>
     <link rel="stylesheet" href="style.css">
     <!-- Ikony dla urządzeń mobilnych i ekranu głównego -->
-    <!-- Podstawowe ikony i Apple Touch Icon -->
     <link rel="icon" type="image/png" sizes="192x192" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="apple-touch-icon" sizes="152x152" href="icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
     <link rel="apple-touch-icon" sizes="167x167" href="icon.png">
     <link rel="manifest" href="manifest.json">
-    <!-- TUTAJ DODAJEMY BIBLIOTEKĘ DO RYSOWANIA WZORÓW -->
+    <!-- BIBLIOTEKI DO RYSOWANIA WZORÓW -->
     <script src="https://unpkg.com/smiles-drawer@2.1.7/dist/smiles-drawer.min.js"></script>
-<script type="text/javascript" src="https://jsme-editor.github.io/dist/jsme/jsme.nocache.js"></script>
+    <script type="text/javascript" src="https://jsme-editor.github.io/dist/jsme/jsme.nocache.js"></script>
 </head>
 <body>
     <div class="app-container">
-        <!-- NAGŁÓWEK APLIKACJI -->
+        <!-- NAGłÓWEK APLIKACJI -->
         <header class="app-header">
             <h1>Chemia Rozszerzona</h1>
             <p class="subtitle">by Paweł Sroga</p>
             
-            <!-- NOWY ELEMENT: STREAK (Licznik dni) -->
+            <!-- STREAK (Licznik dni) -->
             <div style="text-align: center; margin-top: 10px;">
                 <div class="streak-container" title="Ucz się codziennie, aby nie stracić ognia!">
                     🔥 <span id="streak-counter">0</span> dni z rzędu
                 </div>
             </div>
         </header>
-
+<!-- PRZYCISK: PRZYDATNE LINKI -->
+            <button class="action-btn" style="margin-bottom: 25px; font-size: 16px; width: 100%; max-width: 400px; display: block; margin-left: auto; margin-right: auto;" onclick="switchView('view-links')">
+                🔗 Przydatne linki i narzędzia
+            </button>
         <!-- EKRAN 1: GŁÓWNE KAFELKI -->
         <section id="view-main" class="view active">
             <div class="main-tiles-grid">
@@ -45,7 +47,6 @@
                     <span class="title">Progres</span>
                     <span class="desc">Twoje statystyki nauki</span>
                 </button>
-                <!-- NOWE KAFELKI RYSOWANIA -->
                 <button class="main-tile" onclick="switchView('view-draw-inorganic')">
                     <span class="icon">⚗️</span>
                     <span class="title">Nieorganiczne</span>
@@ -59,7 +60,7 @@
             </div>
         </section>
 
-       <!-- EKRAN: RYSOWANIE NIEORGANICZNE (NIEZAWODNY INPUT UNICODE) -->
+        <!-- EKRAN: RYSOWANIE NIEORGANICZNE -->
         <section id="view-draw-inorganic" class="view">
             <button class="back-btn" onclick="switchView('view-main')">
                 <span class="arrow">←</span> Wróć do menu
@@ -69,10 +70,8 @@
             <div class="content-box" style="padding: 15px;">
                 <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Wpisz wzór sumaryczny z klawiatury. Użyj przycisków poniżej, aby włączyć indeksy:</p>
                 
-                <!-- TUTAJ JEST KLUCZOWA ZMIANA: Prawdziwy <input> zamiast <div> -->
                 <input type="text" id="formula-input" placeholder="Np. K4[Fe(CN)6]" class="formula-editor" autocomplete="off" spellcheck="false">
 
-                <!-- TUTAJ JEST ZMIANA W PRZYCISKACH: 'toggleFormat' zamiast 'formatText' -->
                 <div class="editor-tools">
                     <button id="btn-sub" class="tool-btn" onpointerdown="event.preventDefault();" onclick="toggleFormat('sub')" title="Włącz/Wyłącz indeks dolny">X₂</button>
                     <button id="btn-sup" class="tool-btn" onpointerdown="event.preventDefault();" onclick="toggleFormat('sup')" title="Włącz/Wyłącz indeks górny">X²</button>
@@ -88,12 +87,7 @@
             </div>
         </section>
 
-    </div> <!-- Koniec app-container -->
-
-    <!-- Przycisk powrotu do góry (Musi być pod app-container, a nad skryptami) -->
-    <button id="scroll-to-top" class="scroll-top-btn" onclick="scrollToTop()" title="Wróć do góry">&#8593;</button>
-
-        <!-- NOWY EKRAN: RYSOWANIE ORGANICZNE -->
+        <!-- EKRAN: RYSOWANIE ORGANICZNE -->
         <section id="view-draw-organic" class="view">
             <button class="back-btn" onclick="switchView('view-main')">
                 <span class="arrow">←</span> Wróć do menu
@@ -101,14 +95,53 @@
             <h2 class="chapter-title">Kreator Organiczny</h2>
             <div class="content-box" style="padding: 15px;">
                 <p style="margin-top: 0;">Narysuj szkielet węglowy, a AI wygeneruje nazwę IUPAC!</p>
-                <!-- Pojemnik na edytor -->
                 <div id="jsme_container_org" style="width: 100%; border-radius: 8px; overflow: hidden; background: white;"></div>
                 <button class="action-btn" style="margin-top: 15px;" onclick="getIupacName('org')">Generuj nazwę IUPAC</button>
                 <div id="iupac-result-org" class="iupac-result-box">Czekam na Twój rysunek...</div>
             </div>
         </section>
+<!-- EKRAN: PRZYDATNE LINKI -->
+        <section id="view-links" class="view">
+            <button class="back-btn" onclick="switchView('view-main')">
+                <span class="arrow">←</span> Wróć do menu
+            </button>
+            <h2 class="chapter-title">Przydatne linki</h2>
+            
+            <p style="text-align: center; color: #94a3b8; font-size: 14px; margin-bottom: 20px;">
+                Kliknij kafelek, aby otworzyć stronę w nowej karcie.
+            </p>
 
-        <!-- EKRAN 2: LISTA DZIAŁÓW -->
+            <!-- Siatka z kafelkami linków (używamy tej samej klasy co w menu) -->
+            <div class="main-tiles-grid">
+                
+                <a href="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Informatory/wybrane_wzory_stale_fizykochemiczne_EM2023.pdf" target="_blank" class="link-btn">
+                    <span class="link-icon">📄</span>
+                    <span class="link-title">Tablice maturalne (CKE)</span>
+                </a>
+
+                <a href="https://biologhelp.pl/zadania-maturalne-chemia" target="_blank" class="link-btn">
+                    <span class="link-icon">🧬</span>
+                    <span class="link-title">Biologhelp<br><span style="font-size: 12px; font-weight: normal; color: #94a3b8;">Baza zadań</span></span>
+                </a>
+
+                <a href="https://maturabiolchem.pl/chemia" target="_blank" class="link-btn">
+                    <span class="link-icon">📚</span>
+                    <span class="link-title">Maturabiolchem<br><span style="font-size: 12px; font-weight: normal; color: #94a3b8;">Opracowania</span></span>
+                </a>
+
+                <a href="https://ptable.com/#Właściwości" target="_blank" class="link-btn">
+                    <span class="link-icon">🪨</span>
+                    <span class="link-title">Ptable<br><span style="font-size: 12px; font-weight: normal; color: #94a3b8;">Układ okresowy</span></span>
+                </a>
+
+                <a href="https://app.molview.com/" target="_blank" class="link-btn">
+                    <span class="link-icon">🧊</span>
+                    <span class="link-title">MolView<br><span style="font-size: 12px; font-weight: normal; color: #94a3b8;">Modelowanie 3D</span></span>
+                </a>
+
+            </div>
+        </section>
+        <!-- EKRAN: LISTA DZIAŁÓW -->
         <section id="view-chapters" class="view">
             <button class="back-btn" onclick="switchView('view-main')">
                 <span class="arrow">←</span> Wróć do menu
@@ -119,14 +152,13 @@
             </div>
         </section>
 
-        <!-- EKRAN 2: SZCZEGÓŁY DZIAŁU -->
+        <!-- EKRAN: SZCZEGÓŁY DZIAŁU -->
         <section id="view-details" class="view">
             <button class="back-btn" onclick="switchView('view-chapters')">
                 <span class="arrow">←</span> Wróć do listy działów
             </button>
             <h2 id="current-chapter-title" class="chapter-title">Tytuł działu</h2>
             
-            <!-- NOWE MENU ZAKŁADEK -->
             <div class="tabs">
                 <button class="tab-btn active" onclick="switchTab('notatki')">Notatki</button>
                 <button class="tab-btn" onclick="switchTab('notatki-active')">Active Recall</button>
@@ -134,18 +166,15 @@
                 <button class="tab-btn" onclick="switchTab('zadania')">Zadania</button>
             </div>
 
-            <!-- KONTENERY ZAKŁADEK -->
             <div id="tab-notatki" class="tab-content active">
                 <div class="content-box" id="content-notatki">Wybierz dział, aby zobaczyć notatki.</div>
             </div>
 
-            <!-- NOWY KONTENER DLA ACTIVE RECALL -->
             <div id="tab-notatki-active" class="tab-content">
                 <div class="content-box" id="content-notatki-active">Wybierz dział, aby zobaczyć notatki do nauki aktywnej.</div>
             </div>
 
             <div id="tab-fiszki" class="tab-content">
-                <!-- Tutaj jest Twój dotychczasowy kod fiszek (filtry, karta, przyciski nawigacyjne itd.) -->
                 <div class="flashcard-filters">
                     <button class="filter-btn active" onclick="setFilter('all')">Wszystkie</button>
                     <button class="filter-btn" onclick="setFilter('learning')">Do nauki</button>
@@ -160,7 +189,6 @@
                     <div class="flashcard" id="flashcard" onclick="flipCard()">
                         <div class="card-inner">
                             <div class="card-front" id="card-front">Ładowanie...</div>
-                            <!-- W tył fiszki wbudowujemy miejsce na tekst ORAZ na rysunek chemiczny -->
                             <div class="card-back" id="card-back">
                                 <div class="card-text" id="card-back-text"></div>
                                 <canvas id="chem-canvas" width="250" height="150"></canvas>
@@ -182,7 +210,7 @@
             </div>
         </section>
 
-        <!-- EKRAN 4: PROGRES -->
+        <!-- EKRAN: PROGRES -->
         <section id="view-progress" class="view">
             <button class="back-btn" onclick="switchView('view-main')">
                 <span class="arrow">←</span> Wróć do menu
@@ -197,14 +225,17 @@
             <button class="reset-btn" onclick="resetProgress()">Zresetuj statystyki</button>
         </section>
 
-    </div>
+    </div> <!-- Koniec app-container -->
 
-   <!-- Skrypty -->
+    <!-- Pływający przycisk powrotu do góry (tylko jeden) -->
+    <button id="scroll-to-top" class="scroll-top-btn" onclick="scrollToTop()" title="Wróć do góry">&#8593;</button>
+
+    <!-- SKRYPTY -->
     <script src="baza.js"></script>
+    <script src="dzial_2.js"></script>
     <script src="dzial_13.js"></script>
+    <script src="dzial_14.js"></script>
     <script src="nomenklatura.js"></script>
     <script src="app.js"></script>
-    <!-- Pływający przycisk powrotu do góry -->
-    <button id="scroll-to-top" class="scroll-top-btn" onclick="scrollToTop()" title="Wróć do góry">&#8593;</button>
 </body>
 </html>
