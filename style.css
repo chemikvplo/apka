@@ -423,3 +423,66 @@ input.formula-editor:focus { border-color: var(--accent); box-shadow: 0 0 10px v
     font-weight: 700;
     line-height: 1.3;
 }
+/* =========================================================
+   OSTATECZNA NAPRAWA WIDOKU MOBILNEGO (Ucinanie ekranu)
+   ========================================================= */
+
+/* 1. Globalna naprawa Box-Modelu (Padding nie będzie powiększał szerokości) */
+*, *::before, *::after {
+    box-sizing: border-box !important;
+}
+
+/* 2. Blokada wylewania się strony poza ekran telefonu */
+html, body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.app-container, .main-content, .view {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+/* 3. Naprawa uciętych notatek (usunięcie ujemnych marginesów) */
+@media (max-width: 768px) {
+    .note-section {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 15px !important;
+        width: 100% !important;
+    }
+
+    /* 4. Naprawa paska zakładek (żeby pierwsza zakładka nie uciekała w lewo) */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap !important; /* Wymusza przejście zakładek do nowej linii */
+        justify-content: center;
+        gap: 6px;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    .tab-btn {
+        flex: 1 1 calc(50% - 10px); /* Tworzy równą siatkę 2x2 zakładek na telefonie */
+        font-size: 13.5px !important;
+        padding: 10px 5px !important;
+        margin: 0 !important;
+    }
+    
+    /* Poprawa widoczności nagłówków na małym ekranie */
+    .chapter-title {
+        text-align: center;
+        padding: 0 10px;
+        word-wrap: break-word;
+        margin-left: 0 !important;
+    }
+    
+    .back-btn {
+        margin-left: 10px !important;
+    }
+}
