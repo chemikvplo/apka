@@ -350,3 +350,35 @@ input.formula-editor:focus { border-color: var(--accent); box-shadow: 0 0 10px v
     padding-top: 12px;
     font-size: 14px;
 }
+/* =========================================================
+   STREAK (Licznik dni)
+   ========================================================= */
+.streak-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(249, 115, 22, 0.15); /* Delikatny pomarańcz */
+    border: 1px solid rgba(249, 115, 22, 0.4);
+    color: #fdba74; /* Jasnopomarańczowy tekst */
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -5px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.2);
+    animation: pulse-flame 2.5s infinite;
+    user-select: none;
+}
+
+#streak-counter {
+    margin: 0 4px;
+    font-size: 18px;
+    color: #f97316;
+}
+
+@keyframes pulse-flame {
+    0% { box-shadow: 0 0 5px rgba(249, 115, 22, 0.1); }
+    50% { box-shadow: 0 0 15px rgba(249, 115, 22, 0.5); }
+    100% { box-shadow: 0 0 5px rgba(249, 115, 22, 0.1); }
+}

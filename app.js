@@ -26,7 +26,13 @@ function saveProgress() {
 document.addEventListener("DOMContentLoaded", () => {
     renderChaptersGrid();
     updateProgressUI();
+// Odpalenie obliczania Streaka zaraz po wczytaniu aplikacji
+    updateStreak();
 
+    // Rejestruje akcję "cokolwiek poklika"
+    document.addEventListener('click', () => {
+        updateStreak();
+    });
     // 1. ZAMIANA KLAWIATURY NA INDEKSY W LOCIE (Kreator Nieorganiczny)
     const formulaInput = document.getElementById('formula-input');
     if (formulaInput) {
@@ -436,4 +442,45 @@ async function getInorganicName() {
 // =========================================================
 function toggleRecall(el) {
     el.classList.toggle('revealed');
+}
+// =========================================================
+// SYSTEM GAMIFIKACJI: STREAK (Licznik codziennej nauki)
+// =========================================================
+
+function updateStreak() {
+    const streakDisplay = document.getElementById('streak-counter');
+    if (!streakDisplay) return;
+
+    // Pobieramy aktualną datę (format YYYY-MM-DD dla łatwego porównywania)
+    const now = new Date();
+    const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    
+    // Pobieramy dane z pamięci telefonu
+    let streakData = JSON.parse(localStorage.getItem('chemia_streak_data')) || { streak: 0, lastVisit: null };
+    
+    // Jeśli użytkownik już dzisiaj wchodził, tylko wyświetlamy streak i kończymy (nie nabijamy 2 razy dziennie)
+    if (streakData.lastVisit === todayStr) {
+        streakDisplay.innerText = streakData.streak;
+        return;
+    }
+
+    // Obliczamy wczorajszą datę
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.getFullYear() + '-' + String(yesterday.getMonth() + 1).padStart(2, '0') + '-' + String(yesterday.getDate()).padStart(2, '0');
+
+    if (streakData.lastVisit === yesterdayStr) {
+        // Jeśli był wczoraj, dodajemy 1 do streaka
+        streakData.streak += 1;
+    } else {
+        // Jeśli to pierwszy raz lub ominął jakiś dzień -> zerujemy i ustawiamy na 1
+        streakData.streak = 1;
+    }
+
+    // Zapisujemy dzisiejszą wizytę
+    streakData.lastVisit = todayStr;
+    localStorage.setItem('chemia_streak_data', JSON.stringify(streakData));
+    
+    // Aktualizujemy wyświetlacz
+    streakDisplay.innerText = streakData.streak;
 }
