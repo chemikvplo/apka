@@ -27,6 +27,8 @@ body {
     width: 100%;
     max-width: 600px;
     padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* NAGŁÓWEK */
@@ -118,14 +120,13 @@ body {
     border: 1px solid var(--border-color);
     line-height: 1.6; 
     box-sizing: border-box;
-    /* Poniższe linijki naprawiają rozpadanie się tekstu ze znacznikami HTML: */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Dodatkowa poprawka dla samych indeksów we wzorach chemicznych, by nie zaburzały linii tekstu */
+/* Dodatkowa poprawka dla samych indeksów we wzorach chemicznych */
 sub, sup {
     line-height: 0;
     position: relative;
@@ -150,327 +151,150 @@ sub { bottom: -0.25em; }
 .stat-value { display: block; font-size: 48px; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
 .stat-label { color: var(--text-muted); font-size: 15px; font-weight: 500; }
 .reset-btn { background: transparent; border: none; color: #ef4444; width: 100%; padding: 15px; font-weight: 600; cursor: pointer; }
+
 /* LICZNIK FISZEK I NOWE PRZYCISKI */
-.flashcard-header {
-    text-align: center;
-    margin-bottom: 16px;
-}
-
-.counter {
-    background: var(--bg-card);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-muted);
-    border: 1px solid var(--border-color);
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 12px;
-    width: 100%;
-}
-
+.flashcard-header { text-align: center; margin-bottom: 16px; }
+.counter { background: var(--bg-card); padding: 6px 14px; border-radius: 20px; font-size: 14px; font-weight: 700; color: var(--text-muted); border: 1px solid var(--border-color); }
+.nav-buttons { display: flex; gap: 12px; width: 100%; }
 .nav-buttons .action-btn { flex: 1; }
-
-.action-btn.secondary {
-    background: var(--bg-card);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
-}
-
-.action-btn.secondary:hover {
-    background: var(--bg-card-hover);
-}
+.action-btn.secondary { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); }
+.action-btn.secondary:hover { background: var(--bg-card-hover); }
 
 /* Stan przycisku "UMIEM TO" po zaznaczeniu */
-.success-btn.learned {
-    background: var(--success);
-    color: #fff;
-    border-color: var(--success);
-    cursor: default;
-    opacity: 0.9;
-}
+.success-btn.learned { background: var(--success); color: #fff; border-color: var(--success); cursor: default; opacity: 0.9; }
+.success-btn.learned:hover { background: var(--success); }
 
-.success-btn.learned:hover {
-    background: var(--success);
-}
-/* FILTRY FISZEK (Wszystkie / Do nauki / Umiem) */
-.flashcard-filters {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-    background: var(--bg-card);
-    padding: 6px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-.filter-btn {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    font-size: 14px;
-    font-weight: 600;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-.filter-btn.active {
-    background: var(--bg-card-hover);
-    color: var(--accent);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+/* FILTRY FISZEK */
+.flashcard-filters { display: flex; gap: 8px; margin-bottom: 16px; background: var(--bg-card); padding: 6px; border-radius: 12px; border: 1px solid var(--border-color); }
+.filter-btn { flex: 1; background: transparent; border: none; color: var(--text-muted); font-size: 14px; font-weight: 600; padding: 10px; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.filter-btn.active { background: var(--bg-card-hover); color: var(--accent); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 
-/* EDYTOR WZORÓW NIEORGANICZNYCH (Klawiatura) */
-.formula-editor {
-    width: 100%;
-    min-height: 54px;
-    background: #ffffff; /* Jasne tło, by kursor był widoczny */
-    color: #0f172a;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 22px;
-    padding: 12px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    letter-spacing: 1px;
-    outline: none;
-    transition: 0.2s;
-    box-sizing: border-box;
-    text-align: center;
-}
-.formula-editor:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 10px var(--accent-glow);
-}
-.formula-editor[placeholder]:empty:before {
-    content: attr(placeholder);
-    color: #94a3b8;
-    pointer-events: none;
-}
-.editor-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
-    margin-bottom: 20px;
-}
-.tool-btn {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    padding: 10px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 700;
-    transition: 0.2s;
-}
-.tool-btn:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--accent);
-}
+/* =========================================================
+   EDYTOR WZORÓW NIEORGANICZNYCH ORAZ PRZYCISK SCROLL
+   ========================================================= */
+input.formula-editor { width: 100%; min-height: 54px; background: #ffffff; color: #0f172a; border: 2px solid var(--border-color); border-radius: 8px; font-size: 22px; padding: 12px; font-family: 'Courier New', Courier, monospace; font-weight: bold; letter-spacing: 1px; outline: none; transition: 0.2s; box-sizing: border-box; text-align: center; }
+input.formula-editor:focus { border-color: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
+.editor-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; margin-bottom: 20px; }
+.tool-btn { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); padding: 10px 14px; border-radius: 6px; cursor: pointer; font-size: 15px; font-weight: 700; transition: 0.2s; }
+.tool-btn:hover { background: var(--bg-card-hover); border-color: var(--accent); }
+.tool-btn.active-tool { background: var(--accent); color: #0f172a; border-color: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+
+/* Pływający przycisk "Wróć do góry" */
+.scroll-top-btn { position: fixed; bottom: 25px; right: 25px; background: var(--accent); color: #0f172a; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 26px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4); z-index: 9999; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.2s; display: flex; align-items: center; justify-content: center; }
+.scroll-top-btn.visible { opacity: 1; visibility: visible; }
+.scroll-top-btn:active { transform: scale(0.9); }
+
 /* =========================================================
    STYLIZACJA NOTATEK I KOMPENDIUM MATURALNEGO
    ========================================================= */
-.notes-wrapper {
-    line-height: 1.65;
-    color: var(--text-main);
-    font-size: 15px;
-}
+.notes-wrapper { line-height: 1.65; color: var(--text-main); font-size: 15px; }
+.notes-main-title { font-size: 20px; color: var(--accent); border-bottom: 2px solid var(--border-color); padding-bottom: 12px; margin-top: 0; margin-bottom: 20px; text-align: center; letter-spacing: 0.5px; }
+.note-section { background: rgba(15, 23, 42, 0.45); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px; margin-bottom: 20px; }
+.note-section h3 { margin-top: 0; margin-bottom: 14px; color: #38bdf8; font-size: 17px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 8px; }
+.note-section h4 { color: #f8fafc; margin-top: 16px; margin-bottom: 8px; font-size: 15px; border-left: 3px solid var(--accent); padding-left: 10px; }
+.note-list { margin: 8px 0 12px 0; padding-left: 20px; }
+.note-list li { margin-bottom: 8px; }
 
-.notes-main-title {
-    font-size: 20px;
-    color: var(--accent);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 12px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    letter-spacing: 0.5px;
+/* Równania reakcji chemicznych z warunkami nad strzałką */
+.chem-eq { background: #0f172a; border: 1px solid var(--border-color); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; font-size: 15px; font-weight: 600; color: #e2e8f0; overflow-x: auto; white-space: nowrap; display: flex; align-items: center; gap: 6px; }
+.chem-arrow { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 6px; vertical-align: middle; line-height: 1; }
+.chem-arrow .cond-top { font-size: 11px; color: #38bdf8; font-weight: normal; margin-bottom: -3px; padding: 0 4px; }
+.chem-arrow .arrow-sym { font-size: 18px; color: var(--text-main); }
+
+/* Ramki typu "Ważne na maturze" / "Pewniak maturalny" */
+.note-alert { background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.4); border-left: 4px solid #f59e0b; padding: 12px 15px; border-radius: 8px; margin: 14px 0; font-size: 14px; }
+.note-alert.danger { background: rgba(239, 68, 68, 0.12); border-color: rgba(239, 68, 68, 0.4); border-left-color: #ef4444; }
+.note-alert strong { color: #fbbf24; }
+.note-alert.danger strong { color: #f87171; }
+
+/* Paski obserwacji laboratoryjnych */
+.chem-obs { font-size: 13.5px; color: #cbd5e1; background: rgba(56, 189, 248, 0.08); border-radius: 6px; padding: 8px 12px; margin: 6px 0 12px 0; border-left: 3px solid #38bdf8; }
+
+/* Tabele porównawcze w notatkach */
+.note-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: 14px; text-align: left; }
+.note-table th { background: #1e293b; color: var(--accent); padding: 10px 12px; font-weight: 700; border-bottom: 2px solid var(--border-color); }
+.note-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); background: rgba(15, 23, 42, 0.6); vertical-align: top; }
+.note-table tr:last-child td { border-bottom: none; }
+
+
+/* =========================================================
+   POPRAWKI DLA NOTATEK I TABEL NA URZĄDZENIACH MOBILNYCH
+   ========================================================= */
+
+/* Wymuszamy, by tekst nie wykraczał poza ekran */
+.notes-wrapper {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .note-section {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 20px;
+    /* Zabezpieczenie przed rozpychaniem kontenera */
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px; /* Mniejszy padding na telefonach */
+    overflow-x: hidden; /* Ukrywa pasek przewijania jeśli coś wystaje */
 }
 
-.note-section h3 {
-    margin-top: 0;
-    margin-bottom: 14px;
-    color: #38bdf8;
-    font-size: 17px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 8px;
-}
-
-.note-section h4 {
-    color: #f8fafc;
-    margin-top: 16px;
-    margin-bottom: 8px;
-    font-size: 15px;
-    border-left: 3px solid var(--accent);
-    padding-left: 10px;
-}
-
-.note-list {
-    margin: 8px 0 12px 0;
-    padding-left: 20px;
-}
-
-.note-list li {
-    margin-bottom: 8px;
-}
-
-/* Równania reakcji chemicznych z warunkami nad strzałką */
-.chem-eq {
-    background: #0f172a;
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--accent);
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin: 10px 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #e2e8f0;
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.chem-arrow {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 6px;
-    vertical-align: middle;
-    line-height: 1;
-}
-
-.chem-arrow .cond-top {
-    font-size: 11px;
-    color: #38bdf8;
-    font-weight: normal;
-    margin-bottom: -3px;
-    padding: 0 4px;
-}
-
-.chem-arrow .arrow-sym {
-    font-size: 18px;
-    color: var(--text-main);
-}
-
-/* Ramki typu "Ważne na maturze" / "Pewniak maturalny" */
-.note-alert {
-    background: rgba(245, 158, 11, 0.12);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    border-left: 4px solid #f59e0b;
-    padding: 12px 15px;
-    border-radius: 8px;
-    margin: 14px 0;
-    font-size: 14px;
-}
-
-.note-alert.danger {
-    background: rgba(239, 68, 68, 0.12);
-    border-color: rgba(239, 68, 68, 0.4);
-    border-left-color: #ef4444;
-}
-
-.note-alert strong {
-    color: #fbbf24;
-}
-
-.note-alert.danger strong {
-    color: #f87171;
-}
-
-/* Paski obserwacji laboratoryjnych */
-.chem-obs {
-    font-size: 13.5px;
-    color: #cbd5e1;
-    background: rgba(56, 189, 248, 0.08);
-    border-radius: 6px;
-    padding: 8px 12px;
-    margin: 6px 0 12px 0;
-    border-left: 3px solid #38bdf8;
-}
-
-/* Tabele porównawcze w notatkach */
+/* Responsywne tabele w notatkach */
 .table-responsive {
     width: 100%;
-    overflow-x: auto;
-    margin: 12px 0;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    overflow-x: auto; /* Tabela będzie przewijana poziomo w środku, ale NIE zepsuje całej strony */
+    -webkit-overflow-scrolling: touch; /* Płynne przewijanie palcem na iOS */
+    margin-bottom: 15px;
 }
 
-.note-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 480px;
-    font-size: 14px;
-    text-align: left;
+/* Wymuszamy łamanie długich równań chemicznych */
+.chem-eq {
+    white-space: normal; /* Pozwala równaniom zawijać się do nowej linii */
+    word-break: break-all; /* Łamie bardzo długie "wyrazy" chemiczne */
+    padding: 10px;
 }
 
-.note-table th {
-    background: #1e293b;
-    color: var(--accent);
-    padding: 10px 12px;
-    font-weight: 700;
-    border-bottom: 2px solid var(--border-color);
+/* Dodatkowe zabezpieczenie dla małych ekranów (telefony) */
+@media (max-width: 480px) {
+    .note-section {
+        padding: 10px;
+        margin-left: -5px; /* Delikatne powiększenie obszaru roboczego */
+        margin-right: -5px;
+    }
+    
+    .notes-wrapper {
+        font-size: 14px; /* Odrobinę mniejsza czcionka dla lepszej czytelności */
+    }
 }
 
-.note-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border-color);
-    background: rgba(15, 23, 42, 0.6);
-    vertical-align: top;
-}
 
-.note-table tr:last-child td {
-    border-bottom: none;
-}
-/* PŁYWAJĄCY PRZYCISK "WRÓĆ DO GÓRY" */
-.scroll-top-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: var(--accent);
-    color: #0f172a;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 26px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.scroll-top-btn.visible {
-    opacity: 1;
-    visibility: visible;
-}
-.scroll-top-btn:active {
-    transform: scale(0.9);
+/* =========================================================
+   RESPONSYWNOŚĆ - WYGLĄD NA TELEFONACH
+   ========================================================= */
+@media (max-width: 768px) {
+    /* Ukrywamy boczny panel na małych ekranach */
+    .sidebar {
+        display: none !important; 
+    }
+    
+    /* Główna treść zajmuje całą szerokość */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    /* Dopasowanie szerokości przycisków działów */
+    .chapter-btn {
+        width: 100% !important;
+        margin: 5px 0 !important;
+    }
+
+    /* Zmniejszenie marginesów w głównym kontenerze */
+    .app-container {
+        padding: 10px;
+        flex-direction: column; /* Ustawienie elementów pionowo */
+    }
+    
+    /* Poprawa widoku kafelków w menu głównym */
+    .main-tiles-grid {
+        grid-template-columns: 1fr; /* Jedna kolumna na telefonie */
+    }
 }
