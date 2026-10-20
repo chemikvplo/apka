@@ -52,7 +52,7 @@
             </div>
         </section>
 
-       <!-- NOWY EKRAN: RYSOWANIE NIEORGANICZNE (KLAWIATURA + FORMATOWANIE) -->
+       <!-- EKRAN: RYSOWANIE NIEORGANICZNE (NIEZAWODNY INPUT UNICODE) -->
         <section id="view-draw-inorganic" class="view">
             <button class="back-btn" onclick="switchView('view-main')">
                 <span class="arrow">←</span> Wróć do menu
@@ -60,16 +60,15 @@
             <h2 class="chapter-title">Kreator Nieorganiczny</h2>
             
             <div class="content-box" style="padding: 15px;">
-                <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Wpisz wzór sumaryczny z klawiatury. Użyj przycisków poniżej do wstawiania indeksów i nawiasów:</p>
+                <p style="margin-top: 0; margin-bottom: 10px; font-size: 14px;">Wpisz wzór sumaryczny z klawiatury. Użyj przycisków poniżej, aby włączyć indeksy:</p>
                 
-                <!-- Aktywne pole do wpisywania z klawiatury -->
-                <div id="formula-input" contenteditable="true" placeholder="Np. K4[Fe(CN)6]" class="formula-editor"></div>
+                <!-- TUTAJ JEST KLUCZOWA ZMIANA: Prawdziwy <input> zamiast <div> -->
+                <input type="text" id="formula-input" placeholder="Np. K4[Fe(CN)6]" class="formula-editor" autocomplete="off" spellcheck="false">
 
-                <!-- Pasek narzędzi (Indeksy i Nawiasy) -->
+                <!-- TUTAJ JEST ZMIANA W PRZYCISKACH: 'toggleFormat' zamiast 'formatText' -->
                 <div class="editor-tools">
-                    <!-- onpointerdown="event.preventDefault();" blokuje utratę focusa, co naprawia "podwójne indeksy" -->
-                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="formatText('subscript')" title="Indeks dolny (Włącz/Wyłącz)">X₂</button>
-                    <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="formatText('superscript')" title="Indeks górny (Włącz/Wyłącz)">X²</button>
+                    <button id="btn-sub" class="tool-btn" onpointerdown="event.preventDefault();" onclick="toggleFormat('sub')" title="Włącz/Wyłącz indeks dolny">X₂</button>
+                    <button id="btn-sup" class="tool-btn" onpointerdown="event.preventDefault();" onclick="toggleFormat('sup')" title="Włącz/Wyłącz indeks górny">X²</button>
                     <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="insertText('(')">(</button>
                     <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="insertText(')')">)</button>
                     <button class="tool-btn" onpointerdown="event.preventDefault();" onclick="insertText('[')">[</button>
@@ -78,9 +77,14 @@
                 </div>
 
                 <button class="action-btn" style="margin-top: 10px;" onclick="getInorganicName()">Odkryj nazwę związku</button>
-                <div id="iupac-result-inorg" class="iupac-result-box">Wpisz wzór i kliknij przycisk...</div>
+                <div id="iupac-result-inorg" class="iupac-result-box">Wpisz wzór i wciśnij Enter...</div>
             </div>
         </section>
+
+    </div> <!-- Koniec app-container -->
+
+    <!-- Przycisk powrotu do góry (Musi być pod app-container, a nad skryptami) -->
+    <button id="scroll-to-top" class="scroll-top-btn" onclick="scrollToTop()" title="Wróć do góry">&#8593;</button>
 
         <!-- NOWY EKRAN: RYSOWANIE ORGANICZNE -->
         <section id="view-draw-organic" class="view">
