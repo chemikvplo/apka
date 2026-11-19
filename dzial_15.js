@@ -1,196 +1,172 @@
-// Dział XVI. Kwasy karboksylowe (Indeks 15 na liście)
-appData[15] = {
+// Dział XV. Związki karbonylowe − aldehydy i ketony (Indeks 14 na liście)
+appData[14] = {
     notatki: `
     <div class="notes-wrapper">
-        <h2 class="notes-main-title">📚 KOMPENDIUM MATURALNE: KWASY KARBOKSYLOWE</h2>
+        <h2 class="notes-main-title">📚 KOMPENDIUM MATURALNE: ZWIĄZKI KARBONYLOWE (ALDEHYDY I KETONY)</h2>
 
         <!-- SEKCJA 1 -->
         <div class="note-section">
-            <h3>1. Wymagania Podstawy Programowej (Dział XVI)</h3>
-            <p>Zgodnie z podstawą programową uczeń (maturzysta) powinien umieć:</p>
+            <h3>1. Wymagania Podstawy Programowej (Dział XV)</h3>
+            <p>Zgodnie z podstawą programową maturzysta powinien umieć:</p>
             <ol class="note-list">
-                <li>Wskazywać grupę karboksylową i resztę kwasową we wzorach kwasów karboksylowych (alifatycznych i aromatycznych).</li>
-                <li>Pisać równania reakcji otrzymywania kwasów karboksylowych (m.in. z alkoholi, aldehydów).</li>
-                <li>Pisać równania dysocjacji elektrolitycznej rozpuszczalnych kwasów i nazywać powstające jony.</li>
-                <li>Opisywać właściwości chemiczne kwasów na podstawie reakcji tworzenia: soli, estrów, amidów (reakcje z metalami, tlenkami, wodorotlenkami i solami słabszych kwasów).</li>
-                <li>Opisywać czynniki wpływające na moc kwasów (długość łańcucha, obecność polarnych podstawników).</li>
-                <li>Porównywać moc kwasów na podstawie wyników doświadczeń (reakcje wypierania z soli).</li>
-                <li>Wyszukiwać i prezentować informacje o budowie i zastosowaniach hydroksykwasów (tworzenie laktydów, poliestrów, laktonów).</li>
-                <li>Wyszukiwać informacje o procesie usuwania brudu oraz zaznaczać fragmenty hydrofilowe i hydrofobowe w substancjach powierzchniowo czynnych (SPC).</li>
+                <li>Opisywać podobieństwa i różnice w budowie cząsteczek aldehydów i ketonów (położenie grupy karbonylowej).</li>
+                <li>Projektować i przeprowadzać doświadczenie pozwalające odróżnić aldehyd od ketonu (oraz na podstawie obserwacji dokonywać ich klasyfikacji).</li>
+                <li>Pisać odpowiednie równania reakcji aldehydu z odczynnikiem Tollensa i odczynnikiem Trommera.</li>
+                <li>Wyszukiwać, porządkować i prezentować informacje o metodach otrzymywania, właściwościach i zastosowaniach aldehydów i ketonów.</li>
             </ol>
         </div>
 
         <!-- SEKCJA 2 -->
         <div class="note-section">
-            <h3>2. Budowa, Klasyfikacja i Nazewnictwo</h3>
-            <p>Kwasy karboksylowe to pochodne węglowodorów zawierające w cząsteczce co najmniej jedną <strong>grupę karboksylową (–COOH)</strong>.</p>
-            <ul class="note-list">
-                <li><strong>Budowa grupy:</strong> Stanowi połączenie grupy karbonylowej (–C=O) oraz grupy hydroksylowej (–OH).</li>
-                <li><strong>Wzór ogólny kwasów nasyconych monokarboksylowych:</strong> C<sub>n</sub>H<sub>2n+1</sub>COOH.</li>
-                <li><strong>Reszta kwasowa:</strong> Fragment cząsteczki pozostający po odszczepieniu kationu wodoru z grupy –COOH (np. CH<sub>3</sub>COO<sup>&minus;</sup> - reszta octanowa/etanianowa).</li>
-            </ul>
-
+            <h3>2. Klasyfikacja, Budowa i Nazewnictwo</h3>
+            
             <div class="table-responsive">
                 <table class="note-table">
                     <thead>
                         <tr>
-                            <th>Wzór sumaryczny / półstrukturalny</th>
-                            <th>Nazwa systematyczna</th>
-                            <th>Nazwa zwyczajowa</th>
+                            <th>Cecha porównawcza</th>
+                            <th>Aldehydy</th>
+                            <th>Ketony</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>HCOOH</td>
-                            <td>Kwas metanowy</td>
-                            <td>Kwas mrówkowy</td>
+                            <td><strong>Grupa funkcyjna</strong></td>
+                            <td>Grupa aldehydowa <strong>–CHO</strong></td>
+                            <td>Grupa karbonylowa (ketonowa) <strong>>C=O</strong></td>
                         </tr>
                         <tr>
-                            <td>CH<sub>3</sub>COOH</td>
-                            <td>Kwas etanowy</td>
-                            <td>Kwas octowy</td>
+                            <td><strong>Położenie grupy</strong></td>
+                            <td><strong>Zawsze na końcu</strong> łańcucha węglowego. Węgiel łączy się z min. 1 atomem wodoru.</td>
+                            <td><strong>Wewnątrz</strong> łańcucha węglowego. Węgiel łączy się z dwiema grupami węglowodorowymi.</td>
                         </tr>
                         <tr>
-                            <td>CH<sub>3</sub>CH<sub>2</sub>COOH</td>
-                            <td>Kwas propanowy</td>
-                            <td>Kwas propionowy</td>
+                            <td><strong>Wzór ogólny</strong></td>
+                            <td><strong>R–CHO</strong><br>(dla nasyconych alifatycznych: <strong>C<sub>n</sub>H<sub>2n+1</sub>CHO</strong>)</td>
+                            <td><strong>R<sub>1</sub>–CO–R<sub>2</sub></strong></td>
                         </tr>
                         <tr>
-                            <td>CH<sub>3</sub>(CH<sub>2</sub>)<sub>2</sub>COOH</td>
-                            <td>Kwas butanowy</td>
-                            <td>Kwas masłowy</td>
-                        </tr>
-                        <tr>
-                            <td>CH<sub>3</sub>(CH<sub>2</sub>)<sub>4</sub>COOH</td>
-                            <td>Kwas heksanowy</td>
-                            <td>Kwas kapronowy</td>
-                        </tr>
-                        <tr>
-                            <td>C<sub>6</sub>H<sub>5</sub>COOH</td>
-                            <td>Kwas benzenokarboksylowy</td>
-                            <td>Kwas benzoesowy</td>
+                            <td><strong>Nazewnictwo IUPAC</strong></td>
+                            <td>Przyrostek <strong>-al</strong> (np. metanal, butanal). Węgiel grupy –CHO ma zawsze lokant 1.</td>
+                            <td>Przyrostek <strong>-on</strong> (np. propan-2-on). Łańcuch numerujemy tak, by lokant był jak najmniejszy.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h4>Izomeria w kwasach karboksylowych</h4>
-            <ul class="note-list">
-                <li><strong>Szkieletowa:</strong> Zmiana rozgałęzienia łańcucha (np. kwas pentanowy i kwas 2-metylobutanowy).</li>
-                <li><strong>Położenia podstawnika:</strong> Np. kwas 2-chloropropanowy i kwas 3-chloropropanowy.</li>
-                <li><strong>Funkcyjna:</strong> Kwasy karboksylowe są izomerami funkcyjnymi <strong>estrów</strong>.</li>
-                <li><strong>Geometria cis/trans (Z/E):</strong> Występuje w nienasyconych kwasach z wiązaniem podwójnym (np. kwas maleinowy – <em>cis</em>, kwas fumarowy – <em>trans</em>).</li>
-            </ul>
+            <div class="note-alert">
+                ⚠️ <strong>Ważne na Maturze (Izomeria):</strong> Aldehydy i ketony o tej samej liczbie atomów węgla (od C<sub>3</sub> wzwyż) mają identyczny wzór sumaryczny (np. C<sub>3</sub>H<sub>6</sub>O). Stanowią one względem siebie <strong>izomery funkcyjne</strong>.
+            </div>
         </div>
 
         <!-- SEKCJA 3 -->
         <div class="note-section">
-            <h3>3. Właściwości Fizyczne i Dysocjacja Elektrolityczna</h3>
+            <h3>3. Właściwości Fizyczne</h3>
             <ul class="note-list">
-                <li><strong>Asocjacja cząsteczek:</strong> Kwasy karboksylowe łączą się ze sobą wiązaniami wodorowymi w tzw. dimery. Skutkuje to bardzo <strong>wysokimi temperaturami wrzenia i topnienia</strong> (np. 100% kwas octowy krzepnie już w temp. 16,6&deg;C przypominając lód – stąd nazwa "lodowaty kwas octowy").</li>
-                <li><strong>Rozpuszczalność:</strong> Niższe kwasy (do 3 atomów węgla) doskonale mieszają się z wodą. Wraz z wydłużaniem łańcucha węglowego (części hydrofobowej) rozpuszczalność i lotność drastycznie spadają.</li>
+                <li><strong>Temperatury wrzenia i topnienia:</strong> Są wyższe niż w alkanach o podobnej masie cząsteczkowej (dzięki obecności polarnej grupy karbonylowej i oddziaływaniom dipol-dipol), ale niższe niż w alkoholach (nie tworzą wiązań wodorowych między własnymi cząsteczkami).</li>
+                <li><strong>Rozpuszczalność w wodzie:</strong> Związki o krótkich łańcuchach (metanal, etanal, propan-2-on) bardzo dobrze rozpuszczają się w wodzie, ponieważ tworzą z nią wiązania wodorowe.</li>
+                <li><strong>Odczyn:</strong> Wodne roztwory aldehydów i ketonów mają <strong>odczyn obojętny</strong> (związki te nie ulegają dysocjacji).</li>
+                <li><strong>Stan skupienia:</strong> Metanal to duszący gaz, etanal i propan-2-on to lotne ciecze.</li>
             </ul>
-
-            <h4>Dysocjacja</h4>
-            <p>Silna polaryzacja wiązania C=O powoduje przesunięcie chmury elektronowej z wiązania O–H, co ułatwia odłączenie kationu H<sup>+</sup>. Kwasy (poza mrówkowym) zaliczamy do <strong>słabych elektrolitów</strong>.</p>
-            <div class="chem-eq">
-                CH<sub>3</sub>COOH + H<sub>2</sub>O <span class="chem-arrow"><span class="arrow-sym">&rightleftharpoons;</span></span> CH<sub>3</sub>COO<sup>&minus;</sup> + H<sub>3</sub>O<sup>+</sup>
-            </div>
-            <p>Wodne roztwory niższych kwasów wykazują odczyn <strong>kwasowy</strong> (pH < 7).</p>
         </div>
 
         <!-- SEKCJA 4 -->
         <div class="note-section">
-            <h3>4. Właściwości Chemiczne – Reakcje z Podstawy Programowej</h3>
+            <h3>4. Otrzymywanie</h3>
+
+            <h4>A. Otrzymywanie aldehydów</h4>
+            <p><strong>1. Utlenianie alkoholi I-rzędowych (np. przy użyciu CuO):</strong></p>
+            <div class="chem-eq">
+                CH<sub>3</sub>CH<sub>2</sub>OH + CuO 
+                <span class="chem-arrow">
+                    <span class="cond-top">T</span>
+                    <span class="arrow-sym">&rarr;</span>
+                </span> 
+                CH<sub>3</sub>CHO + Cu + H<sub>2</sub>O
+            </div>
             
-            <h4>A. Otrzymywanie soli kwasów karboksylowych</h4>
-            <p>Kwasy organiczne, podobnie jak nieorganiczne, reagują z metalami aktywnymi, ich tlenkami oraz zasadami:</p>
-            <ul class="note-list">
-                <li><strong>Z metalem aktywnym (np. magnezem):</strong> Wydziela się bezbarwny, palny gaz (wodór). Powstaje egzotermiczny efekt cieplny.</li>
-            </ul>
+            <p><strong>2. Hydratacja etynu (reakcja Kuczerowa - uwaga: tylko etyn daje aldehyd):</strong></p>
             <div class="chem-eq">
-                2 CH<sub>3</sub>COOH + Mg <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> (CH<sub>3</sub>COO)<sub>2</sub>Mg + H<sub>2</sub>&uarr;
+                CH&equiv;CH + H<sub>2</sub>O 
+                <span class="chem-arrow">
+                    <span class="cond-top">HgSO<sub>4</sub>, H<sub>2</sub>SO<sub>4</sub></span>
+                    <span class="arrow-sym">&rarr;</span>
+                </span> 
+                CH<sub>3</sub>CHO
             </div>
 
-            <ul class="note-list">
-                <li><strong>Z tlenkiem metalu (np. roztwarzanie czarnego CuO na gorąco):</strong> Roztwór zmienia barwę na niebieską (od jonów Cu<sup>2+</sup>).</li>
-            </ul>
+            <h4>B. Otrzymywanie ketonów</h4>
+            <p><strong>1. Utlenianie alkoholi II-rzędowych:</strong></p>
             <div class="chem-eq">
-                2 CH<sub>3</sub>COOH + CuO <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> (CH<sub>3</sub>COO)<sub>2</sub>Cu + H<sub>2</sub>O
+                CH<sub>3</sub>–CH(OH)–CH<sub>3</sub> + CuO 
+                <span class="chem-arrow">
+                    <span class="cond-top">T</span>
+                    <span class="arrow-sym">&rarr;</span>
+                </span> 
+                CH<sub>3</sub>–CO–CH<sub>3</sub> + Cu + H<sub>2</sub>O
             </div>
-
-            <ul class="note-list">
-                <li><strong>Z wodorotlenkiem (zobojętnianie):</strong> Obserwujemy odbarwienie malinowego roztworu fenoloftaleiny w NaOH.</li>
-            </ul>
-            <div class="chem-eq">
-                CH<sub>3</sub>COOH + NaOH <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> CH<sub>3</sub>COONa + H<sub>2</sub>O
-            </div>
-
-            <h4>B. Kwas mrówkowy (metanowy) jako wyjątek (WŁAŚCIWOŚCI REDUKUJĄCE)</h4>
-            <p>Kwas metanowy (HCOOH) posiada w swojej strukturze nie tylko grupę karboksylową, ale również <strong>ugrupowanie aldehydowe (H–C=O)</strong>. Z tego powodu jako jedyny kwas karboksylowy odbarwia roztwór KMnO<sub>4</sub>:</p>
-            <div class="chem-eq">
-                5 HCOOH + 2 KMnO<sub>4</sub> + 3 H<sub>2</sub>SO<sub>4</sub> <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> 5 CO<sub>2</sub>&uarr; + 2 MnSO<sub>4</sub> + K<sub>2</sub>SO<sub>4</sub> + 8 H<sub>2</sub>O
-            </div>
-
-            <h4>C. Reakcje dekarboksylacji</h4>
-            <p>Grupa karboksylowa zostaje usunięta z cząsteczki w postaci gazowego CO<sub>2</sub> (tlenku węgla(IV)):</p>
-            <div class="chem-eq">
-                R–COOH <span class="chem-arrow"><span class="cond-top">T</span><span class="arrow-sym">&rarr;</span></span> R–H + CO<sub>2</sub>&uarr;
-            </div>
+            
+            <p><strong>2. Hydratacja alkinów wyższych (od propynu wzwyż):</strong> Addycja zgodna z regułą Markownikowa prowadzi do nietrwałego enolu, który ulega tautomeryzacji do ketonu.</p>
         </div>
 
         <!-- SEKCJA 5 -->
         <div class="note-section">
-            <h3>5. Moc Kwasów Karboksylowych (Szczególnie ważne!)</h3>
-            <p>Zdolność do oddawania protonu (moc kwasu) zależy od podstawników obecnych w łańcuchu węglowym:</p>
+            <h3>5. Reakcje Charakterystyczne (Odróżnianie)</h3>
+            <p>Kluczową różnicą jest to, że <strong>aldehydy mają właściwości redukujące</strong> (łatwo się utleniają), podczas gdy ketony są na łagodne utleniacze odporne.</p>
+
+            <h4>A. Próba Tollensa (Reakcja lustra srebrnego)</h4>
             <ul class="note-list">
-                <li><strong>Długość łańcucha węglowego:</strong> Im dłuższy łańcuch alkilowy (część niepolarna/elektronodonorowa), tym silniej wtłacza on elektrony w stronę grupy –COOH, wzmacniając wiązanie O–H. Wniosek: <strong>Wydłużanie łańcucha zmniejsza moc kwasu.</strong> (HCOOH jest najmocniejszy ze wszystkich alifatycznych nasyconych jednokarboksylowych).</li>
-                <li><strong>Podstawniki elektronoakceptorowe (EA):</strong> Atomy o wysokiej elektroujemności (np. F, Cl, NO<sub>2</sub>) odciągają elektrony, osłabiając wiązanie O–H i silnie ułatwiając dysocjację H<sup>+</sup>.</li>
+                <li><strong>Odczynnik:</strong> Amoniakalny roztwór tlenku srebra(I) / [Ag(NH<sub>3</sub>)<sub>2</sub>]OH (środowisko zasadowe).</li>
+                <li><strong>Aldehyd:</strong> Na ściankach probówki wytrąca się <strong>lustro srebrne</strong>.</li>
+                <li><strong>Keton:</strong> Brak zmian.</li>
             </ul>
-
-            <div class="note-alert danger">
-                🔥 <strong>ZŁOTE REGUŁY MOCY KWASÓW Z PODSTAWNIKAMI EA:</strong> Kwas jest tym mocniejszy im:
-                <br>1. Podstawnik (halogen) ma wyższą elektroujemność (Kwas fluorooctowy > Kwas chlorooctowy).
-                <br>2. Podstawników wyciągających elektrony jest więcej (Kwas dichloroctowy > Kwas monochlorooctowy).
-                <br>3. Podstawnik znajduje się <strong>bliżej grupy –COOH</strong> (Kwas 2-chlorobutaniowy > Kwas 3-chlorobutanowy).
-            </div>
-
-            <h4>Porównywanie mocy kwasów (wypieranie z soli)</h4>
-            <p>Mocniejszy kwas wypiera słabszy kwas z jego soli. Dowody doświadczalne:</p>
             <div class="chem-eq">
-                Na<sub>2</sub>CO<sub>3</sub> + 2 CH<sub>3</sub>COOH <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> 2 CH<sub>3</sub>COONa + H<sub>2</sub>O + CO<sub>2</sub>&uarr;
+                R–CHO + 2 [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup> + 3 OH<sup>&minus;</sup> 
+                <span class="chem-arrow">
+                    <span class="cond-top">T</span>
+                    <span class="arrow-sym">&rarr;</span>
+                </span> 
+                R–COO<sup>&minus;</sup> + 2 Ag&darr; + 4 NH<sub>3</sub> + 2 H<sub>2</sub>O
             </div>
             <div class="chem-obs">
-                🔎 Kwas octowy uwalnia gazowy CO<sub>2</sub> z węglanu sodu (zawartość pieni się). <strong>Wniosek: Kwas octowy jest mocniejszy od węglowego.</strong>
+                🔎 <strong>Uwaga maturalna:</strong> W środowisku zasadowym (które panuje w tej próbie), aldehyd nie utlenia się do kwasu, lecz do <strong>anionu soli kwasu karboksylowego</strong>!
             </div>
+
+            <h4>B. Próba Trommera</h4>
+            <ul class="note-list">
+                <li><strong>Odczynnik:</strong> Świeżo strącony niebieski osad wodorotlenku miedzi(II) Cu(OH)<sub>2</sub> z dodatkiem nadmiaru NaOH.</li>
+                <li><strong>Aldehyd:</strong> Niebieski osad zmienia barwę na <strong>ceglastoczerwoną</strong> (powstaje Cu<sub>2</sub>O).</li>
+                <li><strong>Keton:</strong> Brak właściwości redukujących. Po ogrzaniu niebieski osad czernieje, tworząc czarny tlenek miedzi(II) CuO (wynik termicznego rozkładu odczynnika).</li>
+            </ul>
             <div class="chem-eq">
-                2 CH<sub>3</sub>COONa + H<sub>2</sub>SO<sub>4</sub> <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> Na<sub>2</sub>SO<sub>4</sub> + 2 CH<sub>3</sub>COOH
+                R–CHO + 2 Cu(OH)<sub>2</sub> + OH<sup>&minus;</sup> 
+                <span class="chem-arrow">
+                    <span class="cond-top">T</span>
+                    <span class="arrow-sym">&rarr;</span>
+                </span> 
+                R–COO<sup>&minus;</sup> + Cu<sub>2</sub>O&darr; + 3 H<sub>2</sub>O
             </div>
-            <div class="chem-obs">
-                🔎 Kwas siarkowy(VI) uwalnia octowy zapach z octanu sodu. <strong>Wniosek: H<sub>2</sub>SO<sub>4</sub> jest mocniejszy od kwasu octowego.</strong>
-            </div>
+
+            <h4>C. Próba Jodoformowa</h4>
+            <p>Służy do wykrywania <strong>metyloketonów</strong> (posiadających grupę CH<sub>3</sub>–CO–) oraz <strong>etanalu</strong>. Reakcja z roztworem jodu (I<sub>2</sub>) i zasadą (NaOH/KOH) powoduje powstanie <strong>żółtego osadu o charakterystycznym zapachu</strong> (jodoformu – CHI<sub>3</sub>).</p>
         </div>
 
         <!-- SEKCJA 6 -->
         <div class="note-section">
-            <h3>6. Wyższe Kwasy Karboksylowe (Kwasy Tłuszczowe) i Środki Piorące</h3>
-            <p>Kwasy o długich łańcuchach (ponad kilkanaście atomów C). Praktycznie <strong>nie dysocjują</strong> i <strong>nie reagują z metalami ani ich tlenkami</strong>. Reagują jedynie ze stężonymi wodorotlenkami.</p>
+            <h3>6. Inne Reakcje i Zastosowania</h3>
             
+            <h4>Addycja wodoru (Redukcja)</h4>
+            <p>W obecności katalizatora związki karbonylowe przyłączają wodór:</p>
             <ul class="note-list">
-                <li><strong>Nasycone (ciała stałe):</strong> Kwas palmitynowy (C<sub>15</sub>H<sub>31</sub>COOH) oraz stearynowy (C<sub>17</sub>H<sub>35</sub>COOH).</li>
-                <li><strong>Nienasycone (ciecze):</strong> Kwas oleinowy (C<sub>17</sub>H<sub>33</sub>COOH). Zawiera podwójne wiązanie (izomer <em>cis</em>). Odbarwia wodę bromową i roztwór KMnO<sub>4</sub>, co pozwala odróżnić go w laboratorium od kwasów nasyconych. Uwodornienie (utwardzanie tłuszczu) przekształca go w kwas stearynowy.</li>
+                <li>Aldehydy &rarr; alkohole I-rzędowe.</li>
+                <li>Ketony &rarr; alkohole II-rzędowe.</li>
             </ul>
-
-            <h4>Mydła (Substancje Powierzchniowo Czynne)</h4>
-            <p>Mydła to sole wyższych kwasów karboksylowych i metali alkalicznych, otrzymywane w reakcji <strong>zmydlania</strong>:</p>
-            <div class="chem-eq">
-                C<sub>17</sub>H<sub>35</sub>COOH + NaOH <span class="chem-arrow"><span class="cond-top">T</span><span class="arrow-sym">&rarr;</span></span> C<sub>17</sub>H<sub>35</sub>COONa + H<sub>2</sub>O &nbsp; <em>(stearynian sodu - mydło stałe)</em>
-            </div>
             
+            <h4>Polimeryzacja i Polikondensacja</h4>
+            <p>Ketony nie ulegają tym reakcjom. Najprostsze aldehydy tak:</p>
             <ul class="note-list">
-                <li><strong>Budowa jonu mydła (amfifilowa):</strong> Posiada fragment <strong>hydrofobowy</strong> (długi niepolarny "ogon" węglowodorowy) oraz fragment <strong>hydrofilowy</strong> (polarna jonowa "główka" –COO<sup>&minus;</sup>).</li>
-                <li><strong>Usuwanie brudu:</strong> SPC obniżają napięcie powierzchniowe wody. Ogony hydrofobowe wnikają w drobinę brudu (tłuszczu), a hydrofilowe główki pozostają w wodzie, tworząc <strong>micele</strong> odrywające brud od tkaniny.</li>
-                <li><strong>Wpływ twardej wody:</strong> Jony Ca<sup>2+</sup> i Mg<sup>2+</sup> obecne w twardej wodzie reagują z mydłami, tworząc trudno rozpuszczalne sole wapniowe i magnezowe (biały osad, tzw. kłaczki), drastycznie obniżając zdolności piorące.</li>
+                <li><strong>Polimeryzacja metanalu:</strong> Powstaje poliformaldehyd (wytrzymałe termicznie tworzywo).</li>
+                <li><strong>Polikondensacja:</strong> Reakcja metanalu z fenolem tworzy żywice fenolowo-formaldehydowe (bakelit), wydzielając produkt uboczny (wodę).</li>
             </ul>
         </div>
     </div>
@@ -198,336 +174,336 @@ appData[15] = {
 
     notatkiActive: `
     <div class="notes-wrapper">
-        <h2 class="notes-main-title">🧠 ACTIVE RECALL: KWASY KARBOKSYLOWE</h2>
+        <h2 class="notes-main-title">🧠 ACTIVE RECALL: ALDEHYDY I KETONY</h2>
         <p style="text-align: center; color: #94a3b8; font-size: 13px; margin-bottom: 20px;">
-            💡 <em>Klikaj na ciemne pola, aby odkryć ukryte słowa i produkty reakcji, oraz rozwijaj pytania, by sprawdzić swoją wiedzę!</em>
+            💡 <em>Klikaj na ciemne pola, aby odkryć ukryte słowa i równania reakcji, oraz rozwijaj pytania!</em>
         </p>
 
         <div class="note-section">
-            <h3>1. Nazewnictwo i Wzory</h3>
-            <p>Kwas masłowy (zwyczajowa) to systematycznie kwas <span class="recall-blank" onclick="toggleRecall(this)">butanowy</span>.</p>
-            <p>Wzór kwasu szczawiowego (etanodiowego) to <span class="recall-blank" onclick="toggleRecall(this)">HOOC–COOH</span>.</p>
+            <h3>1. Identyfikacja i Nazewnictwo</h3>
+            <p>Aldehydy i ketony o tej samej liczbie atomów węgla to względem siebie izomery <span class="recall-blank" onclick="toggleRecall(this)">funkcyjne</span>.</p>
             <details class="recall-details">
-                <summary>Jakie izomery (Z czy E) tworzy naturalny kwas oleinowy i jak to wpływa na jego budowę przestrzenną?</summary>
-                <p>Tworzy izomery <strong>cis (Z)</strong>, przez co łańcuch jest mocno zgięty wokół wiązania podwójnego, utrudniając upakowanie cząsteczek. Skutkuje to dużo niższą temperaturą topnienia (kwas oleinowy jest cieczą).</p>
+                <summary>Gdzie w łańcuchu znajduje się grupa karbonylowa dla aldehydów, a gdzie dla ketonów?</summary>
+                <p>Dla aldehydów: <strong>zawsze na końcu</strong> łańcucha (lokant 1). Dla ketonów: <strong>wewnątrz</strong> łańcucha węglowego.</p>
             </details>
+            <p>Końcówka w nazwie systematycznej aldehydów to <span class="recall-blank" onclick="toggleRecall(this)">-al</span>, a ketonów to <span class="recall-blank" onclick="toggleRecall(this)">-on</span>.</p>
         </div>
 
         <div class="note-section">
-            <h3>2. Właściwości i Reakcje</h3>
-            <p>Reakcja kwasu etanowego z magnezem tworzy: <span class="recall-blank" onclick="toggleRecall(this)">etanian (octan) magnezu + wodór (H<sub>2</sub>)</span>.</p>
-            <p>Zjawisko, dzięki któremu kwasy wrą w tak wysokich temperaturach, to <span class="recall-blank" onclick="toggleRecall(this)">asocjacja (tworzenie dimerów wiązaniami wodorowymi)</span>.</p>
+            <h3>2. Odróżnianie Aldehydów od Ketonów</h3>
             
+            <h4>Próba Tollensa</h4>
+            <p>Aldehydy utleniają się w niej do soli kwasu karboksylowego, a jony srebra redukują do <span class="recall-blank" onclick="toggleRecall(this)">lustra srebrnego</span>.</p>
+            <div class="chem-eq">
+                HCHO + 2 [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup> + 3 OH<sup>&minus;</sup> <span class="chem-arrow"><span class="cond-top">T</span><span class="arrow-sym">&rarr;</span></span> 
+                <span class="recall-blank" onclick="toggleRecall(this)">HCOO<sup>&minus;</sup> + 2 Ag&darr; + 4 NH<sub>3</sub> + 2 H<sub>2</sub>O</span>
+            </div>
+
+            <h4>Próba Trommera</h4>
             <details class="recall-details">
-                <summary>Jak w warunkach laboratoryjnych odróżnić kwas mrówkowy od kwasu octowego?</summary>
-                <p>Należy dodać zakwaszonego roztworu <strong>KMnO<sub>4</sub></strong>. Kwas mrówkowy wykazuje właściwości redukujące (ugrupowanie aldehydowe) i spowoduje <strong>odbarwienie fioletowego roztworu</strong> manganianu (utleni się do CO<sub>2</sub>). Kwas octowy na niego nie zareaguje.</p>
-            </details>
-            <details class="recall-details">
-                <summary>Dlaczego wodny roztwór octanu sodu wykazuje odczyn silnie zasadowy?</summary>
-                <p>Ulega <strong>hydrolizie anionowej</strong> (CH<sub>3</sub>COO<sup>&minus;</sup> + H<sub>2</sub>O &rightleftharpoons; CH<sub>3</sub>COOH + OH<sup>&minus;</sup>). Sól pochodzi od słabego kwasu organicznego i mocnej zasady sodowej.</p>
+                <summary>Dlaczego ogrzewana próba Trommera z ketonem zmienia barwę z niebieskiej na czarną, a z aldehydem na ceglastoczerwoną?</summary>
+                <p>Ketony nie ulegają utlenieniu, a czarny osad (<strong>CuO</strong>) to wynik zwykłego termicznego rozkładu niezreagowanego wodorotlenku miedzi(II). Z aldehydem zaszła reakcja redoks, w wyniku której wytrąca się ceglastoczerwony tlenek miedzi(I) (<strong>Cu<sub>2</sub>O</strong>).</p>
             </details>
         </div>
 
         <div class="note-section">
-            <h3>3. Moc Kwasów</h3>
-            <p>Kwas chlorooctowy jest <span class="recall-blank" onclick="toggleRecall(this)">mocniejszy</span> niż kwas octowy ze względu na efekt elektronoakceptorowy atomu chloru.</p>
-            <p>Uszereguj wg wzrastającej mocy: kw. propanowy, kw. metanowy, kw. etanowy.</p>
-            <p>Kolejność: <span class="recall-blank" onclick="toggleRecall(this)">kw. propanowy &lt; kw. etanowy &lt; kw. metanowy</span>.</p>
+            <h3>3. Reakcje utleniania i redukcji</h3>
+            <p>Utlenianie alkoholu propan-2-olu w podwyższonej temperaturze za pomocą CuO doprowadzi do powstania <span class="recall-blank" onclick="toggleRecall(this)">propan-2-onu (ketonu)</span>.</p>
+            <p>Reakcja addycji (przyłączenia) wodoru H<sub>2</sub> do butanalu doprowadzi do powstania alkoholu <span class="recall-blank" onclick="toggleRecall(this)">I-rzędowego (butan-1-olu)</span>.</p>
         </div>
-
+        
         <div class="note-section">
-            <h3>4. Środki Czystości</h3>
+            <h3>4. Wykrywanie Metyloketonów</h3>
             <details class="recall-details">
-                <summary>Jak doświadczalnie odróżnić stały kwas stearynowy od kwasu oleinowego?</summary>
-                <p>Użyć <strong>wody bromowej</strong> (brązowej/brunatnej). Nasycony kwas stearynowy nie przereaguje, natomiast nienasycony kwas oleinowy (posiada wiązanie podwójne) <strong>odbarwi roztwór</strong> ulegając addycji bromu.</p>
+                <summary>Jakiego odczynnika użyjesz do Próby Jodoformowej i co zaobserwujesz dla propan-2-onu?</summary>
+                <p>Używa się <strong>jodu i wodorotlenku sodu (lub potasu)</strong>. W przypadku metyloketonu obserwuje się wytrącenie <strong>żółtego osadu</strong> o charakterystycznym, szpitalnym zapachu (powstaje trijodometan - jodoform).</p>
             </details>
-            <p>Podczas prania ujemnie naładowane główki jonu stearynianowego kierują się w stronę <span class="recall-blank" onclick="toggleRecall(this)">polarnej wody</span>, a węglowodorowe ogony wnikają w <span class="recall-blank" onclick="toggleRecall(this)">niepolarny brud (tłuszcz)</span>.</p>
         </div>
     </div>
     `,
-
-    zadania: "<h3>Zadania</h3><br>Miejsce na zadania obliczeniowe i projektowanie syntez kwasów karboksylowych...",
+    
+    zadania: "<h3>Zadania: Związki Karbonylowe</h3><br>Miejsce na zadania PBL, projektowanie doświadczeń odróżniających Tollensa/Trommera oraz syntezy maturalne...",
 
     fiszki: [
-        {
-            front: "Jak nazywa się grupa funkcyjna kwasów karboksylowych i z jakich dwóch grup się składa?",
-            back: "Grupa karboksylowa (-COOH). Składa się z grupy karbonylowej (-C=O) i grupy hydroksylowej (-OH)."
-        },
-        {
-            front: "Podaj wzór ogólny nasyconych alifatycznych kwasów monokarboksylowych.",
-            back: "C<sub>n</sub>H<sub>2n+1</sub>COOH, gdzie n to liczba naturalna (n &ge; 0)."
-        },
-        {
-            front: "Jaki numer lokantu otrzymuje zawsze atom węgla wchodzący w skład grupy karboksylowej w nazewnictwie systematycznym IUPAC?",
-            back: "Lokant 1."
-        },
-        {
-            front: "Czym jest reszta kwasowa kwasu karboksylowego?",
-            back: "To fragment cząsteczki kwasu, który pozostaje po oderwaniu protonu (H<sup>+</sup>) z grupy karboksylowej."
-        },
-        {
-            front: "Podaj nazwę systematyczną i zwyczajową kwasu o wzorze HCOOH.",
-            back: "Kwas metanowy (nazwa systematyczna), kwas mrówkowy (nazwa zwyczajowa)."
-        },
-        {
-            front: "Podaj nazwę systematyczną i zwyczajową kwasu o wzorze CH<sub>3</sub>COOH.",
-            back: "Kwas etanowy (nazwa systematyczna), kwas octowy (nazwa zwyczajowa)."
-        },
-        {
-            front: "Podaj wzór półstrukturalny kwasu propionowego (propanowego).",
-            back: "CH<sub>3</sub>CH<sub>2</sub>COOH."
-        },
-        {
-            front: "Podaj wzór półstrukturalny i nazwę systematyczną kwasu masłowego.",
-            back: "CH<sub>3</sub>(CH<sub>2</sub>)<sub>2</sub>COOH, kwas butanowy."
-        },
-        {
-            front: "Podaj nazwę zwyczajową kwasu pentanowego.",
-            back: "Kwas walerianowy."
-        },
-        {
-            front: "Podaj wzór sumaryczny, nazwę systematyczną i zwyczajową kwasu zawierającego 6 atomów węgla.",
-            back: "C<sub>6</sub>H<sub>12</sub>O<sub>2</sub>, kwas heksanowy, kwas kapronowy."
-        },
-        {
-            front: "Jak tworzy się nazwy soli alifatycznych kwasów karboksylowych?",
-            back: "Dodając do nazwy węglowodoru, od którego pochodzi kwas, końcówkę \"-ian\" podaną w dopełniaczu (np. etanian sodu, potocznie: octan sodu)."
-        },
-        {
-            front: "Jak nazywa się najprostszy aromatyczny kwas karboksylowy o wzorze C<sub>6</sub>H<sub>5</sub>COOH?",
-            back: "Kwas benzenokarboksylowy (często stosowana, zalecana nazwa: kwas benzoesowy)."
-        },
-        {
-            front: "Dlaczego kwasy karboksylowe mają wyższe temperatury wrzenia i topnienia niż odpowiednie alkany czy alkohole?",
-            back: "Ponieważ ich cząsteczki ulegają asocjacji – łączą się silnymi wiązaniami wodorowymi w dimery."
-        },
-        {
-            front: "Jak zmienia się rozpuszczalność kwasów karboksylowych w wodzie w miarę wydłużania łańcucha węglowego?",
-            back: "Rozpuszczalność maleje, ponieważ rośnie wpływ niepolarnej, hydrofobowej grupy węglowodorowej."
-        },
-        {
-            front: "Co oznacza pojęcie \"lodowaty kwas octowy\"?",
-            back: "To bezwodny, czysty (100%) kwas etanowy, który w temperaturze 16,6&deg;C krzepnie, tworząc kryształy łudząco podobne do lodu."
-        },
-        {
-            front: "Z jaką klasą związków organicznych kwasy karboksylowe tworzą izomery funkcyjne?",
-            back: "Z estrami."
-        },
-        {
-            front: "Podaj dwa przykłady izomerii szkieletowej dla kwasów o wzorze C<sub>5</sub>H<sub>10</sub>O<sub>2</sub>.",
-            back: "Np. kwas pentanowy i kwas 2-metylobutanowy (lub kwas 3-metylobutanowy / kwas 2,2-dimetylopropanowy)."
-        },
-        {
-            front: "Jakim typem izomerii różnią się kwas 2-chloropropanowy i kwas 3-chloropropanowy?",
-            back: "Izomerią położenia podstawników w łańcuchu węglowym."
-        },
-        {
-            front: "W jakich kwasach karboksylowych występuje izomeria geometryczna cis-trans (Z/E)?",
-            back: "W kwasach nienasyconych, posiadających wiązanie podwójne między atomami węgla i różne podstawniki (np. izomery kwasu but-2-enowego)."
-        },
-        {
-            front: "Napisz równanie reakcji utleniania etanolu do kwasu octowego zakwaszonym roztworem manganianu(VII) potasu.",
-            back: "5CH<sub>3</sub>CH<sub>2</sub>OH + 4KMnO<sub>4</sub> + 6H<sub>2</sub>SO<sub>4</sub> &rarr; 5CH<sub>3</sub>COOH + 4MnSO<sub>4</sub> + 2K<sub>2</sub>SO<sub>4</sub> + 11H<sub>2</sub>O."
-        },
-        {
-            front: "Z jakich klas związków organicznych otrzymuje się kwasy karboksylowe w wyniku utleniania z użyciem mocnych utleniaczy?",
-            back: "Z alkoholi pierwszorzędowych oraz aldehydów."
-        },
-        {
-            front: "Napisz sumaryczne równanie biochemicznego procesu fermentacji octowej.",
-            back: "CH<sub>3</sub>CH<sub>2</sub>OH + O<sub>2</sub> (bakterie)&rarr; CH<sub>3</sub>COOH + H<sub>2</sub>O."
-        },
-        {
-            front: "Z jakich substratów produkuje się metanian sodu (mrówczan sodu) na drodze syntezy przemysłowej?",
-            back: "Z tlenku węgla(II) (CO) i wodorotlenku sodu (NaOH) pod zwiększonym ciśnieniem i w wysokiej temperaturze."
-        },
-        {
-            front: "W jaki sposób przekształca się sól kwasu (np. HCOONa) w wolny kwas karboksylowy?",
-            back: "Działając na sól roztworem mocniejszego kwasu nieorganicznego, np. mocnym kwasem siarkowym(VI) (H<sub>2</sub>SO<sub>4</sub>)."
-        },
-        {
-            front: "Co jest organicznym produktem reakcji utleniania aldehydu (próba Tollensa) w środowisku zasadowym?",
-            back: "Sól kwasu karboksylowego (anion karboksylanowy), a nie wolny kwas karboksylowy."
-        },
-        {
-            front: "Na czym polega dysocjacja elektrolityczna rozpuszczalnych w wodzie kwasów karboksylowych?",
-            back: "Na odszczepieniu protonu (H<sup>+</sup>) z grupy karboksylowej, przez co w wodzie powstaje jon oksoniowy (H<sub>3</sub>O<sup>+</sup>) i anion reszty kwasowej."
-        },
-        {
-            front: "Z czego wynika zdolność kwasów karboksylowych do odszczepienia jonu H<sup>+</sup>?",
-            back: "Wynika to z silnej polaryzacji wiązania C=O, co wymusza przesunięcie chmury elektronowej z wiązania O-H w stronę atomu tlenu i pozwala na ucieczkę kationu wodorowego."
-        },
-        {
-            front: "Czy kwasy karboksylowe to silne, czy słabe elektrolity?",
-            back: "Większość należy do słabych elektrolitów (ich stałe dysocjacji K<sub>a</sub> przyjmują wartości ok. 10<sup>-4</sup> do 10<sup>-5</sup>)."
-        },
-        {
-            front: "Z jakimi ogólnymi klasami substancji nieorganicznych reagują kwasy karboksylowe, tworząc sole?",
-            back: "Reagują z metalami aktywnymi, tlenkami metali, wodorotlenkami metali oraz wypierają reszty kwasowe z soli słabszych kwasów."
-        },
-        {
-            front: "Podaj pełne zbilansowane równanie reakcji kwasu etanowego z magnezem.",
-            back: "2CH<sub>3</sub>COOH + Mg &rarr; (CH<sub>3</sub>COO)<sub>2</sub>Mg + H<sub>2</sub>&uarr;."
-        },
-        {
-            front: "Co można zaobserwować podczas roztwarzania czarnego tlenku miedzi(II) na gorąco w roztworze kwasu octowego?",
-            back: "Zawartość probówki zmienia barwę z czarnej na niebieską, co świadczy o pojawieniu się jonów miedzi(II)."
-        },
-        {
-            front: "Jak zmienia się barwa fenoloftaleiny w roztworze NaOH po dodaniu nadmiaru kwasu etanowego?",
-            back: "Zabarwienie roztworu zmienia się z różowoczerwonego (malinowego) na bezbarwne (reakcja zobojętniania)."
-        },
-        {
-            front: "Napisz równanie reakcji wypierania kwasu z węglanu sodu przy użyciu kwasu etanowego.",
-            back: "Na<sub>2</sub>CO<sub>3</sub> + 2CH<sub>3</sub>COOH &rarr; 2CH<sub>3</sub>COONa + CO<sub>2</sub>&uarr; + H<sub>2</sub>O."
-        },
-        {
-            front: "Kwas octowy wlano do probówki z węglanem sodu i zaobserwowano silne pienienie (wydzielanie gazu). Jaki płynie z tego wniosek?",
-            back: "Kwas etanowy (octowy) jest kwasem mocniejszym od kwasu węglowego, ponieważ zdołał go wyprzeć z jego soli."
-        },
-        {
-            front: "Kwas siarkowy(VI) dodano do stałego etanianu sodu, a zawartość łagodnie podgrzano. Co zaobserwowano?",
-            back: "Można wyczuć ostry, charakterystyczny zapach kwasu etanowego, który został wyparty ze swojej soli przez mocniejszy kwas nieorganiczny."
-        },
-        {
-            front: "Podaj wzór na stałą dysocjacji jonowej (K<sub>a</sub>) kwasu etanowego.",
-            back: "K<sub>a</sub> = ([CH<sub>3</sub>COO<sup>&minus;</sup>][H<sup>+</sup>]) / [CH<sub>3</sub>COOH]."
-        },
-        {
-            front: "Jaki odczyn ma wodny roztwór octanu sodu (CH<sub>3</sub>COONa) i jakiego zjawiska jest to wynik?",
-            back: "Ma odczyn zasadowy, co jest wynikiem zajścia hydrolizy anionowej (octan sodu to sól słabego kwasu organicznego i mocnej zasady sodowej)."
-        },
-        {
-            front: "Napisz jonowe równanie skrócone reakcji hydrolizy anionowej octanu sodu.",
-            back: "CH<sub>3</sub>COO<sup>&minus;</sup> + H<sub>2</sub>O &rightleftharpoons; CH<sub>3</sub>COOH + OH<sup>&minus;</sup>."
-        },
-        {
-            front: "Jak obecność i długość grupy alkilowej (niepolarnej) wpływa na moc alifatycznych kwasów karboksylowych?",
-            back: "Zmniejsza moc kwasu. Grupa alkilowa dostarcza elektrony do związku, osłabiając polaryzację i utrudniając oderwanie kationu wodorowego."
-        },
-        {
-            front: "Który kwas z szeregu homologicznego nasyconych alifatycznych kwasów jednokarboksylowych jest najmocniejszy?",
-            back: "Kwas metanowy (mrówkowy)."
-        },
-        {
-            front: "Czym są podstawniki elektronoakceptorowe (EA)?",
-            back: "Są to silnie elektroujemne atomy lub grupy atomów (np. Cl, F, NO<sub>2</sub>), które ściągają (przyciągają) elektrony na siebie."
-        },
-        {
-            front: "Jak podstawniki elektronoakceptorowe (np. atomy fluorowców) wpływają na moc kwasu karboksylowego?",
-            back: "Znacznie zwiększają jego moc. Zmniejszają gęstość elektronową w obrębie grupy -COOH, bardzo silnie osłabiają wiązanie tlen-wodór, co wybitnie ułatwia dysocjację jonu H<sup>+</sup>."
-        },
-        {
-            front: "Który z kwasów jest mocniejszy: kwas chlorooctowy czy kwas octowy? Odpowiedź uzasadnij.",
-            back: "Kwas chlorooctowy. Obecność elektroujemnego atomu chloru (podstawnika EA) wyciąga chmurę elektronową, ułatwiając dysocjację protonu."
-        },
-        {
-            front: "Który z kwasów jest mocniejszy: kwas 2-chloropropanowy czy kwas 3-chloropropanowy? Dlaczego?",
-            back: "Kwas 2-chloropropanowy. Moc kwasu jest tym większa, im bliżej grupy -COOH (czyli miejsca dysocjacji) znajduje się podstawnik wyciągający elektrony."
-        },
-        {
-            front: "Jak rodzaj podstawnika fluorowcowego (F vs Cl) wpływa na moc kwasu chlorowcooctowego?",
-            back: "Kwas fluorooctowy jest znacznie mocniejszy od kwasu chlorooctowego, ponieważ atom fluoru charakteryzuje się wyższą elektroujemnością niż atom chloru."
-        },
-        {
-            front: "Jak liczba podstawników chlorowcowych wpływa na moc kwasu? Porównaj kwas chlorooctowy i dichloroocotowy.",
-            back: "Im więcej podstawników elektronoakceptorowych, tym kwas jest mocniejszy. Kwas dichloroctowy (CHCl<sub>2</sub>COOH) ma mniejszą wartość pK<sub>a</sub> (jest silniejszy) niż kwas monochlorooctowy."
-        },
-        {
-            front: "Jak liczba grup karboksylowych w cząsteczce wpływa na jej siłę jako kwasu?",
-            back: "Im więcej grup -COOH znajduje się w cząsteczce, tym kwas staje się mocniejszy (np. kwas szczawiowy jest bardzo mocnym kwasem organicznym)."
-        },
-        {
-            front: "Co to jest reakcja dekarboksylacji?",
-            back: "Jest to specyficzna reakcja, w której cała grupa -COOH zostaje zastąpiona atomem wodoru, przy czym na zewnątrz wydziela się tlenek węgla(IV) (CO<sub>2</sub>)."
-        },
-        {
-            front: "Kwas metanowy wyróżnia się spośród innych kwasów swoimi właściwościami chemicznymi. Jakimi?",
-            back: "Wykazuje właściwości redukujące (np. odbarwia roztwór KMnO<sub>4</sub> w środowisku kwasowym)."
-        },
-        {
-            front: "Jak budowa cząsteczki kwasu mrówkowego tłumaczy jego właściwości redukujące?",
-            back: "Obok grupy karboksylowej można w jego cząsteczce wyróżnić również strukturę grupy aldehydowej (-CHO), odpowiedzialnej za zdolność do utleniania się."
-        },
-        {
-            front: "Napisz równanie reakcji utleniania (redukcji jonów) kwasu mrówkowego zakwaszonym roztworem manganianu(VII) potasu.",
-            back: "5HCOOH + 2KMnO<sub>4</sub> + 3H<sub>2</sub>SO<sub>4</sub> &rarr; 5CO<sub>2</sub>&uarr; + 2MnSO<sub>4</sub> + K<sub>2</sub>SO<sub>4</sub> + 8H<sub>2</sub>O."
-        },
-        {
-            front: "Do jakiej grupy należą tzw. kwasy tłuszczowe?",
-            back: "To wyższe kwasy karboksylowe – związki chemiczne zbudowane z nierozgałęzionych, bardzo długich łańcuchów węglowych liczących najczęściej kilkanaście (14-18) atomów węgla w cząsteczce."
-        },
-        {
-            front: "Podaj wzory i nazwy dwóch powszechnych, naturalnie nasyconych wyższych kwasów karboksylowych.",
-            back: "Kwas palmitynowy (C<sub>15</sub>H<sub>31</sub>COOH) oraz kwas stearynowy (C<sub>17</sub>H<sub>35</sub>COOH)."
-        },
-        {
-            front: "Podaj wzór i nazwę najważniejszego, powszechnego nienasyconego wyższego kwasu karboksylowego.",
-            back: "Kwas oleinowy (C<sub>17</sub>H<sub>33</sub>COOH)."
-        },
-        {
-            front: "Jaka jest systematyczna nazwa IUPAC kwasu stearynowego?",
-            back: "Kwas oktadekanowy."
-        },
-        {
-            front: "Jaka jest systematyczna nazwa IUPAC dla nienasyconego kwasu oleinowego?",
-            back: "Kwas (9Z)-oktadec-9-enowy."
-        },
-        {
-            front: "Jaka izomeria występuje wokół wiązania podwójnego w naturalnym kwasie oleinowym i jak wpływa to na jego kształt przestrzenny?",
-            back: "Występuje tam izomeria cis (Z). Oznacza to, że konfiguracja podstawników powoduje zgięcie łańcucha na wiązaniu podwójnym (struktura nieliniowa)."
-        },
-        {
-            front: "Jak odróżnisz w laboratorium kwas oleinowy od kwasu stearynowego przy pomocy jednego odczynnika?",
-            back: "Do obu kwasów należy dodać wodę bromową. Nienasycony kwas oleinowy odbarwi brunatną wodę bromową, podczas gdy w obecności stałego, nasyconego kwasu stearynowego probówka pozostanie brunatna."
-        },
-        {
-            front: "Napisz równanie reakcji addycji kwasu oleinowego z bromem.",
-            back: "CH<sub>3</sub>(CH<sub>2</sub>)<sub>7</sub>CH=CH(CH<sub>2</sub>)<sub>7</sub>COOH + Br<sub>2</sub> &rarr; CH<sub>3</sub>(CH<sub>2</sub>)<sub>7</sub>CH(Br)CH(Br)(CH<sub>2</sub>)<sub>7</sub>COOH."
-        },
-        {
-            front: "Co otrzymamy po katalitycznym uwodornieniu kwasu oleinowego (H<sub>2</sub> / kat. Ni) i do czego ten proces jest używany w przemyśle?",
-            back: "Otrzymamy nasycony kwas stearynowy. Przemysł spożywczy wykorzystuje to do tzw. utwardzania tłuszczów, czyli zamiany ciekłych olejów roślinnych w ciała stałe (np. margaryny)."
-        },
-        {
-            front: "Jak na rozpuszczalność i dysocjację elektrolityczną w wodzie wpływa bardzo długi \"ogon\" węglowodorowy w kwasach tłuszczowych?",
-            back: "Sprawia on, że wyższe kwasy karboksylowe są praktycznie nierozpuszczalne w wodzie i zupełnie nie ulegają w niej dysocjacji."
-        },
-        {
-            front: "Z jakimi substancjami jako jedynymi reagują w sposób \"kwasowy\" wyższe kwasy karboksylowe, by wytworzyć sole (mydła)?",
-            back: "Nie reagują już z metalami ani ich tlenkami; roztwarzają się tylko w reakcji ze stężonymi, silnymi wodorotlenkami metali (np. NaOH, KOH)."
-        },
-        {
-            front: "Zdefiniuj proces zwany powszechnie \"zmydlaniem\".",
-            back: "Zmydlanie wyższych kwasów karboksylowych to ich bezpośrednia, na gorąco zachodząca reakcja z wodorotlenkiem sodu lub potasu, w wyniku której powstają rozpuszczalne w wodzie sole – mydła (np. stearynian sodu)."
-        },
-        {
-            front: "Napisz równanie otrzymywania mydła z kwasu stearynowego i wodorotlenku sodu.",
-            back: "C<sub>17</sub>H<sub>35</sub>COOH + NaOH (temp.) &rarr; C<sub>17</sub>H<sub>35</sub>COONa + H<sub>2</sub>O."
-        },
-        {
-            front: "Jakimi typami substancji, ze względu na zmniejszanie napięcia powierzchniowego wody, są mydła?",
-            back: "Mydła zaliczają się do substancji powierzchniowo czynnych (SPC), inaczej zwanych surfaktantami."
-        },
-        {
-            front: "Wyjaśnij amfifilową (dwoistą) budowę chemiczną jonu (np. stearynianowego) mydła.",
-            back: "Składa się on z niepolarnego fragmentu hydrofobowego (\"ogona\" węglowodorowego, który unika wody) oraz jonowego, ujemnie naładowanego fragmentu hydrofilowego (\"główki\" -COO<sup>&minus;</sup>, która kieruje się do wody)."
-        },
-        {
-            front: "Na czym polega uproszczony mechanizm fizykochemiczny prania przy użyciu mydła?",
-            back: "SPC obniżają napięcie powierzchniowe wody. Następnie wnikają \"ogonami\" w hydrofobowy brud (np. tłuszcz), tworząc wokół niego micele. Pocieranie odrywa odizolowany brud od tkaniny."
-        },
-        {
-            front: "Czym jest twardość wody i jak ona wpływa na skuteczność samego mydła sodowego?",
-            back: "Twarda woda zawiera duże stężenia rozpuszczalnych soli wapnia (Ca<sup>2+</sup>) i magnezu (Mg<sup>2+</sup>). Osłabia ona drastycznie pranie, tworząc z mydłami nierozpuszczalne, lepkie osady (tzw. kłaczki mydlane)."
-        },
-        {
-            front: "Napisz jonowe równanie skrócone obrazujące reakcję jonów stearynianowych z jonami wapnia zawartymi w twardej wodzie.",
-            back: "2 C<sub>17</sub>H<sub>35</sub>COO<sup>&minus;</sup> + Ca<sup>2+</sup> &rarr; (C<sub>17</sub>H<sub>35</sub>COO)<sub>2</sub>Ca&darr;."
-        },
-        {
-            front: "Jaki problem z punktu widzenia ekologii sprawiało masowe odprowadzanie do ścieków środków piorących zawierających fosforany(V)?",
-            back: "Fosforany trafiały do wód gruntowych, stymulując masowy rozrost glonów i sinic – jest to tzw. proces eutrofizacji, powodujący z czasem całkowite wymieranie jezior."
+        { 
+            front: "Co to są związki karbonylowe?", 
+            back: "Jednofunkcyjne pochodne węglowodorów zawierające w cząsteczce silnie spolaryzowaną grupę karbonylową (>C=O)." 
+        },
+        { 
+            front: "Jaka jest grupa funkcyjna aldehydów?", 
+            back: "Grupa aldehydowa (-CHO)." 
+        },
+        { 
+            front: "Jaka jest grupa funkcyjna ketonów?", 
+            back: "Grupa karbonylowa (ketonowa) (>C=O)." 
+        },
+        { 
+            front: "Gdzie w łańcuchu węglowym znajduje się grupa aldehydowa?", 
+            back: "Zawsze na końcu łańcucha węglowego." 
+        },
+        { 
+            front: "Gdzie w łańcuchu węglowym znajduje się grupa karbonylowa w ketonach?", 
+            back: "Wewnątrz łańcucha węglowego." 
+        },
+        { 
+            front: "Z iloma atomami wodoru łączy się bezpośrednio atom węgla grupy karbonylowej w aldehydach (poza metanalem)?", 
+            back: "Z jednym atomem wodoru." 
+        },
+        { 
+            front: "Z iloma atomami wodoru łączy się węgiel grupy karbonylowej w najprostszym aldehydzie – metanalu (HCHO)?", 
+            back: "Z dwoma atomami wodoru." 
+        },
+        { 
+            front: "Z jakimi grupami łączy się węgiel grupy karbonylowej w ketonach?", 
+            back: "Z dwiema grupami węglowodorowymi (alkilowymi lub arylowymi)." 
+        },
+        { 
+            front: "Jaki jest ogólny wzór aldehydów?", 
+            back: "R-CHO (dla alifatycznych nasyconych: C<sub>n</sub>H<sub>2n+1</sub>CHO)." 
+        },
+        { 
+            front: "Jaki jest ogólny wzór ketonów?", 
+            back: "R<sub>1</sub>-CO-R<sub>2</sub>." 
+        },
+        { 
+            front: "Jaką końcówkę dodaje się do nazwy węglowodoru w systematycznym nazewnictwie aldehydów?", 
+            back: "Końcówkę \"-al\" (np. metanal, etanal)." 
+        },
+        { 
+            front: "Jaką końcówkę dodaje się do nazwy węglowodoru w systematycznym nazewnictwie ketonów?", 
+            back: "Końcówkę \"-on\" (np. propan-2-on)." 
+        },
+        { 
+            front: "Jaki lokant otrzymuje w nazewnictwie systematycznym atom węgla z grupy aldehydowej?", 
+            back: "Zawsze lokant 1." 
+        },
+        { 
+            front: "W jaki sposób numeruje się łańcuch węglowy w ketonach?", 
+            back: "W taki sposób, aby lokant grupy karbonylowej był jak najmniejszy." 
+        },
+        { 
+            front: "Jaki rodzaj izomerii występuje pomiędzy aldehydami i ketonami o tej samej liczbie atomów węgla?", 
+            back: "Izomeria funkcyjna." 
+        },
+        { 
+            front: "Podaj przykład dwóch związków będących wobec siebie izomerami funkcyjnymi o wzorze sumarycznym C<sub>3</sub>H<sub>6</sub>O.", 
+            back: "Propanal (aldehyd) i propan-2-on (keton)." 
+        },
+        { 
+            front: "Czy cząsteczki aldehydów i ketonów mogą tworzyć wiązania wodorowe między sobą?", 
+            back: "Nie, co powoduje, że mają niższe temperatury wrzenia niż odpowiednie alkohole." 
+        },
+        { 
+            front: "Dlaczego temperatury wrzenia aldehydów i ketonów są wyższe niż alkanów o zbliżonej masie?", 
+            back: "Wynika to z obecności silnie polarnej grupy karbonylowej i oddziaływań dipol-dipol." 
+        },
+        { 
+            front: "Dlaczego aldehydy i ketony o krótkich łańcuchach (do C<sub>3</sub>) dobrze rozpuszczają się w wodzie?", 
+            back: "Ponieważ mogą tworzyć wiązania wodorowe z cząsteczkami wody." 
+        },
+        { 
+            front: "Jaki odczyn mają wodne roztwory aldehydów i ketonów?", 
+            back: "Obojętny (nie ulegają dysocjacji elektrolitycznej)." 
+        },
+        { 
+            front: "Jaki stan skupienia (w warunkach normalnych) ma pierwszy w szeregu aldehyd – metanal?", 
+            back: "Jest to gaz (drażniący)." 
+        },
+        { 
+            front: "Co to jest formalina?", 
+            back: "37-procentowy wodny roztwór metanalu." 
+        },
+        { 
+            front: "Jaką metodą z alkoholi otrzymuje się aldehydy?", 
+            back: "Poprzez łagodne utlenianie alkoholi pierwszorzędowych (1°)." 
+        },
+        { 
+            front: "Jaką metodą z alkoholi otrzymuje się ketony?", 
+            back: "Poprzez utlenianie alkoholi drugorzędowych (2°)." 
+        },
+        { 
+            front: "Co powstaje w wyniku utleniania etanolu tlenkiem miedzi(II) (CuO)?", 
+            back: "Etanal, miedź metaliczna (Cu) i woda." 
+        },
+        { 
+            front: "Co powstaje w wyniku utleniania propan-2-olu tlenkiem miedzi(II) (CuO)?", 
+            back: "Propan-2-on (keton), miedź metaliczna (Cu) i woda." 
+        },
+        { 
+            front: "Reakcja jakiego związku organicznego z wodą (hydratacja) jest metodą otrzymywania etanalu?", 
+            back: "Hydratacja etynu (najprostszego alkinu)." 
+        },
+        { 
+            front: "Zgodnie z jaką regułą zachodzi addycja wody do wyższych alkinów (od propynu w górę)?", 
+            back: "Zgodnie z regułą Markownikowa." 
+        },
+        { 
+            front: "Jaki typ związku powstaje w wyniku hydratacji alkinów wyższych niż etyn (np. propynu)?", 
+            back: "Keton (poprzez nietrwały produkt pośredni – enol)." 
+        },
+        { 
+            front: "Jaka jest najważniejsza różnica we właściwościach chemicznych między aldehydami a ketonami?", 
+            back: "Aldehydy mają właściwości redukujące (łatwo się utleniają), a ketony nie mają właściwości redukujących." 
+        },
+        { 
+            front: "Jakie dwie reakcje charakterystyczne pozwalają jednoznacznie odróżnić aldehyd od ketonu?", 
+            back: "Próba Tollensa (reakcja lustra srebrnego) i próba Trommera." 
+        },
+        { 
+            front: "Jaki odczynnik stosuje się w próbie Tollensa?", 
+            back: "Wodorotlenek diaminasrebra(I) [Ag(NH<sub>3</sub>)<sub>2</sub>]OH (amoniakalny roztwór tlenku srebra(I))." 
+        },
+        { 
+            front: "W jakim środowisku zachodzi próba Tollensa?", 
+            back: "W środowisku zasadowym." 
+        },
+        { 
+            front: "Jakie są objawy pozytywnego wyniku próby Tollensa (dla aldehydów)?", 
+            back: "Na ściankach ogrzewanej probówki wytrąca się błyszczący osad metalicznego srebra (lustro srebrne)." 
+        },
+        { 
+            front: "Do jakiego jonu utlenia się aldehyd (np. etanal) podczas próby Tollensa w środowisku zasadowym?", 
+            back: "Do anionu soli kwasu karboksylowego (np. anionu etanianowego/octanowego)." 
+        },
+        { 
+            front: "Jaki wynik dają ketony w próbie Tollensa?", 
+            back: "Negatywny (brak zmian, brak lustra srebrnego)." 
+        },
+        { 
+            front: "Jaki odczynnik stosuje się w próbie Trommera?", 
+            back: "Świeżo strącony wodorotlenek miedzi(II) – Cu(OH)<sub>2</sub>." 
+        },
+        { 
+            front: "Jaki jest stan skupienia i barwa świeżo strąconego Cu(OH)<sub>2</sub>?", 
+            back: "Jest to niebieski, galaretowaty osad." 
+        },
+        { 
+            front: "W jakim środowisku należy przeprowadzać próbę Trommera?", 
+            back: "W środowisku silnie zasadowym (przy obecności np. NaOH)." 
+        },
+        { 
+            front: "Jakie są obserwacje pozytywnego wyniku próby Trommera (reakcja z aldehydem)?", 
+            back: "Niebieski osad po podgrzaniu zmienia barwę na ceglastoczerwoną." 
+        },
+        { 
+            front: "Jaki związek chemiczny stanowi ceglastoczerwony osad wytrącający się w udanej próbie Trommera?", 
+            back: "Tlenek miedzi(I) – Cu<sub>2</sub>O." 
+        },
+        { 
+            front: "Dlaczego ogrzewany keton z odczynnikiem Trommera tworzy czarny osad?", 
+            back: "Keton nie utlenia się, a w wysokiej temperaturze wodorotlenek miedzi(II) ulega termicznemu rozkładowi do czarnego tlenku miedzi(II) – CuO." 
+        },
+        { 
+            front: "W jaki sposób zabezpieczona jest grupa karbonylowa w ketonach przed utlenianiem?", 
+            back: "Z dwóch stron wiązaniami węgiel-węgiel (C-C), których zerwanie wymaga użycia silnego utleniacza i bardzo dużej energii." 
+        },
+        { 
+            front: "Do wykrywania jakich związków służy próba jodoformowa (reakcja haloformowa)?", 
+            back: "Do metyloketonów (związków z grupą CH<sub>3</sub>-CO-) oraz etanalu (jedynego takiego aldehydu)." 
+        },
+        { 
+            front: "Jakich odczynników używa się w próbie jodoformowej?", 
+            back: "Roztworu jodu (I<sub>2</sub> / KI) w obecności silnej zasady (np. NaOH, KOH)." 
+        },
+        { 
+            front: "Jaki jest pozytywny objaw próby jodoformowej?", 
+            back: "Wytrącenie się żółtego osadu o charakterystycznym (często określanym jako \"szpitalny\") zapachu." 
+        },
+        { 
+            front: "Jak nazywa się chemicznie żółty osad powstający w próbie jodoformowej?", 
+            back: "Jodoform, czyli trijodometan (CHI<sub>3</sub>)." 
+        },
+        { 
+            front: "Czy etanal da pozytywny wynik próby jodoformowej?", 
+            back: "Tak, ponieważ zawiera grupę metylową połączoną z grupą karbonylową (CH<sub>3</sub>-CHO)." 
+        },
+        { 
+            front: "Reakcji jakiego typu ulegają aldehydy i ketony podczas przyłączania cząsteczki wodoru (H<sub>2</sub>)?", 
+            back: "Reakcji addycji połączonej z redukcją." 
+        },
+        { 
+            front: "Co powstaje w wyniku redukcji aldehydów za pomocą wodoru w obecności katalizatora?", 
+            back: "Alkohole pierwszorzędowe (1°)." 
+        },
+        { 
+            front: "Co powstaje w wyniku redukcji ketonów za pomocą wodoru w obecności katalizatora?", 
+            back: "Alkohole drugorzędowe (2°)." 
+        },
+        { 
+            front: "Czym jest reakcja polimeryzacji dla związków karbonylowych i co jej ulega?", 
+            back: "Łączeniem się ze sobą monomerów; ulegają jej tylko najprostsze aldehydy, np. metanal (ketony nie)." 
+        },
+        { 
+            front: "Jaki produkt powstaje w wyniku polimeryzacji formaldehydu?", 
+            back: "Poliformaldehyd (wytrzymały termicznie polimer)." 
+        },
+        { 
+            front: "Z czym reaguje metanal w procesie polikondensacji, by utworzyć żywice?", 
+            back: "Z fenolem." 
+        },
+        { 
+            front: "Co odróżnia polikondensację (charakterystyczną dla aldehydów) od zwykłej polimeryzacji?", 
+            back: "Powstaje w niej nie tylko wielkocząsteczkowy polikondensat, ale również produkt uboczny o małej masie (np. woda H<sub>2</sub>O)." 
+        },
+        { 
+            front: "Jak nazywa się wielkocząsteczkowy produkt reakcji metanalu z fenolem?", 
+            back: "Żywica fenolowo-formaldehydowa (bakelit)." 
+        },
+        { 
+            front: "Dlaczego aldehydy łatwo się utleniają w porównaniu do ketonów?", 
+            back: "Ponieważ grupa karbonylowa w aldehydach łączy się z atomem wodoru, łatwym do \"oderwania\" (utlenienia wiązania C-H)." 
+        },
+        { 
+            front: "Zapisz wzór grupowy butanalu.", 
+            back: "CH<sub>3</sub>-CH<sub>2</sub>-CH<sub>2</sub>-CHO." 
+        },
+        { 
+            front: "Zapisz wzór grupowy propan-2-onu (acetonu).", 
+            back: "CH<sub>3</sub>-CO-CH<sub>3</sub>." 
+        },
+        { 
+            front: "Do utleniania na skalę przemysłową metanolu używa się powietrza oraz...", 
+            back: "Odpowiedniego katalizatora w podwyższonej temperaturze (wynikiem jest formaldehyd)." 
+        },
+        { 
+            front: "Który z tych związków rozpuszcza lakiery i jest aktywnym składnikiem zmywaczy do paznokci: metanal czy aceton?", 
+            back: "Aceton (propan-2-on)." 
+        },
+        { 
+            front: "Jak nazywa się aldehyd będący naturalnym składnikiem olejku pozyskiwanego z kory cynamonowca?", 
+            back: "Aldehyd cynamonowy." 
+        },
+        { 
+            front: "Jaki znany keton cykliczny, występujący w preparatach rozgrzewających (leczenie przeziębień), omawia podstawa programowa?", 
+            back: "Kamfora." 
+        },
+        { 
+            front: "Oprócz metyloketonów, jakie alkohole dają wynik pozytywny w próbie jodoformowej?", 
+            back: "Alkohole drugorzędowe zawierające grupę metylową przy atomie węgla z grupą hydroksylową (np. propan-2-ol) oraz etanol." 
+        },
+        { 
+            front: "Czy kwas karboksylowy to bezpośredni produkt próby Trommera i Tollensa przeprowadzanych we fiolce testowej?", 
+            back: "Nie, produktem jest sól kwasu karboksylowego, ponieważ reakcje te zachodzą w środowisku zasadowym." 
+        },
+        { 
+            front: "Jakie jony odpowiadają za zasadowe środowisko w próbie Tollensa i Trommera?", 
+            back: "Aniony wodorotlenkowe (OH<sup>-</sup>)." 
+        },
+        { 
+            front: "Do czego wykorzystuje się wodny roztwór aldehydu glutarowego?", 
+            back: "Ze względu na właściwości grzybo- i bakteriobójcze, służy do dezynfekcji narzędzi medycznych w szpitalach." 
+        },
+        { 
+            front: "Który związek chemiczny posiada hybrydyzację węgla sp2 w grupie funkcyjnej: propanal, propanol czy propan?", 
+            back: "Propanal (węgiel w grupie karbonylowej >C=O ma hybrydyzację sp<sup>2</sup>)." 
+        },
+        { 
+            front: "Jak się nazywa aldehyd, w którym węgiel grupy aldehydowej połączony jest bezpośrednio z pierścieniem benzenowym?", 
+            back: "Benzaldehyd (benzenokarboaldehyd)." 
+        },
+        { 
+            front: "W jakiej reakcji etanal ulega redukcji?", 
+            back: "W reakcji addycji wodoru (katalizatorem np. nikiel, platyna), dając w produkcie etanol." 
         }
     ]
 };

@@ -1,210 +1,196 @@
-// Dział XVI. Estry i Tłuszcze (Indeks 16 na liście)
-appData[16] = {
+// Dział XVI. Kwasy karboksylowe (Indeks 15 na liście)
+appData[15] = {
     notatki: `
     <div class="notes-wrapper">
-        <h2 class="notes-main-title">📚 KOMPENDIUM MATURALNE: ESTRY I TŁUSZCZE</h2>
+        <h2 class="notes-main-title">📚 KOMPENDIUM MATURALNE: KWASY KARBOKSYLOWE</h2>
 
         <!-- SEKCJA 1 -->
         <div class="note-section">
-            <h3>1. ESTRY 🧪 - Budowa i Wzór Ogólny</h3>
-            <p><strong>Estry</strong> to pochodne kwasów karboksylowych (lub tlenowych kwasów nieorganicznych), w których grupa –OH została zastąpiona grupą –OR (gdzie R to grupa alkilowa lub arylowa pochodząca od alkoholu/fenolu).</p>
-            <ul class="note-list">
-                <li><strong>Wzór ogólny estrów kwasów karboksylowych:</strong> R<sub>1</sub>–COO–R<sub>2</sub>.</li>
-                <li><strong>R<sub>1</sub>:</strong> atom wodoru (w estrach kwasu mrówkowego) lub grupa węglowodorowa pochodząca od kwasu karboksylowego.</li>
-                <li><strong>R<sub>2</sub>:</strong> grupa węglowodorowa (alkilowa lub arylowa) pochodząca od alkoholu lub fenolu.</li>
-                <li><strong>Grupa funkcyjna (estrowa):</strong> –COO–.</li>
-            </ul>
+            <h3>1. Wymagania Podstawy Programowej (Dział XVI)</h3>
+            <p>Zgodnie z podstawą programową uczeń (maturzysta) powinien umieć:</p>
+            <ol class="note-list">
+                <li>Wskazywać grupę karboksylową i resztę kwasową we wzorach kwasów karboksylowych (alifatycznych i aromatycznych).</li>
+                <li>Pisać równania reakcji otrzymywania kwasów karboksylowych (m.in. z alkoholi, aldehydów).</li>
+                <li>Pisać równania dysocjacji elektrolitycznej rozpuszczalnych kwasów i nazywać powstające jony.</li>
+                <li>Opisywać właściwości chemiczne kwasów na podstawie reakcji tworzenia: soli, estrów, amidów (reakcje z metalami, tlenkami, wodorotlenkami i solami słabszych kwasów).</li>
+                <li>Opisywać czynniki wpływające na moc kwasów (długość łańcucha, obecność polarnych podstawników).</li>
+                <li>Porównywać moc kwasów na podstawie wyników doświadczeń (reakcje wypierania z soli).</li>
+                <li>Wyszukiwać i prezentować informacje o budowie i zastosowaniach hydroksykwasów (tworzenie laktydów, poliestrów, laktonów).</li>
+                <li>Wyszukiwać informacje o procesie usuwania brudu oraz zaznaczać fragmenty hydrofilowe i hydrofobowe w substancjach powierzchniowo czynnych (SPC).</li>
+            </ol>
         </div>
 
         <!-- SEKCJA 2 -->
         <div class="note-section">
-            <h3>2. Nazewnictwo Estrów</h3>
-            <p>Nazwy systematyczne estrów składają się z dwóch członów:</p>
-            <ol class="note-list">
-                <li>Od nazwy <strong>kwasu</strong> (z końcówką <em>-an</em>), np. etanian, propanian.</li>
-                <li>Od nazwy <strong>alkoholu</strong> (nazwa grupy alkilowej w dopełniaczu), np. metylu, etylu.</li>
-            </ol>
+            <h3>2. Budowa, Klasyfikacja i Nazewnictwo</h3>
+            <p>Kwasy karboksylowe to pochodne węglowodorów zawierające w cząsteczce co najmniej jedną <strong>grupę karboksylową (–COOH)</strong>.</p>
+            <ul class="note-list">
+                <li><strong>Budowa grupy:</strong> Stanowi połączenie grupy karbonylowej (–C=O) oraz grupy hydroksylowej (–OH).</li>
+                <li><strong>Wzór ogólny kwasów nasyconych monokarboksylowych:</strong> C<sub>n</sub>H<sub>2n+1</sub>COOH.</li>
+                <li><strong>Reszta kwasowa:</strong> Fragment cząsteczki pozostający po odszczepieniu kationu wodoru z grupy –COOH (np. CH<sub>3</sub>COO<sup>&minus;</sup> - reszta octanowa/etanianowa).</li>
+            </ul>
 
             <div class="table-responsive">
                 <table class="note-table">
                     <thead>
                         <tr>
-                            <th>Kwas karboksylowy</th>
-                            <th>Alkohol</th>
-                            <th>Wzór estru</th>
+                            <th>Wzór sumaryczny / półstrukturalny</th>
                             <th>Nazwa systematyczna</th>
                             <th>Nazwa zwyczajowa</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>kwas metanowy</td>
-                            <td>metanol</td>
-                            <td>HCOOCH<sub>3</sub></td>
-                            <td>metanian metylu</td>
-                            <td>mrówczan metylu</td>
+                            <td>HCOOH</td>
+                            <td>Kwas metanowy</td>
+                            <td>Kwas mrówkowy</td>
                         </tr>
                         <tr>
-                            <td>kwas etanowy</td>
-                            <td>etanol</td>
-                            <td>CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub></td>
-                            <td>etanian etylu</td>
-                            <td>octan etylu</td>
+                            <td>CH<sub>3</sub>COOH</td>
+                            <td>Kwas etanowy</td>
+                            <td>Kwas octowy</td>
                         </tr>
                         <tr>
-                            <td>kwas propanowy</td>
-                            <td>propan-1-ol</td>
-                            <td>CH<sub>3</sub>CH<sub>2</sub>COOCH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub></td>
-                            <td>propanian propylu</td>
-                            <td>propionian propylu</td>
+                            <td>CH<sub>3</sub>CH<sub>2</sub>COOH</td>
+                            <td>Kwas propanowy</td>
+                            <td>Kwas propionowy</td>
                         </tr>
                         <tr>
-                            <td>kwas butanowy</td>
-                            <td>butan-1-ol</td>
-                            <td>CH<sub>3</sub>(CH<sub>2</sub>)<sub>2</sub>COOCH<sub>2</sub>(CH<sub>2</sub>)<sub>2</sub>CH<sub>3</sub></td>
-                            <td>butanian butylu</td>
-                            <td>maślan butylu</td>
+                            <td>CH<sub>3</sub>(CH<sub>2</sub>)<sub>2</sub>COOH</td>
+                            <td>Kwas butanowy</td>
+                            <td>Kwas masłowy</td>
                         </tr>
                         <tr>
-                            <td>kwas benzoesowy</td>
-                            <td>etanol</td>
-                            <td>C<sub>6</sub>H<sub>5</sub>COOCH<sub>2</sub>CH<sub>3</sub></td>
-                            <td>benzoesan etylu</td>
-                            <td>-</td>
+                            <td>CH<sub>3</sub>(CH<sub>2</sub>)<sub>4</sub>COOH</td>
+                            <td>Kwas heksanowy</td>
+                            <td>Kwas kapronowy</td>
+                        </tr>
+                        <tr>
+                            <td>C<sub>6</sub>H<sub>5</sub>COOH</td>
+                            <td>Kwas benzenokarboksylowy</td>
+                            <td>Kwas benzoesowy</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <h4>Izomeria w kwasach karboksylowych</h4>
+            <ul class="note-list">
+                <li><strong>Szkieletowa:</strong> Zmiana rozgałęzienia łańcucha (np. kwas pentanowy i kwas 2-metylobutanowy).</li>
+                <li><strong>Położenia podstawnika:</strong> Np. kwas 2-chloropropanowy i kwas 3-chloropropanowy.</li>
+                <li><strong>Funkcyjna:</strong> Kwasy karboksylowe są izomerami funkcyjnymi <strong>estrów</strong>.</li>
+                <li><strong>Geometria cis/trans (Z/E):</strong> Występuje w nienasyconych kwasach z wiązaniem podwójnym (np. kwas maleinowy – <em>cis</em>, kwas fumarowy – <em>trans</em>).</li>
+            </ul>
         </div>
 
         <!-- SEKCJA 3 -->
         <div class="note-section">
-            <h3>3. Izomeria Estrów</h3>
-            <p>Podobnie jak inne związki organiczne, estry tworzą izomery:</p>
+            <h3>3. Właściwości Fizyczne i Dysocjacja Elektrolityczna</h3>
             <ul class="note-list">
-                <li><strong>Izomeria szkieletowa:</strong> Różnice w budowie szkieletu węglowego (np. rozgałęzienia w łańcuchu reszty kwasowej lub alkoholowej).</li>
-                <li><strong>Izomeria położenia:</strong> Różnica w położeniu grupy estrowej w łańcuchu (np. mrówczan propylu i octan etylu to izomery położenia o wzorze sumarycznym C<sub>4</sub>H<sub>8</sub>O<sub>2</sub>).</li>
-                <li><strong>Izomeria funkcyjna:</strong> Estry są izomerami funkcyjnymi kwasów karboksylowych o tym samym wzorze sumarycznym (np. etanian metylu CH<sub>3</sub>COOCH<sub>3</sub> i kwas propanowy CH<sub>3</sub>CH<sub>2</sub>COOH).</li>
+                <li><strong>Asocjacja cząsteczek:</strong> Kwasy karboksylowe łączą się ze sobą wiązaniami wodorowymi w tzw. dimery. Skutkuje to bardzo <strong>wysokimi temperaturami wrzenia i topnienia</strong> (np. 100% kwas octowy krzepnie już w temp. 16,6&deg;C przypominając lód – stąd nazwa "lodowaty kwas octowy").</li>
+                <li><strong>Rozpuszczalność:</strong> Niższe kwasy (do 3 atomów węgla) doskonale mieszają się z wodą. Wraz z wydłużaniem łańcucha węglowego (części hydrofobowej) rozpuszczalność i lotność drastycznie spadają.</li>
             </ul>
+
+            <h4>Dysocjacja</h4>
+            <p>Silna polaryzacja wiązania C=O powoduje przesunięcie chmury elektronowej z wiązania O–H, co ułatwia odłączenie kationu H<sup>+</sup>. Kwasy (poza mrówkowym) zaliczamy do <strong>słabych elektrolitów</strong>.</p>
+            <div class="chem-eq">
+                CH<sub>3</sub>COOH + H<sub>2</sub>O <span class="chem-arrow"><span class="arrow-sym">&rightleftharpoons;</span></span> CH<sub>3</sub>COO<sup>&minus;</sup> + H<sub>3</sub>O<sup>+</sup>
+            </div>
+            <p>Wodne roztwory niższych kwasów wykazują odczyn <strong>kwasowy</strong> (pH < 7).</p>
         </div>
 
         <!-- SEKCJA 4 -->
         <div class="note-section">
-            <h3>4. Otrzymywanie: Reakcja Estryfikacji</h3>
-            <p>Reakcja między kwasem karboksylowym a alkoholem przebiegająca w obecności stężonego kwasu siarkowego(VI) jako katalizatora.</p>
-            <div class="chem-eq">
-                R<sub>1</sub>COOH + R<sub>2</sub>OH <span class="chem-arrow"><span class="cond-top">H<sub>2</sub>SO<sub>4</sub></span><span class="arrow-sym">&rightleftharpoons;</span></span> R<sub>1</sub>COOR<sub>2</sub> + H<sub>2</sub>O
-            </div>
+            <h3>4. Właściwości Chemiczne – Reakcje z Podstawy Programowej</h3>
+            
+            <h4>A. Otrzymywanie soli kwasów karboksylowych</h4>
+            <p>Kwasy organiczne, podobnie jak nieorganiczne, reagują z metalami aktywnymi, ich tlenkami oraz zasadami:</p>
             <ul class="note-list">
-                <li><strong>Mechanizm (Dowód z izotopami):</strong> Badania z izotopem tlenu <sup>18</sup>O wykazały, że atom tlenu w cząsteczce wody pochodzi z grupy –OH kwasu karboksylowego, a w cząsteczce estru zostaje atom tlenu pochodzący od alkoholu.</li>
-                <li><strong>Rola stężonego H<sub>2</sub>SO<sub>4</sub>:</strong> Pełni podwójną funkcję – jest katalizatorem (dostarcza jonów H<sup>+</sup>) oraz środkiem higroskopijnym (wiąże powstającą wodę, co zgodnie z regułą przekory przesuwa stan równowagi w prawo, zwiększając wydajność).</li>
+                <li><strong>Z metalem aktywnym (np. magnezem):</strong> Wydziela się bezbarwny, palny gaz (wodór). Powstaje egzotermiczny efekt cieplny.</li>
             </ul>
+            <div class="chem-eq">
+                2 CH<sub>3</sub>COOH + Mg <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> (CH<sub>3</sub>COO)<sub>2</sub>Mg + H<sub>2</sub>&uarr;
+            </div>
+
+            <ul class="note-list">
+                <li><strong>Z tlenkiem metalu (np. roztwarzanie czarnego CuO na gorąco):</strong> Roztwór zmienia barwę na niebieską (od jonów Cu<sup>2+</sup>).</li>
+            </ul>
+            <div class="chem-eq">
+                2 CH<sub>3</sub>COOH + CuO <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> (CH<sub>3</sub>COO)<sub>2</sub>Cu + H<sub>2</sub>O
+            </div>
+
+            <ul class="note-list">
+                <li><strong>Z wodorotlenkiem (zobojętnianie):</strong> Obserwujemy odbarwienie malinowego roztworu fenoloftaleiny w NaOH.</li>
+            </ul>
+            <div class="chem-eq">
+                CH<sub>3</sub>COOH + NaOH <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> CH<sub>3</sub>COONa + H<sub>2</sub>O
+            </div>
+
+            <h4>B. Kwas mrówkowy (metanowy) jako wyjątek (WŁAŚCIWOŚCI REDUKUJĄCE)</h4>
+            <p>Kwas metanowy (HCOOH) posiada w swojej strukturze nie tylko grupę karboksylową, ale również <strong>ugrupowanie aldehydowe (H–C=O)</strong>. Z tego powodu jako jedyny kwas karboksylowy odbarwia roztwór KMnO<sub>4</sub>:</p>
+            <div class="chem-eq">
+                5 HCOOH + 2 KMnO<sub>4</sub> + 3 H<sub>2</sub>SO<sub>4</sub> <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> 5 CO<sub>2</sub>&uarr; + 2 MnSO<sub>4</sub> + K<sub>2</sub>SO<sub>4</sub> + 8 H<sub>2</sub>O
+            </div>
+
+            <h4>C. Reakcje dekarboksylacji</h4>
+            <p>Grupa karboksylowa zostaje usunięta z cząsteczki w postaci gazowego CO<sub>2</sub> (tlenku węgla(IV)):</p>
+            <div class="chem-eq">
+                R–COOH <span class="chem-arrow"><span class="cond-top">T</span><span class="arrow-sym">&rarr;</span></span> R–H + CO<sub>2</sub>&uarr;
+            </div>
         </div>
 
         <!-- SEKCJA 5 -->
         <div class="note-section">
-            <h3>5. Właściwości, Zastosowanie i Hydroliza Estrów</h3>
+            <h3>5. Moc Kwasów Karboksylowych (Szczególnie ważne!)</h3>
+            <p>Zdolność do oddawania protonu (moc kwasu) zależy od podstawników obecnych w łańcuchu węglowym:</p>
             <ul class="note-list">
-                <li><strong>Właściwości fizyczne:</strong> Niższe estry to na ogół bezbarwne, lotne ciecze o przyjemnym owocowym zapachu. Słabo rozpuszczają się w wodzie (ze względu na brak zdolności tworzenia wiązań wodorowych między własnymi cząsteczkami), ale są świetnymi rozpuszczalnikami organicznymi.</li>
-                <li><strong>Zastosowanie:</strong> Przemysł spożywczy (aromaty, esencje smakowe), przemysł kosmetyczny (perfumy), rozpuszczalniki farb i lakierów.</li>
-                <li><strong>Polikondensacja:</strong> Estryfikacja związków wielofunkcyjnych (np. kwasu tereftalowego i etano-1,2-diolu) prowadzi do powstania sztucznych tworzyw – poliestrów (np. PET używanego do produkcji butelek i włókien).</li>
+                <li><strong>Długość łańcucha węglowego:</strong> Im dłuższy łańcuch alkilowy (część niepolarna/elektronodonorowa), tym silniej wtłacza on elektrony w stronę grupy –COOH, wzmacniając wiązanie O–H. Wniosek: <strong>Wydłużanie łańcucha zmniejsza moc kwasu.</strong> (HCOOH jest najmocniejszy ze wszystkich alifatycznych nasyconych jednokarboksylowych).</li>
+                <li><strong>Podstawniki elektronoakceptorowe (EA):</strong> Atomy o wysokiej elektroujemności (np. F, Cl, NO<sub>2</sub>) odciągają elektrony, osłabiając wiązanie O–H i silnie ułatwiając dysocjację H<sup>+</sup>.</li>
             </ul>
 
-            <h4>Reakcje Chemiczne: Hydroliza</h4>
-            <p>Estryfikacja jest procesem odwracalnym, dlatego estry ulegają reakcji rozkładu pod wpływem wody – hydrolizie.</p>
-            
-            <p><strong>1. Hydroliza kwasowa (odwracalna):</strong> Estry reagują z wodą (w obecności jonów H<sup>+</sup>) odtwarzając kwas karboksylowy i alkohol.</p>
-            <div class="chem-eq">
-                CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + H<sub>2</sub>O <span class="chem-arrow"><span class="cond-top">H<sup>+</sup></span><span class="arrow-sym">&rightleftharpoons;</span></span> CH<sub>3</sub>COOH + CH<sub>3</sub>CH<sub>2</sub>OH
+            <div class="note-alert danger">
+                🔥 <strong>ZŁOTE REGUŁY MOCY KWASÓW Z PODSTAWNIKAMI EA:</strong> Kwas jest tym mocniejszy im:
+                <br>1. Podstawnik (halogen) ma wyższą elektroujemność (Kwas fluorooctowy > Kwas chlorooctowy).
+                <br>2. Podstawników wyciągających elektrony jest więcej (Kwas dichloroctowy > Kwas monochlorooctowy).
+                <br>3. Podstawnik znajduje się <strong>bliżej grupy –COOH</strong> (Kwas 2-chlorobutaniowy > Kwas 3-chlorobutanowy).
             </div>
 
-            <p><strong>2. Hydroliza zasadowa (nieodwracalna - Zmydlanie):</strong> Ogrzewanie estru w obecności mocnej zasady (np. NaOH). Powstaje alkohol oraz sól kwasu karboksylowego. Ponieważ kwas zostaje zneutralizowany do soli, reakcja przebiega w jedną stronę z niemal 100% wydajnością.</p>
+            <h4>Porównywanie mocy kwasów (wypieranie z soli)</h4>
+            <p>Mocniejszy kwas wypiera słabszy kwas z jego soli. Dowody doświadczalne:</p>
             <div class="chem-eq">
-                CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + NaOH <span class="chem-arrow"><span class="cond-top">T</span><span class="arrow-sym">&rarr;</span></span> CH<sub>3</sub>COONa + CH<sub>3</sub>CH<sub>2</sub>OH
+                Na<sub>2</sub>CO<sub>3</sub> + 2 CH<sub>3</sub>COOH <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> 2 CH<sub>3</sub>COONa + H<sub>2</sub>O + CO<sub>2</sub>&uarr;
+            </div>
+            <div class="chem-obs">
+                🔎 Kwas octowy uwalnia gazowy CO<sub>2</sub> z węglanu sodu (zawartość pieni się). <strong>Wniosek: Kwas octowy jest mocniejszy od węglowego.</strong>
+            </div>
+            <div class="chem-eq">
+                2 CH<sub>3</sub>COONa + H<sub>2</sub>SO<sub>4</sub> <span class="chem-arrow"><span class="arrow-sym">&rarr;</span></span> Na<sub>2</sub>SO<sub>4</sub> + 2 CH<sub>3</sub>COOH
+            </div>
+            <div class="chem-obs">
+                🔎 Kwas siarkowy(VI) uwalnia octowy zapach z octanu sodu. <strong>Wniosek: H<sub>2</sub>SO<sub>4</sub> jest mocniejszy od kwasu octowego.</strong>
             </div>
         </div>
 
         <!-- SEKCJA 6 -->
         <div class="note-section">
-            <h3>6. TŁUSZCZE (LIPIDY) 🥑</h3>
-            <p><strong>Tłuszcze (glicerydy)</strong> to estry propano-1,2,3-triolu (glicerolu) i wyższych kwasów karboksylowych (zwanych kwasami tłuszczowymi).</p>
-            <ul class="note-list">
-                <li><strong>Tłuszcze proste:</strong> Wszystkie trzy reszty kwasowe w cząsteczce są identyczne.</li>
-                <li><strong>Tłuszcze mieszane:</strong> Glicerol jest zestryfikowany różnymi kwasami tłuszczowymi.</li>
-            </ul>
-
-            <h4>Podział i Klasyfikacja</h4>
-            <div class="table-responsive">
-                <table class="note-table">
-                    <thead>
-                        <tr>
-                            <th>Kryterium</th>
-                            <th>Tłuszcze Stałe 🧈</th>
-                            <th>Tłuszcze Ciekłe 🌻</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Pochodzenie</strong></td>
-                            <td>Głównie zwierzęce (masło, smalec, łój)</td>
-                            <td>Głównie roślinne (oleje, oliwa) oraz tran (zwierzęcy wyjątek)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Budowa chemiczna</strong></td>
-                            <td>Przeważają reszty wyższych kwasów <strong>nasyconych</strong> (np. kwas stearynowy, palmitynowy)</td>
-                            <td>Przeważają reszty kwasów <strong>nienasyconych</strong> (zawierających wiązania podwójne C=C, np. kwas oleinowy, linolowy)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Rozpuszczalność</strong></td>
-                            <td>Nierozpuszczalne w wodzie. Dobrze rozpuszczalne w rozpuszczalnikach niepolarnych (np. benzyna).</td>
-                            <td>Nierozpuszczalne w wodzie. Dobrze rozpuszczalne w rozpuszczalnikach niepolarnych.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="note-alert">
-                💧 <strong>Ważne pojęcie - Emulsja:</strong> Po intensywnym wstrząśnięciu tłuszczu z wodą powstaje nietrwała mieszanina drobnych kropel tłuszczu w wodzie (lub odwrotnie), zwana emulsją. Aby była trwała, dodaje się emulgatory (np. lecytynę, mydło).
-            </div>
-        </div>
-
-        <!-- SEKCJA 7 -->
-        <div class="note-section">
-            <h3>7. Właściwości Chemiczne Tłuszczów i Kluczowe Doświadczenia</h3>
+            <h3>6. Wyższe Kwasy Karboksylowe (Kwasy Tłuszczowe) i Środki Piorące</h3>
+            <p>Kwasy o długich łańcuchach (ponad kilkanaście atomów C). Praktycznie <strong>nie dysocjują</strong> i <strong>nie reagują z metalami ani ich tlenkami</strong>. Reagują jedynie ze stężonymi wodorotlenkami.</p>
             
-            <p><strong>1. Wykrywanie wiązań nienasyconych (Woda Bromowa / KMnO<sub>4</sub>)</strong></p>
             <ul class="note-list">
-                <li><strong>Reakcja addycji:</strong> Tłuszcze ciekłe (zawierające wiązania wielokrotne) przyłączają fluorowce do wiązań &pi;.</li>
-                <li><strong>Doświadczenie:</strong> Po dodaniu wody bromowej do probówki z olejem roślinnym, woda bromowa <strong>odbarwia się</strong>. Smalec nie odbarwia wody bromowej. To podstawowy sposób odróżnienia tłuszczów roślinnych od zwierzęcych (oraz nienasyconych od nasyconych).</li>
+                <li><strong>Nasycone (ciała stałe):</strong> Kwas palmitynowy (C<sub>15</sub>H<sub>31</sub>COOH) oraz stearynowy (C<sub>17</sub>H<sub>35</sub>COOH).</li>
+                <li><strong>Nienasycone (ciecze):</strong> Kwas oleinowy (C<sub>17</sub>H<sub>33</sub>COOH). Zawiera podwójne wiązanie (izomer <em>cis</em>). Odbarwia wodę bromową i roztwór KMnO<sub>4</sub>, co pozwala odróżnić go w laboratorium od kwasów nasyconych. Uwodornienie (utwardzanie tłuszczu) przekształca go w kwas stearynowy.</li>
             </ul>
 
-            <p><strong>2. Utwardzanie tłuszczów (Uwodornienie)</strong></p>
-            <p>Addycja wodoru (H<sub>2</sub>) do nienasyconych tłuszczów ciekłych w obecności katalizatora (np. Ni). Ciekły tłuszcz staje się nasycony i zmienia stan skupienia na stały (produkcja margaryny).</p>
+            <h4>Mydła (Substancje Powierzchniowo Czynne)</h4>
+            <p>Mydła to sole wyższych kwasów karboksylowych i metali alkalicznych, otrzymywane w reakcji <strong>zmydlania</strong>:</p>
             <div class="chem-eq">
-                tłuszcz ciekły + H<sub>2</sub> <span class="chem-arrow"><span class="cond-top">katalizator</span><span class="arrow-sym">&rarr;</span></span> tłuszcz stały
+                C<sub>17</sub>H<sub>35</sub>COOH + NaOH <span class="chem-arrow"><span class="cond-top">T</span><span class="arrow-sym">&rarr;</span></span> C<sub>17</sub>H<sub>35</sub>COONa + H<sub>2</sub>O &nbsp; <em>(stearynian sodu - mydło stałe)</em>
             </div>
-
-            <p><strong>3. Zmydlanie tłuszczów (Hydroliza zasadowa)</strong></p>
-            <p>Ogrzewanie tłuszczu z wodorotlenkiem sodu (NaOH) lub potasu (KOH) prowadzi do powstania <strong>glicerolu</strong> oraz soli wyższych kwasów tłuszczowych, czyli <strong>mydeł</strong>. Reakcja jest nieodwracalna.</p>
-            <div class="chem-eq">
-                Tłuszcz + 3 NaOH <span class="chem-arrow"><span class="cond-top">T</span><span class="arrow-sym">&rarr;</span></span> Glicerol + 3 Mydło sodowe (np. stearynian sodu)
-            </div>
-
-            <p><strong>4. Jełczenie tłuszczów</strong></p>
-            <p>Naturalny proces psucia się tłuszczów pod wpływem czasu i warunków:</p>
+            
             <ul class="note-list">
-                <li><strong>Jełczenie utleniające:</strong> Utlenianie wiązań podwójnych w tłuszczach nienasyconych pod wpływem światła i tlenu – powstają aldehydy i ketony o brzydkim zapachu.</li>
-                <li><strong>Jełczenie hydrolityczne:</strong> Biochemiczna hydroliza katalizowana przez mikroorganizmy. Uwalniane są lotne kwasy tłuszczowe, np. kwas butanowy (masłowy) odpowiedzialny za zapach zjełczałego masła.</li>
-            </ul>
-        </div>
-
-        <!-- SEKCJA 8 -->
-        <div class="note-section">
-            <h3>🔎 Dodatek Klasyfikacyjny: Złożone Związki Lipidowe</h3>
-            <p>Oprócz klasycznych triglicerydów, do lipidów zalicza się także:</p>
-            <ul class="note-list">
-                <li><strong>Woski:</strong> Estry wyższych kwasów tłuszczowych i <em>wyższych alkoholi monohydroksylowych</em> (np. wosk pszczeli chroniący owoce przed wysychaniem).</li>
-                <li><strong>Fosfolipidy i Glikolipidy:</strong> Zawierają resztę kwasu fosforowego(V) lub fragment cukrowy. Posiadają hydrofobowy "ogon" (reszty kwasów) i hydrofilową "głowę". Tworzą struktury dwuwarstwowe będące podstawą błon komórkowych.</li>
-                <li><strong>Lipidy izoprenowe (steroidy i terpeny):</strong> Związki niezawierające wiązań estrowych, np. cholesterol. Mają zazwyczaj złożoną budowę pierścieniową.</li>
+                <li><strong>Budowa jonu mydła (amfifilowa):</strong> Posiada fragment <strong>hydrofobowy</strong> (długi niepolarny "ogon" węglowodorowy) oraz fragment <strong>hydrofilowy</strong> (polarna jonowa "główka" –COO<sup>&minus;</sup>).</li>
+                <li><strong>Usuwanie brudu:</strong> SPC obniżają napięcie powierzchniowe wody. Ogony hydrofobowe wnikają w drobinę brudu (tłuszczu), a hydrofilowe główki pozostają w wodzie, tworząc <strong>micele</strong> odrywające brud od tkaniny.</li>
+                <li><strong>Wpływ twardej wody:</strong> Jony Ca<sup>2+</sup> i Mg<sup>2+</sup> obecne w twardej wodzie reagują z mydłami, tworząc trudno rozpuszczalne sole wapniowe i magnezowe (biały osad, tzw. kłaczki), drastycznie obniżając zdolności piorące.</li>
             </ul>
         </div>
     </div>
@@ -212,254 +198,336 @@ appData[16] = {
 
     notatkiActive: `
     <div class="notes-wrapper">
-        <h2 class="notes-main-title">🧠 ACTIVE RECALL: ESTRY I TŁUSZCZE</h2>
+        <h2 class="notes-main-title">🧠 ACTIVE RECALL: KWASY KARBOKSYLOWE</h2>
         <p style="text-align: center; color: #94a3b8; font-size: 13px; margin-bottom: 20px;">
             💡 <em>Klikaj na ciemne pola, aby odkryć ukryte słowa i produkty reakcji, oraz rozwijaj pytania, by sprawdzić swoją wiedzę!</em>
         </p>
 
         <div class="note-section">
-            <h3>1. Budowa i Otrzymywanie Estrów</h3>
-            <p>Ogólny wzór grupy estrowej to <span class="recall-blank" onclick="toggleRecall(this)">–COO–</span>.</p>
-            <p>Reakcja otrzymywania estrów z kwasu i alkoholu to <span class="recall-blank" onclick="toggleRecall(this)">estryfikacja</span>, a jej katalizatorem jest zazwyczaj stężony <span class="recall-blank" onclick="toggleRecall(this)">kwas siarkowy(VI) (H<sub>2</sub>SO<sub>4</sub>)</span>.</p>
+            <h3>1. Nazewnictwo i Wzory</h3>
+            <p>Kwas masłowy (zwyczajowa) to systematycznie kwas <span class="recall-blank" onclick="toggleRecall(this)">butanowy</span>.</p>
+            <p>Wzór kwasu szczawiowego (etanodiowego) to <span class="recall-blank" onclick="toggleRecall(this)">HOOC–COOH</span>.</p>
+            <details class="recall-details">
+                <summary>Jakie izomery (Z czy E) tworzy naturalny kwas oleinowy i jak to wpływa na jego budowę przestrzenną?</summary>
+                <p>Tworzy izomery <strong>cis (Z)</strong>, przez co łańcuch jest mocno zgięty wokół wiązania podwójnego, utrudniając upakowanie cząsteczek. Skutkuje to dużo niższą temperaturą topnienia (kwas oleinowy jest cieczą).</p>
+            </details>
+        </div>
+
+        <div class="note-section">
+            <h3>2. Właściwości i Reakcje</h3>
+            <p>Reakcja kwasu etanowego z magnezem tworzy: <span class="recall-blank" onclick="toggleRecall(this)">etanian (octan) magnezu + wodór (H<sub>2</sub>)</span>.</p>
+            <p>Zjawisko, dzięki któremu kwasy wrą w tak wysokich temperaturach, to <span class="recall-blank" onclick="toggleRecall(this)">asocjacja (tworzenie dimerów wiązaniami wodorowymi)</span>.</p>
             
             <details class="recall-details">
-                <summary>Badania z użyciem izotopu <sup>18</sup>O udowodniły ważny fakt dotyczący mechanizmu estryfikacji. Jaki?</summary>
-                <p>Dowiodły, że atom tlenu tworzący cząsteczkę uboczną wody pochodzi z <strong>grupy hydroksylowej (–OH) kwasu karboksylowego</strong>, a nie z alkoholu. Tlen łączący resztę kwasową z alkilową w estrz pochodzi z alkoholu.</p>
-            </details>
-        </div>
-
-        <div class="note-section">
-            <h3>2. Właściwości i Izomeria</h3>
-            <p>Kwas masłowy (butanowy) i octan etylu mają taki sam wzór sumaryczny C<sub>4</sub>H<sub>8</sub>O<sub>2</sub>, więc są względem siebie izomerami <span class="recall-blank" onclick="toggleRecall(this)">funkcyjnymi</span>.</p>
-            <p>Niższe estry słabo rozpuszczają się w wodzie, ponieważ w przeciwieństwie do alkoholi czy kwasów <span class="recall-blank" onclick="toggleRecall(this)">nie tworzą wiązań wodorowych</span> między własnymi cząsteczkami.</p>
-            <p>Hydroliza kwasowa estrów jest procesem <span class="recall-blank" onclick="toggleRecall(this)">odwracalnym</span>, natomiast hydroliza zasadowa (np. z użyciem NaOH) jest procesem <span class="recall-blank" onclick="toggleRecall(this)">nieodwracalnym (powstaje sól)</span>.</p>
-        </div>
-
-        <div class="note-section">
-            <h3>3. Tłuszcze: Budowa i Właściwości</h3>
-            <p>Tłuszcze (glicerydy) to estry wyższych kwasów karboksylowych oraz alkoholu trihydroksylowego o nazwie <span class="recall-blank" onclick="toggleRecall(this)">glicerol (propano-1,2,3-triol)</span>.</p>
-            <p>Tłuszcze zwierzęce mają zazwyczaj stały stan skupienia, ponieważ przeważają w nich reszty kwasów <span class="recall-blank" onclick="toggleRecall(this)">nasyconych</span> (np. kwasu stearynowego).</p>
-            
-            <details class="recall-details">
-                <summary>Wykonano doświadczenie: do dwóch probówek (olej rzepakowy i stopiony smalec) dodano wody bromowej. Co zaobserwowano i dlaczego?</summary>
-                <p>W probówce z olejem rzepakowym woda bromowa <strong>odbarwiła się</strong>, co świadczy o obecności <strong>wiązań wielokrotnych (reszty kwasów nienasyconych)</strong> i zajściu reakcji addycji. W probówce ze smalcem (tłuszcz nasycony) zabarwienie brunatne pozostało.</p>
+                <summary>Jak w warunkach laboratoryjnych odróżnić kwas mrówkowy od kwasu octowego?</summary>
+                <p>Należy dodać zakwaszonego roztworu <strong>KMnO<sub>4</sub></strong>. Kwas mrówkowy wykazuje właściwości redukujące (ugrupowanie aldehydowe) i spowoduje <strong>odbarwienie fioletowego roztworu</strong> manganianu (utleni się do CO<sub>2</sub>). Kwas octowy na niego nie zareaguje.</p>
             </details>
             <details class="recall-details">
-                <summary>Na czym polega proces utwardzania tłuszczów i do czego służy w przemyśle?</summary>
-                <p>Jest to katalityczne <strong>uwodornienie</strong> (addycja H<sub>2</sub> do wiązań &pi;) ciekłych tłuszczów roślinnych. Przekształca je w tłuszcze nasycone o stałym stanie skupienia. Wykorzystuje się to w produkcji <strong>margaryny</strong>.</p>
+                <summary>Dlaczego wodny roztwór octanu sodu wykazuje odczyn silnie zasadowy?</summary>
+                <p>Ulega <strong>hydrolizie anionowej</strong> (CH<sub>3</sub>COO<sup>&minus;</sup> + H<sub>2</sub>O &rightleftharpoons; CH<sub>3</sub>COOH + OH<sup>&minus;</sup>). Sól pochodzi od słabego kwasu organicznego i mocnej zasady sodowej.</p>
             </details>
         </div>
 
         <div class="note-section">
-            <h3>4. Inne Lipidy</h3>
-            <p>Mieszanina wody i oleju po wstrząśnięciu tworzy nietrwałą zawiesinę kropelek jednej cieczy w drugiej. Zjawisko to nazywamy <span class="recall-blank" onclick="toggleRecall(this)">emulsją</span>.</p>
-            <p>Woski różnią się od klasycznych tłuszczów tym, że są estrami wyższych kwasów tłuszczowych i alkoholi <span class="recall-blank" onclick="toggleRecall(this)">monohydroksylowych</span> (a nie trihydroksylowego glicerolu).</p>
+            <h3>3. Moc Kwasów</h3>
+            <p>Kwas chlorooctowy jest <span class="recall-blank" onclick="toggleRecall(this)">mocniejszy</span> niż kwas octowy ze względu na efekt elektronoakceptorowy atomu chloru.</p>
+            <p>Uszereguj wg wzrastającej mocy: kw. propanowy, kw. metanowy, kw. etanowy.</p>
+            <p>Kolejność: <span class="recall-blank" onclick="toggleRecall(this)">kw. propanowy &lt; kw. etanowy &lt; kw. metanowy</span>.</p>
+        </div>
+
+        <div class="note-section">
+            <h3>4. Środki Czystości</h3>
+            <details class="recall-details">
+                <summary>Jak doświadczalnie odróżnić stały kwas stearynowy od kwasu oleinowego?</summary>
+                <p>Użyć <strong>wody bromowej</strong> (brązowej/brunatnej). Nasycony kwas stearynowy nie przereaguje, natomiast nienasycony kwas oleinowy (posiada wiązanie podwójne) <strong>odbarwi roztwór</strong> ulegając addycji bromu.</p>
+            </details>
+            <p>Podczas prania ujemnie naładowane główki jonu stearynianowego kierują się w stronę <span class="recall-blank" onclick="toggleRecall(this)">polarnej wody</span>, a węglowodorowe ogony wnikają w <span class="recall-blank" onclick="toggleRecall(this)">niepolarny brud (tłuszcz)</span>.</p>
         </div>
     </div>
     `,
 
-    zadania: "<h3>Zadania</h3><br>Miejsce na zadania obliczeniowe, równania reakcji estryfikacji, zmydlania tłuszczów i identyfikację izomerów na podstawie właściwości chemicznych...",
+    zadania: "<h3>Zadania</h3><br>Miejsce na zadania obliczeniowe i projektowanie syntez kwasów karboksylowych...",
 
     fiszki: [
         {
-            front: "Jak zdefiniowane są estry?",
-            back: "Są to pochodne kwasów karboksylowych, w których grupa -OH została zastąpiona grupą -OR (gdzie R to reszta alkilowa lub arylowa pochodząca od alkoholu)."
+            front: "Jak nazywa się grupa funkcyjna kwasów karboksylowych i z jakich dwóch grup się składa?",
+            back: "Grupa karboksylowa (-COOH). Składa się z grupy karbonylowej (-C=O) i grupy hydroksylowej (-OH)."
         },
         {
-            front: "Podaj ogólny wzór grupy estrowej.",
-            back: "Grupa estrowa to -COO-."
+            front: "Podaj wzór ogólny nasyconych alifatycznych kwasów monokarboksylowych.",
+            back: "C<sub>n</sub>H<sub>2n+1</sub>COOH, gdzie n to liczba naturalna (n &ge; 0)."
         },
         {
-            front: "Z jakich dwóch członów składa się systematyczna nazwa estru?",
-            back: "Od nazwy kwasu z końcówką -an (np. etanian) oraz nazwy reszty węglowodorowej alkoholu w dopełniaczu (np. etylu)."
+            front: "Jaki numer lokantu otrzymuje zawsze atom węgla wchodzący w skład grupy karboksylowej w nazewnictwie systematycznym IUPAC?",
+            back: "Lokant 1."
         },
         {
-            front: "Podaj nazwę systematyczną i zwyczajową estru o wzorze HCOOCH3.",
-            back: "Metanian metylu (nazwa systematyczna), mrówczan metylu (nazwa zwyczajowa)."
+            front: "Czym jest reszta kwasowa kwasu karboksylowego?",
+            back: "To fragment cząsteczki kwasu, który pozostaje po oderwaniu protonu (H<sup>+</sup>) z grupy karboksylowej."
         },
         {
-            front: "Napisz wzór półstrukturalny octanu etylu (etanianu etylu).",
-            back: "CH3COOCH2CH3"
+            front: "Podaj nazwę systematyczną i zwyczajową kwasu o wzorze HCOOH.",
+            back: "Kwas metanowy (nazwa systematyczna), kwas mrówkowy (nazwa zwyczajowa)."
         },
         {
-            front: "Jak nazywa się ester powstający z reakcji kwasu propanowego i propan-1-olu?",
-            back: "Propanian propylu (zwyczajowo: propionian propylu)."
+            front: "Podaj nazwę systematyczną i zwyczajową kwasu o wzorze CH<sub>3</sub>COOH.",
+            back: "Kwas etanowy (nazwa systematyczna), kwas octowy (nazwa zwyczajowa)."
         },
         {
-            front: "Jak nazywa się ester powstający z kwasu benzoesowego i etanolu?",
-            back: "Benzoesan etylu."
+            front: "Podaj wzór półstrukturalny kwasu propionowego (propanowego).",
+            back: "CH<sub>3</sub>CH<sub>2</sub>COOH."
         },
         {
-            front: "Z jakimi związkami estry tworzą izomery funkcyjne?",
-            back: "Z kwasami karboksylowymi o tej samej liczbie atomów węgla w cząsteczce."
+            front: "Podaj wzór półstrukturalny i nazwę systematyczną kwasu masłowego.",
+            back: "CH<sub>3</sub>(CH<sub>2</sub>)<sub>2</sub>COOH, kwas butanowy."
         },
         {
-            front: "Jaki wzór sumaryczny mają kwas butanowy oraz octan etylu i jakim są dla siebie typem izomerów?",
-            back: "Mają wzór C4H8O2. Są to izomery funkcyjne."
+            front: "Podaj nazwę zwyczajową kwasu pentanowego.",
+            back: "Kwas walerianowy."
         },
         {
-            front: "Podaj przykład izomerii położenia w estrach o wzorze C4H8O2.",
-            back: "Octan etylu (etanian etylu) oraz mrówczan propylu (metanian propylu) – różnią się podziałem szkieletu węglowego względem grupy -COO-."
+            front: "Podaj wzór sumaryczny, nazwę systematyczną i zwyczajową kwasu zawierającego 6 atomów węgla.",
+            back: "C<sub>6</sub>H<sub>12</sub>O<sub>2</sub>, kwas heksanowy, kwas kapronowy."
         },
         {
-            front: "Jak nazywa się reakcja otrzymywania estrów z kwasów karboksylowych i alkoholi?",
-            back: "Reakcja estryfikacji."
+            front: "Jak tworzy się nazwy soli alifatycznych kwasów karboksylowych?",
+            back: "Dodając do nazwy węglowodoru, od którego pochodzi kwas, końcówkę \"-ian\" podaną w dopełniaczu (np. etanian sodu, potocznie: octan sodu)."
         },
         {
-            front: "Jaki katalizator stosuje się powszechnie w reakcji estryfikacji?",
-            back: "Stężony kwas siarkowy(VI) (H2SO4)."
+            front: "Jak nazywa się najprostszy aromatyczny kwas karboksylowy o wzorze C<sub>6</sub>H<sub>5</sub>COOH?",
+            back: "Kwas benzenokarboksylowy (często stosowana, zalecana nazwa: kwas benzoesowy)."
         },
         {
-            front: "Dlaczego stężony H2SO4 jest idealnym dodatkiem w reakcji estryfikacji?",
-            back: "Dostarcza jonów H+ (katalizator) oraz jest higroskopijny – wiąże powstającą wodę, przesuwając stan równowagi w stronę produktów (estru)."
+            front: "Dlaczego kwasy karboksylowe mają wyższe temperatury wrzenia i topnienia niż odpowiednie alkany czy alkohole?",
+            back: "Ponieważ ich cząsteczki ulegają asocjacji – łączą się silnymi wiązaniami wodorowymi w dimery."
         },
         {
-            front: "Z jakiej cząsteczki (kwasu czy alkoholu) odrywana jest grupa -OH do budowy cząsteczki wody podczas estryfikacji?",
-            back: "Z cząsteczki kwasu karboksylowego."
+            front: "Jak zmienia się rozpuszczalność kwasów karboksylowych w wodzie w miarę wydłużania łańcucha węglowego?",
+            back: "Rozpuszczalność maleje, ponieważ rośnie wpływ niepolarnej, hydrofobowej grupy węglowodorowej."
         },
         {
-            front: "W jaki sposób udowodniono mechanizm odrywania grupy -OH od kwasu w reakcji estryfikacji?",
-            back: "Wykorzystano metodę znaczników izotopowych, używając alkoholu z ciężkim izotopem tlenu 18O. Izotop ten znalazł się w produkcie (estrze), a nie w wodzie."
+            front: "Co oznacza pojęcie \"lodowaty kwas octowy\"?",
+            back: "To bezwodny, czysty (100%) kwas etanowy, który w temperaturze 16,6&deg;C krzepnie, tworząc kryształy łudząco podobne do lodu."
         },
         {
-            front: "Czy reakcja estryfikacji jest procesem odwracalnym czy nieodwracalnym?",
-            back: "Jest to proces odwracalny, prowadzący do ustalenia się stanu równowagi dynamicznej."
+            front: "Z jaką klasą związków organicznych kwasy karboksylowe tworzą izomery funkcyjne?",
+            back: "Z estrami."
         },
         {
-            front: "Jakie właściwości zapachowe posiadają niższe estry?",
-            back: "Cechują się przyjemnymi, często owocowymi lub kwiatowymi zapachami."
+            front: "Podaj dwa przykłady izomerii szkieletowej dla kwasów o wzorze C<sub>5</sub>H<sub>10</sub>O<sub>2</sub>.",
+            back: "Np. kwas pentanowy i kwas 2-metylobutanowy (lub kwas 3-metylobutanowy / kwas 2,2-dimetylopropanowy)."
         },
         {
-            front: "Dlaczego estry mają znacznie niższe temperatury wrzenia niż alkohole i kwasy o podobnej masie molowej?",
-            back: "Ponieważ ich cząsteczki nie zawierają grup hydroksylowych i nie tworzą wiązań wodorowych między sobą."
+            front: "Jakim typem izomerii różnią się kwas 2-chloropropanowy i kwas 3-chloropropanowy?",
+            back: "Izomerią położenia podstawników w łańcuchu węglowym."
         },
         {
-            front: "Czy estry dobrze rozpuszczają się w wodzie?",
-            back: "Niższe estry są słabo rozpuszczalne, a wyższe praktycznie w ogóle nie rozpuszczają się w wodzie (ze względu na hydrofobowe reszty węglowodorowe i brak wiązań wodorowych)."
+            front: "W jakich kwasach karboksylowych występuje izomeria geometryczna cis-trans (Z/E)?",
+            back: "W kwasach nienasyconych, posiadających wiązanie podwójne między atomami węgla i różne podstawniki (np. izomery kwasu but-2-enowego)."
         },
         {
-            front: "Jak nazywa się reakcja, która jest odwrotnością estryfikacji i zachodzi w środowisku kwasowym?",
-            back: "Hydroliza kwasowa estrów."
+            front: "Napisz równanie reakcji utleniania etanolu do kwasu octowego zakwaszonym roztworem manganianu(VII) potasu.",
+            back: "5CH<sub>3</sub>CH<sub>2</sub>OH + 4KMnO<sub>4</sub> + 6H<sub>2</sub>SO<sub>4</sub> &rarr; 5CH<sub>3</sub>COOH + 4MnSO<sub>4</sub> + 2K<sub>2</sub>SO<sub>4</sub> + 11H<sub>2</sub>O."
         },
         {
-            front: "Jakie produkty powstają w wyniku całkowitej hydrolizy kwasowej etanianu metylu?",
-            back: "Kwas etanowy (octowy) oraz metanol."
+            front: "Z jakich klas związków organicznych otrzymuje się kwasy karboksylowe w wyniku utleniania z użyciem mocnych utleniaczy?",
+            back: "Z alkoholi pierwszorzędowych oraz aldehydów."
         },
         {
-            front: "Dlaczego hydroliza zasadowa estrów jest procesem nieodwracalnym?",
-            back: "Ponieważ powstający kwas natychmiast reaguje z obecną zasadą (np. NaOH), tworząc sól, co usuwa substrat reakcji odwrotnej z układu."
+            front: "Napisz sumaryczne równanie biochemicznego procesu fermentacji octowej.",
+            back: "CH<sub>3</sub>CH<sub>2</sub>OH + O<sub>2</sub> (bakterie)&rarr; CH<sub>3</sub>COOH + H<sub>2</sub>O."
         },
         {
-            front: "Jakie produkty powstają z hydrolizy zasadowej estrów (reakcji z NaOH na gorąco)?",
-            back: "Alkohol oraz sól sodowa kwasu karboksylowego."
+            front: "Z jakich substratów produkuje się metanian sodu (mrówczan sodu) na drodze syntezy przemysłowej?",
+            back: "Z tlenku węgla(II) (CO) i wodorotlenku sodu (NaOH) pod zwiększonym ciśnieniem i w wysokiej temperaturze."
         },
         {
-            front: "Gdzie w życiu codziennym estry znajdują najczęstsze zastosowanie?",
-            back: "W przemyśle spożywczym (aromaty), kosmetycznym (perfumy) oraz jako rozpuszczalniki do farb i lakierów (np. octan etylu)."
+            front: "W jaki sposób przekształca się sól kwasu (np. HCOONa) w wolny kwas karboksylowy?",
+            back: "Działając na sól roztworem mocniejszego kwasu nieorganicznego, np. mocnym kwasem siarkowym(VI) (H<sub>2</sub>SO<sub>4</sub>)."
         },
         {
-            front: "Czym jest reakcja polikondensacji kwasów i alkoholi?",
-            back: "To wielokrotna estryfikacja związków posiadających minimum dwie grupy funkcyjne (np. kwas dikarboksylowy i diol), prowadząca do powstania polimerów – poliestrów (np. PET)."
+            front: "Co jest organicznym produktem reakcji utleniania aldehydu (próba Tollensa) w środowisku zasadowym?",
+            back: "Sól kwasu karboksylowego (anion karboksylanowy), a nie wolny kwas karboksylowy."
         },
         {
-            front: "Zdefiniuj tłuszcze pod kątem budowy chemicznej.",
-            back: "Tłuszcze (glicerydy) to estry glicerolu (propano-1,2,3-triolu) oraz wyższych kwasów karboksylowych (kwasów tłuszczowych)."
+            front: "Na czym polega dysocjacja elektrolityczna rozpuszczalnych w wodzie kwasów karboksylowych?",
+            back: "Na odszczepieniu protonu (H<sup>+</sup>) z grupy karboksylowej, przez co w wodzie powstaje jon oksoniowy (H<sub>3</sub>O<sup>+</sup>) i anion reszty kwasowej."
         },
         {
-            front: "Co odróżnia tłuszcze proste od tłuszczów mieszanych?",
-            back: "W tłuszczach prostych wszystkie trzy reszty kwasowe przyłączone do glicerolu pochodzą od tego samego kwasu. W mieszanych – od różnych kwasów."
+            front: "Z czego wynika zdolność kwasów karboksylowych do odszczepienia jonu H<sup>+</sup>?",
+            back: "Wynika to z silnej polaryzacji wiązania C=O, co wymusza przesunięcie chmury elektronowej z wiązania O-H w stronę atomu tlenu i pozwala na ucieczkę kationu wodorowego."
         },
         {
-            front: "Skąd pozyskuje się głównie tłuszcze stałe i jakie kwasy w nich dominują?",
-            back: "Pochodzą głównie z organizmów zwierzęcych (np. smalec, łój). Dominują w nich reszty kwasów nasyconych (stearynowy, palmitynowy)."
+            front: "Czy kwasy karboksylowe to silne, czy słabe elektrolity?",
+            back: "Większość należy do słabych elektrolitów (ich stałe dysocjacji K<sub>a</sub> przyjmują wartości ok. 10<sup>-4</sup> do 10<sup>-5</sup>)."
         },
         {
-            front: "Skąd pozyskuje się głównie tłuszcze ciekłe i jakie kwasy w nich dominują?",
-            back: "Pochodzą z roślin (oleje, oliwa). Dominują w nich reszty kwasów nienasyconych (np. kwasu oleinowego, linolowego)."
+            front: "Z jakimi ogólnymi klasami substancji nieorganicznych reagują kwasy karboksylowe, tworząc sole?",
+            back: "Reagują z metalami aktywnymi, tlenkami metali, wodorotlenkami metali oraz wypierają reszty kwasowe z soli słabszych kwasów."
         },
         {
-            front: "Podaj przykład tłuszczu odzwierzęcego, który jest wyjątkiem i ma stan ciekły.",
-            back: "Tran (olej rybi)."
+            front: "Podaj pełne zbilansowane równanie reakcji kwasu etanowego z magnezem.",
+            back: "2CH<sub>3</sub>COOH + Mg &rarr; (CH<sub>3</sub>COO)<sub>2</sub>Mg + H<sub>2</sub>&uarr;."
         },
         {
-            front: "Podaj przykład tłuszczu roślinnego, który w temperaturze pokojowej występuje w stanie stałym.",
-            back: "Masło kakaowe lub olej kokosowy."
+            front: "Co można zaobserwować podczas roztwarzania czarnego tlenku miedzi(II) na gorąco w roztworze kwasu octowego?",
+            back: "Zawartość probówki zmienia barwę z czarnej na niebieską, co świadczy o pojawieniu się jonów miedzi(II)."
         },
         {
-            front: "Jak zbadać w laboratorium obecność wiązań nienasyconych w tłuszczach?",
-            back: "Należy wykonać próbę z wodą bromową lub zakwaszonym wodnym roztworem KMnO4. Tłuszcze nienasycone odbarwią te roztwory."
+            front: "Jak zmienia się barwa fenoloftaleiny w roztworze NaOH po dodaniu nadmiaru kwasu etanowego?",
+            back: "Zabarwienie roztworu zmienia się z różowoczerwonego (malinowego) na bezbarwne (reakcja zobojętniania)."
         },
         {
-            front: "Dlaczego olej roślinny odbarwia wodę bromową?",
-            back: "Ponieważ olej ten posiada reszty nienasyconych kwasów tłuszczowych, które ulegają reakcji addycji cząsteczek bromu (pęka wiązanie podwójne typu pi)."
+            front: "Napisz równanie reakcji wypierania kwasu z węglanu sodu przy użyciu kwasu etanowego.",
+            back: "Na<sub>2</sub>CO<sub>3</sub> + 2CH<sub>3</sub>COOH &rarr; 2CH<sub>3</sub>COONa + CO<sub>2</sub>&uarr; + H<sub>2</sub>O."
         },
         {
-            front: "W jakich rozpuszczalnikach tłuszcze rozpuszczają się najlepiej?",
-            back: "W rozpuszczalnikach niepolarnych, takich jak benzyna, heksan czy chloroform. Nie rozpuszczają się w polarnej wodzie."
+            front: "Kwas octowy wlano do probówki z węglanem sodu i zaobserwowano silne pienienie (wydzielanie gazu). Jaki płynie z tego wniosek?",
+            back: "Kwas etanowy (octowy) jest kwasem mocniejszym od kwasu węglowego, ponieważ zdołał go wyprzeć z jego soli."
         },
         {
-            front: "Co to jest emulsja?",
-            back: "To układ dwufazowy, w którym jedna ciecz jest rozproszona w postaci mikroskopijnych kropel w drugiej (np. kropelki tłuszczu w wodzie)."
+            front: "Kwas siarkowy(VI) dodano do stałego etanianu sodu, a zawartość łagodnie podgrzano. Co zaobserwowano?",
+            back: "Można wyczuć ostry, charakterystyczny zapach kwasu etanowego, który został wyparty ze swojej soli przez mocniejszy kwas nieorganiczny."
         },
         {
-            front: "Na czym polega utwardzanie tłuszczów (produkcja margaryny)?",
-            back: "Na reakcji addycji wodoru (uwodornieniu, z użyciem katalizatora) do wiązań podwójnych w ciekłych tłuszczach roślinnych, co przekształca je w nasycone tłuszcze stałe."
+            front: "Podaj wzór na stałą dysocjacji jonowej (K<sub>a</sub>) kwasu etanowego.",
+            back: "K<sub>a</sub> = ([CH<sub>3</sub>COO<sup>&minus;</sup>][H<sup>+</sup>]) / [CH<sub>3</sub>COOH]."
         },
         {
-            front: "Czym jest proces zmydlania tłuszczów z punktu widzenia kinetyki i chemii?",
-            back: "Jest to nieodwracalna hydroliza zasadowa triglicerydów przebiegająca z użyciem KOH lub NaOH, dająca w efekcie glicerol oraz mydła (sole wyższych kwasów tłuszczowych)."
+            front: "Jaki odczyn ma wodny roztwór octanu sodu (CH<sub>3</sub>COONa) i jakiego zjawiska jest to wynik?",
+            back: "Ma odczyn zasadowy, co jest wynikiem zajścia hydrolizy anionowej (octan sodu to sól słabego kwasu organicznego i mocnej zasady sodowej)."
         },
         {
-            front: "Podaj nazwę chemiczną zwykłego, szarego mydła powstającego po hydrolizie zasadowej tłuszczu zwierzęcego.",
-            back: "Najczęściej jest to stearynian sodu (lub palmitynian sodu)."
+            front: "Napisz jonowe równanie skrócone reakcji hydrolizy anionowej octanu sodu.",
+            back: "CH<sub>3</sub>COO<sup>&minus;</sup> + H<sub>2</sub>O &rightleftharpoons; CH<sub>3</sub>COOH + OH<sup>&minus;</sup>."
         },
         {
-            front: "Czym różni się jełczenie utleniające od jełczenia hydrolitycznego?",
-            back: "Utleniające to utlenianie wiązań podwójnych pod wpływem tlenu i światła (powstają ketony/aldehydy). Hydrolityczne to reakcja z wodą z udziałem bakterii, co uwalnia lotne, śmierdzące kwasy (np. kwas masłowy)."
+            front: "Jak obecność i długość grupy alkilowej (niepolarnej) wpływa na moc alifatycznych kwasów karboksylowych?",
+            back: "Zmniejsza moc kwasu. Grupa alkilowa dostarcza elektrony do związku, osłabiając polaryzację i utrudniając oderwanie kationu wodorowego."
         },
         {
-            front: "Jaki związek jest odpowiedzialny za charakterystyczny, bardzo nieprzyjemny zapach zjełczałego masła?",
-            back: "Kwas butanowy (zwyczajowo kwas masłowy)."
+            front: "Który kwas z szeregu homologicznego nasyconych alifatycznych kwasów jednokarboksylowych jest najmocniejszy?",
+            back: "Kwas metanowy (mrówkowy)."
         },
         {
-            front: "Z czego zbudowane są woski?",
-            back: "Są to estry wyższych kwasów karboksylowych (tłuszczowych) i wyższych alkoholi monohydroksylowych (a nie glicerolu)."
+            front: "Czym są podstawniki elektronoakceptorowe (EA)?",
+            back: "Są to silnie elektroujemne atomy lub grupy atomów (np. Cl, F, NO<sub>2</sub>), które ściągają (przyciągają) elektrony na siebie."
         },
         {
-            front: "Jaką ważną biologiczną funkcję pełnią woski u roślin i zwierząt?",
-            back: "Mają charakter ochronny – pokrywają liście lub owoce chroniąc przed utratą wody i atakiem szkodników, a u ptaków natłuszczają pióra, zapobiegając ich przemakaniu."
+            front: "Jak podstawniki elektronoakceptorowe (np. atomy fluorowców) wpływają na moc kwasu karboksylowego?",
+            back: "Znacznie zwiększają jego moc. Zmniejszają gęstość elektronową w obrębie grupy -COOH, bardzo silnie osłabiają wiązanie tlen-wodór, co wybitnie ułatwia dysocjację jonu H<sup>+</sup>."
         },
         {
-            front: "Czym są fosfolipidy?",
-            back: "To złożone lipidy (tłuszcze), w których jedna reszta kwasu tłuszczowego została zastąpiona resztą kwasu fosforowego(V), do której często podłączona jest mała cząsteczka polarna."
+            front: "Który z kwasów jest mocniejszy: kwas chlorooctowy czy kwas octowy? Odpowiedź uzasadnij.",
+            back: "Kwas chlorooctowy. Obecność elektroujemnego atomu chloru (podstawnika EA) wyciąga chmurę elektronową, ułatwiając dysocjację protonu."
         },
         {
-            front: "Gdzie w biologii fosfolipidy odgrywają kluczową rolę?",
-            back: "Są głównym budulcem dwuwarstwy lipidowej we wszystkich błonach komórkowych organizmów żywych."
+            front: "Który z kwasów jest mocniejszy: kwas 2-chloropropanowy czy kwas 3-chloropropanowy? Dlaczego?",
+            back: "Kwas 2-chloropropanowy. Moc kwasu jest tym większa, im bliżej grupy -COOH (czyli miejsca dysocjacji) znajduje się podstawnik wyciągający elektrony."
         },
         {
-            front: "Dlaczego cząsteczkę fosfolipidu nazywamy amfipatyczną (amfifilową)?",
-            back: "Ponieważ posiada dwa przeciwstawne obszary: hydrofobowy 'ogon' (reszty kwasów tłuszczowych) oraz silnie hydrofilową 'głowę' (resztę fosforanową)."
+            front: "Jak rodzaj podstawnika fluorowcowego (F vs Cl) wpływa na moc kwasu chlorowcooctowego?",
+            back: "Kwas fluorooctowy jest znacznie mocniejszy od kwasu chlorooctowego, ponieważ atom fluoru charakteryzuje się wyższą elektroujemnością niż atom chloru."
         },
         {
-            front: "Do jakiej grupy substancji zaliczymy cholesterol i czy zawiera on wiązanie estrowe?",
-            back: "Zaliczamy go do lipidów izoprenowych (steroidów). Nie zawiera on wiązania estrowego, jest polikierunkowym alkoholem."
+            front: "Jak liczba podstawników chlorowcowych wpływa na moc kwasu? Porównaj kwas chlorooctowy i dichloroocotowy.",
+            back: "Im więcej podstawników elektronoakceptorowych, tym kwas jest mocniejszy. Kwas dichloroctowy (CHCl<sub>2</sub>COOH) ma mniejszą wartość pK<sub>a</sub> (jest silniejszy) niż kwas monochlorooctowy."
         },
         {
-            front: "Które tłuszcze - roślinne czy zwierzęce - uchodzą w dietetyce za zdrowsze dla układu krwionośnego i dlaczego?",
-            back: "Tłuszcze roślinne, ponieważ dostarczają nienasyconych kwasów tłuszczowych (NNKT), podczas gdy stałe tłuszcze zwierzęce sprzyjają podnoszeniu poziomu cholesterolu."
+            front: "Jak liczba grup karboksylowych w cząsteczce wpływa na jej siłę jako kwasu?",
+            back: "Im więcej grup -COOH znajduje się w cząsteczce, tym kwas staje się mocniejszy (np. kwas szczawiowy jest bardzo mocnym kwasem organicznym)."
         },
         {
-            front: "Które z wymienionych związków ulegają hydrolizie: estry, alkohole, czy kwasy karboksylowe?",
-            back: "Tylko estry (w tym tłuszcze jako triglicerydy). Alkohole i kwasy karboksylowe w typowych warunkach nie ulegają rozkładowi wodą."
+            front: "Co to jest reakcja dekarboksylacji?",
+            back: "Jest to specyficzna reakcja, w której cała grupa -COOH zostaje zastąpiona atomem wodoru, przy czym na zewnątrz wydziela się tlenek węgla(IV) (CO<sub>2</sub>)."
         },
         {
-            front: "Napisz sumaryczne, słowne równanie reakcji, z której powstają estry.",
-            back: "Kwas karboksylowy + Alkohol ⇌ Ester + Woda."
+            front: "Kwas metanowy wyróżnia się spośród innych kwasów swoimi właściwościami chemicznymi. Jakimi?",
+            back: "Wykazuje właściwości redukujące (np. odbarwia roztwór KMnO<sub>4</sub> w środowisku kwasowym)."
         },
         {
-            front: "Jak na wydajność estryfikacji wpływa oddestylowanie (usuwanie) estru lub wody w trakcie trwania reakcji?",
-            back: "Zgodnie z regułą przekory Le Chateliera, usuwanie produktów ze środowiska reakcji przesuwa stan równowagi w prawą stronę, stale zwiększając całkowitą wydajność procesu."
+            front: "Jak budowa cząsteczki kwasu mrówkowego tłumaczy jego właściwości redukujące?",
+            back: "Obok grupy karboksylowej można w jego cząsteczce wyróżnić również strukturę grupy aldehydowej (-CHO), odpowiedzialnej za zdolność do utleniania się."
+        },
+        {
+            front: "Napisz równanie reakcji utleniania (redukcji jonów) kwasu mrówkowego zakwaszonym roztworem manganianu(VII) potasu.",
+            back: "5HCOOH + 2KMnO<sub>4</sub> + 3H<sub>2</sub>SO<sub>4</sub> &rarr; 5CO<sub>2</sub>&uarr; + 2MnSO<sub>4</sub> + K<sub>2</sub>SO<sub>4</sub> + 8H<sub>2</sub>O."
+        },
+        {
+            front: "Do jakiej grupy należą tzw. kwasy tłuszczowe?",
+            back: "To wyższe kwasy karboksylowe – związki chemiczne zbudowane z nierozgałęzionych, bardzo długich łańcuchów węglowych liczących najczęściej kilkanaście (14-18) atomów węgla w cząsteczce."
+        },
+        {
+            front: "Podaj wzory i nazwy dwóch powszechnych, naturalnie nasyconych wyższych kwasów karboksylowych.",
+            back: "Kwas palmitynowy (C<sub>15</sub>H<sub>31</sub>COOH) oraz kwas stearynowy (C<sub>17</sub>H<sub>35</sub>COOH)."
+        },
+        {
+            front: "Podaj wzór i nazwę najważniejszego, powszechnego nienasyconego wyższego kwasu karboksylowego.",
+            back: "Kwas oleinowy (C<sub>17</sub>H<sub>33</sub>COOH)."
+        },
+        {
+            front: "Jaka jest systematyczna nazwa IUPAC kwasu stearynowego?",
+            back: "Kwas oktadekanowy."
+        },
+        {
+            front: "Jaka jest systematyczna nazwa IUPAC dla nienasyconego kwasu oleinowego?",
+            back: "Kwas (9Z)-oktadec-9-enowy."
+        },
+        {
+            front: "Jaka izomeria występuje wokół wiązania podwójnego w naturalnym kwasie oleinowym i jak wpływa to na jego kształt przestrzenny?",
+            back: "Występuje tam izomeria cis (Z). Oznacza to, że konfiguracja podstawników powoduje zgięcie łańcucha na wiązaniu podwójnym (struktura nieliniowa)."
+        },
+        {
+            front: "Jak odróżnisz w laboratorium kwas oleinowy od kwasu stearynowego przy pomocy jednego odczynnika?",
+            back: "Do obu kwasów należy dodać wodę bromową. Nienasycony kwas oleinowy odbarwi brunatną wodę bromową, podczas gdy w obecności stałego, nasyconego kwasu stearynowego probówka pozostanie brunatna."
+        },
+        {
+            front: "Napisz równanie reakcji addycji kwasu oleinowego z bromem.",
+            back: "CH<sub>3</sub>(CH<sub>2</sub>)<sub>7</sub>CH=CH(CH<sub>2</sub>)<sub>7</sub>COOH + Br<sub>2</sub> &rarr; CH<sub>3</sub>(CH<sub>2</sub>)<sub>7</sub>CH(Br)CH(Br)(CH<sub>2</sub>)<sub>7</sub>COOH."
+        },
+        {
+            front: "Co otrzymamy po katalitycznym uwodornieniu kwasu oleinowego (H<sub>2</sub> / kat. Ni) i do czego ten proces jest używany w przemyśle?",
+            back: "Otrzymamy nasycony kwas stearynowy. Przemysł spożywczy wykorzystuje to do tzw. utwardzania tłuszczów, czyli zamiany ciekłych olejów roślinnych w ciała stałe (np. margaryny)."
+        },
+        {
+            front: "Jak na rozpuszczalność i dysocjację elektrolityczną w wodzie wpływa bardzo długi \"ogon\" węglowodorowy w kwasach tłuszczowych?",
+            back: "Sprawia on, że wyższe kwasy karboksylowe są praktycznie nierozpuszczalne w wodzie i zupełnie nie ulegają w niej dysocjacji."
+        },
+        {
+            front: "Z jakimi substancjami jako jedynymi reagują w sposób \"kwasowy\" wyższe kwasy karboksylowe, by wytworzyć sole (mydła)?",
+            back: "Nie reagują już z metalami ani ich tlenkami; roztwarzają się tylko w reakcji ze stężonymi, silnymi wodorotlenkami metali (np. NaOH, KOH)."
+        },
+        {
+            front: "Zdefiniuj proces zwany powszechnie \"zmydlaniem\".",
+            back: "Zmydlanie wyższych kwasów karboksylowych to ich bezpośrednia, na gorąco zachodząca reakcja z wodorotlenkiem sodu lub potasu, w wyniku której powstają rozpuszczalne w wodzie sole – mydła (np. stearynian sodu)."
+        },
+        {
+            front: "Napisz równanie otrzymywania mydła z kwasu stearynowego i wodorotlenku sodu.",
+            back: "C<sub>17</sub>H<sub>35</sub>COOH + NaOH (temp.) &rarr; C<sub>17</sub>H<sub>35</sub>COONa + H<sub>2</sub>O."
+        },
+        {
+            front: "Jakimi typami substancji, ze względu na zmniejszanie napięcia powierzchniowego wody, są mydła?",
+            back: "Mydła zaliczają się do substancji powierzchniowo czynnych (SPC), inaczej zwanych surfaktantami."
+        },
+        {
+            front: "Wyjaśnij amfifilową (dwoistą) budowę chemiczną jonu (np. stearynianowego) mydła.",
+            back: "Składa się on z niepolarnego fragmentu hydrofobowego (\"ogona\" węglowodorowego, który unika wody) oraz jonowego, ujemnie naładowanego fragmentu hydrofilowego (\"główki\" -COO<sup>&minus;</sup>, która kieruje się do wody)."
+        },
+        {
+            front: "Na czym polega uproszczony mechanizm fizykochemiczny prania przy użyciu mydła?",
+            back: "SPC obniżają napięcie powierzchniowe wody. Następnie wnikają \"ogonami\" w hydrofobowy brud (np. tłuszcz), tworząc wokół niego micele. Pocieranie odrywa odizolowany brud od tkaniny."
+        },
+        {
+            front: "Czym jest twardość wody i jak ona wpływa na skuteczność samego mydła sodowego?",
+            back: "Twarda woda zawiera duże stężenia rozpuszczalnych soli wapnia (Ca<sup>2+</sup>) i magnezu (Mg<sup>2+</sup>). Osłabia ona drastycznie pranie, tworząc z mydłami nierozpuszczalne, lepkie osady (tzw. kłaczki mydlane)."
+        },
+        {
+            front: "Napisz jonowe równanie skrócone obrazujące reakcję jonów stearynianowych z jonami wapnia zawartymi w twardej wodzie.",
+            back: "2 C<sub>17</sub>H<sub>35</sub>COO<sup>&minus;</sup> + Ca<sup>2+</sup> &rarr; (C<sub>17</sub>H<sub>35</sub>COO)<sub>2</sub>Ca&darr;."
+        },
+        {
+            front: "Jaki problem z punktu widzenia ekologii sprawiało masowe odprowadzanie do ścieków środków piorących zawierających fosforany(V)?",
+            back: "Fosforany trafiały do wód gruntowych, stymulując masowy rozrost glonów i sinic – jest to tzw. proces eutrofizacji, powodujący z czasem całkowite wymieranie jezior."
         }
     ]
 };
